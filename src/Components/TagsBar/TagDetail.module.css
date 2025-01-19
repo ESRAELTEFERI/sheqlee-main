@@ -1,0 +1,99 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Kantumruy Pro", sans-serif;
+  text-align: center;
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px 10px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #000;
+  /* margin: 20px; */
+  margin: 0;
+  padding-right: 10px;
+}
+
+.strong {
+  font-weight: 500;
+}
+.description {
+  font-size: 1.5rem;
+  text-align: center;
+  position: relative;
+  color: #000;
+  width: 30em;
+  margin-bottom: 50px;
+}
+.align {
+  display: flex;
+}
+
+.iconBell {
+  width: 25px;
+  height: 25px;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+.buttonText {
+  padding: 0px 30px;
+  padding-left: 15px;
+  color: white;
+  margin-top: 13px;
+  font-size: 25px;
+}
+
+.subscribeButton {
+  height: 60px;
+  background-color: #8967b3;
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.subscribeButton:hover {
+  background-color: #8967b3;
+}
+
+.subscribers {
+  font-size: 20px;
+  color: #000;
+  margin-top: 20px;
+}
+
+.subscriberCount {
+  font-weight: bold;
+}
+
+.verify {
+  width: 15px;
+  height: 15px;
+  margin-top: 10px;
+  /* margin-left: 20px; */
+}
+
+.socialIcons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.socialIcons a {
+  text-decoration: none;
+}
+
+.socialIcons a:hover {
+  fill: #391355;
+}

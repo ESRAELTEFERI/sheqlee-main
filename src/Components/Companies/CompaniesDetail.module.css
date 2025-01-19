@@ -1,0 +1,104 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Kantumruy Pro", sans-serif;
+  text-align: center;
+}
+
+.icon {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 0;
+}
+.heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #000;
+  margin: 10px;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #000;
+  /* margin: 20px; */
+  padding-right: 10px;
+  margin-left: 65px;
+  margin-top: 80px;
+  padding-bottom: 3px;
+}
+.strong {
+  font-weight: 500;
+}
+.description {
+  font-size: 0.8rem;
+  color: #000;
+  border-radius: 5px;
+  background-color: #dddddd;
+  padding: 5px 10px;
+}
+.alignDescription {
+  display: flex;
+  margin: 5px;
+  margin-bottom: 30px;
+}
+
+.iconBell {
+  width: 25px;
+  height: 25px;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+.buttonText {
+  padding: 0px 30px;
+  padding-left: 15px;
+  color: white;
+  margin-top: 13px;
+  font-size: 23px;
+}
+
+.subscribeButton {
+  height: 60px;
+  background-color: #8967b3;
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.subscribeButton:hover {
+  background-color: #8967b3;
+}
+
+.subscribers {
+  font-size: 22px;
+  color: #000;
+  margin-top: 20px;
+}
+
+.subscriberCount {
+  font-weight: bold;
+}
+.align {
+  display: flex;
+}
+.verify {
+  width: 20px;
+  height: 20px;
+  margin-top: 25px;
+}
+.icons {
+  width: 13px;
+  height: 13px;
+  margin-right: 5px;
+}
+
+.Read {
+  width: 10px;
+  height: 10px;
+}

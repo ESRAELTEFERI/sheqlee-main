@@ -1,0 +1,48 @@
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 17px;
+  color: #000;
+  background-color: #fcfcfc;
+}
+
+.icon {
+  width: 15px;
+  height: 50px;
+  margin-left: 150px;
+}
+
+.navLinkk {
+  font-family: "Kantumruy Pro", sans-serif;
+  color: #000;
+  text-decoration: none;
+
+  /***************/
+  background: linear-gradient(90deg, #000000, #8967b3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: background-position 0.3s ease;
+  background-size: 200%;
+}
+
+.navLinkkk {
+  font-family: "Kantumruy Pro", sans-serif;
+  color: #000;
+  text-decoration: none;
+}
+
+.navLinkk:hover {
+  /* text-decoration: underline;
+  background-color: #f5f5f5; */
+  transform: scale(1.05);
+  background-color: #f5f5f5;
+
+  background-position: right; /* Gradient animation */
+}
+
+/* .separator {
+  margin: 0 5px;
+  color: #000;
+} */

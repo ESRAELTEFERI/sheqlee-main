@@ -1,0 +1,91 @@
+@font-face {
+  font-family: "Kantumruy Pro";
+  src: url("../../../node_modules/@fontsource/kantumruy-pro/files/kantumruy-pro-khmer-600-normal.woff2")
+      format("woff2"),
+    url("../../../node_modules/@fontsource/kantumruy-pro/files/kantumruy-pro-khmer-600-normal.woff")
+      format("woff");
+
+  font-weight: 600;
+  font-style: normal;
+}
+
+/********************* Navigation ********************/
+.nav {
+  display: flex;
+  /* gap: 2rem; */
+  /* align-items: center; */
+  font-family: "Kantumruy Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000;
+  /* padding-right: 1rem; */
+  /* width: 18rem; */
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+/*********************************************************/
+
+.nav li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/***************************************************************/
+.nav .navLink {
+  text-decoration: none;
+  color: var(--color-primary-400);
+  position: relative;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.nav .navLink:hover,
+.nav .navLink.active {
+  color: var(--color-primary-800);
+}
+
+.nav .navLink::after {
+  content: "";
+  position: absolute;
+  bottom: -50px; /* Adjusts underline position */
+  left: 50%;
+  width: 0px; /* Initial width */
+  height: 6px; /* Thickness of underline */
+  background-color: #8967b3;
+  transform: translateX(-50%);
+  transition: width 0.3s ease; /* Smooth animation */
+}
+
+.nav .navLink:hover::after,
+.nav .navLink.active::after {
+  width: 100%; /* Full underline on hover or active */
+}
+
+/* Dropdown Styling */
+.nav .dropdown {
+  font-size: 0.8rem;
+  color: var(--color-primary-400);
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  position: relative;
+}
+
+.nav .dropdown:hover {
+  color: var(--color-primary-800);
+}
+
+.nav .dropdownArrow {
+  width: 0.6rem;
+  height: 0.4rem;
+  transition: transform 0.3s ease;
+}
+
+.nav .dropdown:hover .dropdownArrow {
+  transform: rotate(180deg);
+}

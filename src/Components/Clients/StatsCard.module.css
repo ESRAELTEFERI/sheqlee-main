@@ -1,0 +1,69 @@
+/* src/StatsCard.module.css */
+.card {
+  height: 180px;
+  width: 850px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  margin-top: 40px;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  background-color: #f7f7f7;
+  margin-left: 100px;
+  margin-bottom: 60px;
+  font-family: "Kantumruy Pro";
+}
+
+.border {
+  border-left: 10px solid #000;
+}
+.reverse {
+  flex-direction: row-reverse; /* Moves the stat to the end when darkMode is enabled */
+  margin-left: 350px;
+  border-right: 10px solid #000;
+}
+
+.stat {
+  width: 250px;
+  height: 180px;
+  align-items: center;
+  font-size: 3rem;
+  /* padding: 10px 20px; */
+  color: #fff;
+  background-color: #000;
+  font-weight: 500;
+  padding-top: 50px;
+  padding-left: 45px;
+}
+
+/* .statDark {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #000;
+  background-color: #fff;
+} */
+
+.content {
+  flex: 1;
+  padding: 20px;
+}
+.textReverse {
+  direction: rtl; /* Reverses the text direction */
+  text-align: right; /* Optional: Aligns the text to the right */
+}
+
+.content h2 {
+  margin: 5px 10px;
+  font-size: 2rem;
+  color: #000;
+  font-weight: 500;
+}
+
+.content p {
+  margin: 15px 10px;
+  font-size: 1.1rem;
+  color: #000;
+  width: 27em;
+}

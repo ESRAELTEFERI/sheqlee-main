@@ -1,0 +1,147 @@
+.container {
+  max-width: 900px;
+
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  font-family: "Kantumruy Pro", sans-serif;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.subtitle {
+  font-size: 1.6rem;
+  text-align: center;
+  position: relative;
+  color: #000;
+  /* margin-right: 100px;
+  margin-left: 100px;
+  margin-top: 30px;
+  margin-bottom: 30px; */
+  margin: 30px 50px 30px 50px;
+}
+
+/* Filters Section */
+.filters {
+  display: grid;
+  grid-template-columns: 350px 240px 240px;
+  gap: 20px;
+  align-items: center;
+}
+
+input::placeholder {
+  font-size: 21px;
+  color: #444444;
+}
+
+/* Search Input Styles */
+.searchInput {
+  height: 60px;
+  grid-column: span 2; /* Search input spans 2 columns */
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #dfdfdf;
+  font-family: "Kantumruy Pro", sans-serif;
+  margin-bottom: 50px;
+  position: relative;
+  padding: 20px;
+  font-size: 21px;
+}
+.searchInput:focus {
+  outline: none; /* Remove default focus outline */
+  border-color: #ddd; /* Set border color when input is focused */
+}
+.searchInput::before {
+  background: url("../../asset/Filter/search.svg");
+  position: absolute;
+  left: 10px; /* Adjust the left position of the search icon */
+  top: 50%; /* Position the icon vertically centered */
+  transform: translateY(-50%); /* Center the icon vertically */
+  width: 20px; /* Set the width of the search icon */
+  height: 20px; /* Set the height of the search icon */
+  z-index: 1; /* Ensure the icon is above the input text */
+}
+
+/* Button Styles */
+.applyButton {
+  height: 60px;
+  font-family: "Kantumruy Pro", sans-serif;
+  padding: 10px 20px;
+  font-size: 21px;
+  background-color: #8967b3;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+
+.applyButton:hover {
+  /* background-color: #5e36c9; */
+  background-color: #8967b3;
+}
+.tagsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 16px;
+
+  /**********align************/
+  justify-content: space-between;
+  align-items: left;
+  padding: 2rem 2rem 0 2rem;
+  max-width: 1200px;
+
+  margin-right: 40px;
+  margin-left: 60px;
+}
+
+.select-container {
+  position: relative;
+  display: inline-block;
+  width: 100%; /* Optional: Set a specific width */
+}
+
+.dropdown {
+  width: 100%; /*Ensure full width*/
+  -webkit-appearance: none; /* For Safari */
+  -moz-appearance: none; /* For Firefox */
+  appearance: none; /* Remove default arrow */
+  background: none; /* Remove background to use custom icon */
+  height: 58px;
+  padding: 10px;
+  padding-left: 20px;
+  font-size: 21px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #dfdfdf;
+  color: #444444;
+  font-family: "Kantumruy Pro", sans-serif;
+}
+
+.dropdown:focus {
+  outline: none; /* Remove default focus outline */
+  border-color: #ddd; /* Set border color when input is focused */
+}
+
+.select-container::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 20px; /*Adjust the distance from the right*/
+  transform: translateY(-50%); /* Center vertically */
+  width: 14px; /* Adjust the width of the icon */
+  height: 14px; /* Adjust the height of the icon */
+  background: url("../../asset/Filter/arrow-down.svg") no-repeat center center; /* Use your custom icon */
+  background-size: contain; /* Ensure the icon fits within the size */
+  pointer-events: none; /* Ensure the icon doesn't interfere with clicking */
+}

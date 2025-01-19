@@ -1,0 +1,20 @@
+.postJob {
+  padding: 18px 80px;
+  font-size: 1.8rem;
+  border-radius: 15px;
+  font-family: "Kantumruy Pro", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #8967b3;
+  color: #fff;
+  border: none;
+  margin-left: 530px;
+  margin-bottom: 100px;
+}
+
+.postJob:hover {
+  background-color: #8967b3;
+  color: #fff;
+  border: none;
+}

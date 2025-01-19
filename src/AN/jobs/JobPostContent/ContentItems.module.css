@@ -1,0 +1,245 @@
+@font-face {
+  font-family: "Kantumruy Pro";
+  src: url("../../../node_modules/@fontsource/kantumruy-pro/files/kantumruy-pro-khmer-600-normal.woff2")
+      format("woff2"),
+    url("../../../node_modules/@fontsource/kantumruy-pro/files/kantumruy-pro-khmer-600-normal.woff")
+      format("woff");
+
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Kantumruy Pro";
+  src: url("../../../node_modules/@fontsource/kantumruy-pro/files/kantumruy-pro-khmer-400-normal.woff2")
+      format("woff2"),
+    url("../../../node_modules/@fontsource/kantumruy-pro/files/kantumruy-pro-khmer-400-normal.woff")
+      format("woff");
+
+  font-weight: 400;
+  font-style: normal;
+}
+
+.contentItem {
+  background: #f7f7f7;
+  height: 230px;
+  width: 390px;
+  padding: 16px 16px 16px 16px;
+  /* width: 370px; */
+  /* height: 230px; */
+  text-align: center;
+  /* border-radius: 15px;
+  margin-bottom: 20px;
+  margin-right: 5px; */
+
+  /* background: #dfdfdf; */
+  border-radius: 12px;
+  /* padding: 10px 16px 16px 16px; */
+  /* width: 390px; */
+  /* height: 100px; */
+  text-align: center;
+  /* border-left: 15px solid #000; */
+  margin-bottom: 15px;
+}
+
+.title {
+  /* font-size: 1.4rem;
+  color: #000000;
+  letter-spacing: 0px;
+  font-weight: 500;
+  font-family: "Kantumruy Pro";
+  padding-bottom: 20px;
+  text-align: left;
+  margin-right: 100px; */
+
+  font-size: 1.5rem;
+  color: #000000;
+  letter-spacing: 0px;
+  font-family: "Kantumruy Pro", sans-serif;
+  font-weight: 500;
+  padding-top: 5px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #000000;
+  letter-spacing: 0px;
+  font-family: "Kantumruy Pro";
+  font-weight: 400;
+  opacity: 1;
+  text-align: left;
+  padding-bottom: 20px;
+  width: 19em; /*about 20 characters*/
+  height: 5em;
+}
+
+.elements {
+  display: grid;
+  grid-template-columns: 90px 110px 90px; /* 3 equal columns */
+  /* height: 230px; */
+  width: 350px;
+  gap: 16px;
+  /* padding: 16px; */
+  margin-top: 10px;
+  /* margin-right: 100px; */
+  align-items: left;
+  /* padding: 0; */
+  /* width: 50px; */
+  align-items: start;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.icons {
+  display: flex;
+
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 8px;
+}
+.titleIcon {
+  font-size: 1.2rem;
+  color: #000000;
+  letter-spacing: 0px;
+  font-family: "Kantumruy Pro";
+  padding-bottom: 0px;
+  text-align: left;
+  /* margin-right: 100px; */
+  margin: 0;
+  padding: 0;
+}
+
+/*-----------Shimmering Effect-------------*/
+
+.skeletonContentItem {
+  background: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skeletonTitleIcon {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.skeletonIcon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 12px;
+  margin-bottom: 30px;
+}
+
+.skeletonTitle {
+  height: 17px;
+  width: 70%;
+  margin-bottom: 30px;
+  border-radius: 3px;
+}
+
+.skeletonIcon,
+.skeletonTitle,
+.skeletonDescriptionSecond,
+.skeletonDescription,
+.skeletonElement {
+  background: linear-gradient(90deg, #dfdfdf 25%, #f0f0f0 50%, #dfdfdf 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeletonDescription {
+  height: 10px;
+  width: 80%;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+
+.skeletonDescriptionSecond {
+  height: 10px;
+  width: 50%;
+  margin-bottom: 30px;
+  border-radius: 3px;
+}
+.skeletonContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  /* padding: 16px; */
+  margin-top: 10px;
+  margin-right: 100px;
+  align-items: left;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/*************Shimmering Effect of the Bottom part****************/
+.skeletonElement {
+  width: 90px;
+  height: 20px;
+  margin-bottom: 5px;
+  color: #dfdfdf;
+}
+/* Skeleton Content/arrangment */
+.skeletonInsideContent {
+  display: flex;
+  gap: 8px;
+  /* align center*/
+  padding: 5px;
+  margin: 0; /*Remove margin*/
+  text-align: center;
+}
+
+.skeletonInsideText {
+  width: 60px;
+  height: 10px;
+  background: linear-gradient(90deg, #c9c9c9 25%, #f0f0f0 50%, #c9c9c9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+.skeletonInsideElementButton {
+  background: linear-gradient(90deg, #8967b3 25%, #f0f0f0 50%, #8967b3 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  width: 50px;
+  height: 20px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+.skeletonInsideTextButton {
+  width: 40px;
+  height: 10px;
+  background: linear-gradient(90deg, #c9c9c9 25%, #f0f0f0 50%, #c9c9c9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+/* Icon Placeholder */
+.skeletonInsideIcon {
+  display: flex;
+  justify-content: start;
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(90deg, #c9c9c9 25%, #f0f0f0 50%, #c9c9c9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 50%;
+}

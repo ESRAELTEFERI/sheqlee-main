@@ -1,0 +1,74 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .header {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .buttonContainer {
+    margin-right: 0;
+    gap: 1rem;
+  }
+
+  .nav {
+    justify-content: center;
+  }
+
+  .loginButton,
+  .signupButton {
+    width: 8vw;
+    min-width: 80px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .buttonContainer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .loginButton,
+  .signupButton {
+    width: 100px;
+    font-size: 0.8rem;
+  }
+
+  .sheq {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.5rem;
+  }
+
+  .nav {
+    font-size: 0.9rem;
+  }
+
+  .loginButton,
+  .signupButton {
+    width: 80px;
+    font-size: 0.7rem;
+  }
+
+  .sheq {
+    font-size: 1rem;
+    margin-left: 1rem;
+  }
+}

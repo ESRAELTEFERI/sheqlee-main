@@ -1,0 +1,122 @@
+@font-face {
+  font-family: "Kantumruy Pro";
+  src: url("../../../node_modules/@fontsource/kantumruy-pro/files/kantumruy-pro-khmer-600-normal.woff2")
+      format("woff2"),
+    url("../../../node_modules/@fontsource/kantumruy-pro/files/kantumruy-pro-khmer-600-normal.woff")
+      format("woff");
+
+  font-weight: 600;
+  font-style: normal;
+}
+
+.tagsContainer {
+  /* max-width: 900; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 40px;
+  row-gap: 20px;
+  padding: 16px;
+}
+
+.align {
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem 0rem 2rem;
+  max-width: 1500px;
+
+  /* margin-right: 40px; */
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.background {
+  background-color: #ffffff;
+}
+
+.hh2 {
+  top: 1603px;
+  left: 91px;
+  width: 385px;
+  height: 59px;
+  /* text-align: left; */
+  text-align: left;
+  font-size: 35px;
+  line-height: 40px;
+  font-family: "Kantumruy Pro";
+  font-weight: 500;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+  margin-left: 20px;
+}
+
+.head {
+  display: flex;
+  gap: 670px;
+}
+
+/*////////////////////////////////////////*/
+.moreJobs {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.linkJobs {
+  font-size: 16px;
+  line-height: 40px;
+  font-family: "Kantumruy Pro";
+  font-weight: 500;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+  margin-bottom: 20px;
+}
+
+.arrow {
+  padding-left: 10px;
+  height: 18px;
+  margin-bottom: 20px;
+}
+
+.underline {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 45px;
+  height: 4px;
+  line-height: 0;
+  background-color: #8967b3;
+  transition: width 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.moreJobs:hover .underline {
+  width: 100%; /* Full width on hover */
+}
+
+/*-------------Shimmering Effect Link---------------*/
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeletonSpan2 {
+  width: 80px;
+  height: 10px;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    #dfdfdf 25%,
+    #f0f0f0 50%,
+    #dfdfdf 75%
+  ); /*90deg left- right*/
+  background-size: 200% 100%; /*width twice of the element and same height*/
+  animation: shimmer 1.5s infinite;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,59 @@
+.content {
+  display: inline;
+  background: #dfdfdf;
+  /* width: 10em; */
+  height: 20px;
+  /* line-height: 50%; */
+  font-size: 0.6rem;
+  color: #000000;
+  letter-spacing: 0px;
+  font-family: "Kantumruy Pro", sans-serif;
+  opacity: 1;
+  padding: 5px;
+  margin: 0;
+  line-height: 1;
+  /* overflow: scroll; */
+  text-align: left;
+  align-items: center;
+  /* white-space: nowrap; */
+  /* width: fit-content; */
+  /* margin-right: 6px; Adds spacing from the button */
+  position: relative;
+  box-sizing: border-box;
+}
+.text {
+  /* line-height: 1; /* Compact line height */
+  /* overflow: hidden;  */
+  letter-spacing: 0px; /* Adjust spacing as needed */
+  display: inline; /* Keeps the icon inline */
+  box-sizing: border-box;
+}
+
+.icon {
+  display: inline-block; /* Keeps the icon inline */
+  justify-content: start;
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.bottoncontent {
+  display: flex;
+  background-color: #8967b3;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-top: 20px;
+  /* width: 15px; */
+  height: 20px;
+  display: inline-block;
+  align-items: baseline;
+  /* margin-right: 8px; */
+}
+.bottoncontent:hover {
+  background-color: #732d91;
+}

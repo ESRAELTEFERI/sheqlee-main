@@ -1,0 +1,35 @@
+.container {
+  max-width: 800px;
+
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  font-family: "Kantumruy Pro", sans-serif;
+  padding-bottom: 0;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 0;
+  margin-top: 15px;
+  padding-bottom: 0;
+}
+
+.subtitle {
+  font-size: 1.6rem;
+  text-align: center;
+  position: relative;
+  color: #000;
+  /* margin-right: 100px;
+  margin-left: 100px;
+  margin-top: 30px;
+  margin-bottom: 30px; */
+  margin: 20px 100px 20px 78px;
+}
+.icons {
+  width: 60px;
+  height: 50px;
+  margin-right: 5px;
+}

@@ -1,0 +1,118 @@
+@font-face {
+  font-family: "Kantumruy Pro";
+  src: url("../../../node_modules/@fontsource/kantumruy-pro/files/kantumruy-pro-khmer-600-normal.woff2")
+      format("woff2"),
+    url("../../../node_modules/@fontsource/kantumruy-pro/files/kantumruy-pro-khmer-600-normal.woff")
+      format("woff");
+
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Kantumruy Pro";
+  src: url("../../../node_modules/@fontsource/kantumruy-pro/files/kantumruy-pro-khmer-400-normal.woff2")
+      format("woff2"),
+    url("../../../node_modules/@fontsource/kantumruy-pro/files/kantumruy-pro-khmer-400-normal.woff")
+      format("woff");
+
+  font-weight: 400;
+  font-style: normal;
+}
+
+.skeletonTagItem,
+.tagItem {
+  background: #dfdfdf;
+  border-radius: 12px;
+  padding: 10px 16px 16px 16px;
+  width: 350px;
+  height: 100px;
+  text-align: center;
+  border-left: 15px solid #000;
+  margin-right: 70px;
+  margin-bottom: 15px;
+  /* margin-left: 15px; */
+}
+
+.tagName {
+  font-size: 1.5rem;
+  color: #000000;
+  letter-spacing: 0px;
+  font-family: "Kantumruy Pro", sans-serif;
+  font-weight: 500;
+  padding-top: 5px;
+  margin: 0;
+  text-align: left;
+}
+/* .tagName {
+  padding-bottom: 5px; 
+} */
+
+.tagDetails {
+  font-size: 1.3rem;
+  color: #000000;
+  letter-spacing: 0px;
+  font-family: "Kantumruy Pro", sans-serif;
+  font-weight: 400;
+  /* opacity: 1; */
+  text-align: left;
+  /* margin-bottom: 10px; */
+  /* padding: 0; */
+  margin: 15px 0 10px 0;
+}
+
+/*------------shimmering Effect--------------*/
+.skeletonTagItem {
+  background-color: #dfdfdf;
+}
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+.skeletonTitle {
+  /* background: #c9c9c9; */
+  width: 120px;
+  height: 13px;
+  padding-bottom: 0;
+  margin-bottom: 25px;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    #c9c9c9 25%,
+    #f0f0f0 50%,
+    #c9c9c9 75%
+  ); /*90deg left- right*/
+  background-size: 200% 100%; /*width twice of the element and same height*/
+  animation: shimmer 1.5s infinite;
+}
+
+.skeletonDetails {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.skeletonBar {
+  width: 50px;
+  height: 10px;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    #c9c9c9 25%,
+    #f0f0f0 50%,
+    #c9c9c9 75%
+  ); /*90deg left- right*/
+  background-size: 200% 100%; /*width twice of the element and same height*/
+  animation: shimmer 1.5s infinite;
+}
+
+.skeletonDot {
+  width: 6px;
+  height: 6px;
+  background: #444444;
+  border-radius: 50%;
+}

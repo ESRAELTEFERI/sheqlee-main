@@ -1,0 +1,83 @@
+.container {
+  padding: 7px 20px 20px 20px;
+  font-family: "Kantumruy Pro", sans-serif;
+  /* padding-bottom: 0; */
+}
+
+.tabSelector {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.tab {
+  background-color: #dfdfdf;
+  /* width: 300px; */
+  padding: 5px 0px;
+  border-radius: 7px;
+  margin-bottom: 25px;
+}
+.tabButton {
+  padding: 10px 30px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  color: #000;
+  font-size: 1.4rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #dfdfdf;
+}
+.tabButton:hover {
+  background-color: #dfdfdf;
+  color: #000;
+}
+
+.tabButton.active {
+  background-color: #000;
+  color: #fff;
+}
+
+.content {
+  max-width: 830px;
+  margin: 0 auto;
+}
+
+.qaItem {
+  margin-bottom: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.question {
+  font-size: 1.55rem;
+  /* padding: 15px; */
+  background-color: #dfdfdf;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 30px 30px;
+}
+
+.question:hover {
+  background-color: #e0e0e0;
+}
+
+.answer {
+  font-size: 1.3rem;
+  /* padding: 15px; */
+  background-color: #f7f7f7;
+  color: #000;
+  /* border-top: 1px solid #ccc; */
+  padding: 30px 30px;
+  /* width: 39em; */
+  line-height: 1.3;
+  /* letter-spacing: 1px; */
+}
+
+.icon {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #000;
+}

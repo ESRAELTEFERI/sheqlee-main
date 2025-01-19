@@ -1,0 +1,304 @@
+/********************************Filter**************************************************/
+/* Container Styles */
+.container {
+  max-width: 800px;
+
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  font-family: "Kantumruy Pro", sans-serif;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 20px;
+  text-align: center;
+  position: relative;
+  color: #000;
+  /* margin-right: 100px;
+  margin-left: 100px;
+  margin-top: 30px;
+  margin-bottom: 30px; */
+  margin: 30px 100px 30px 100px;
+}
+
+/* Filters Section */
+.filters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+
+/* Dropdown Styles */
+.dropdown {
+  height: 50px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #dfdfdf;
+  color: #444444;
+  font-family: "Kantumruy Pro", sans-serif;
+  margin-top: 10px;
+}
+
+/* Search Input Styles */
+.searchInput {
+  height: 50px;
+  grid-column: span 2; /* Search input spans 2 columns */
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #dfdfdf;
+  font-family: "Kantumruy Pro", sans-serif;
+  margin-bottom: 50px;
+}
+
+/* Button Styles */
+.applyButton {
+  height: 50px;
+  font-family: "Kantumruy Pro", sans-serif;
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: #8967b3;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+.applyButton:hover {
+  background-color: #5e36c9;
+}
+.tagsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 16px;
+
+  /**********align************/
+  justify-content: space-between;
+  align-items: left;
+  padding: 2rem 2rem 0 2rem;
+  max-width: 1200px;
+
+  margin-right: 40px;
+  margin-left: 60px;
+}
+
+/************************Pagination**************************************************/
+@font-face {
+  font-family: "Kantumruy Pro";
+  src: url("../../../../node_modules/@fontsource/kantumruy-pro/files/kantumruy-pro-khmer-600-normal.woff2")
+      format("woff2"),
+    url("../../../../node_modules/@fontsource/kantumruy-pro/files/kantumruy-pro-khmer-600-normal.woff")
+      format("woff");
+
+  font-weight: 600;
+  font-style: normal;
+}
+
+.tagsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 16px;
+}
+
+.align {
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2rem 0 2rem;
+  max-width: 1200px;
+
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+.background {
+  background-color: #ffffff;
+}
+
+.hh2 {
+  top: 1603px;
+  left: 91px;
+  width: 385px;
+  height: 59px;
+  /* text-align: left; */
+  font-size: 40px;
+  line-height: 40px;
+  font-family: "Kantumruy Pro";
+  font-weight: 600;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+
+.head {
+  display: flex;
+  gap: 550px;
+}
+
+/*////////////////////////////////////////*/
+.moreJobs {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.linkJobs {
+  font-size: 12px;
+  line-height: 40px;
+  font-family: "Kantumruy Pro";
+  font-weight: 600;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+
+.arrow {
+  padding-left: 10px;
+  height: 15px;
+}
+
+.underline {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 45px;
+  height: 4px;
+  line-height: 0;
+  background-color: #8967b3;
+  transition: width 0.3s ease;
+  margin-bottom: 40px;
+}
+
+.moreJobs:hover .underline {
+  width: 100%; /* Full width on hover */
+}
+
+/*-------------Shimmering Effect Link---------------*/
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeletonSpan2 {
+  width: 80px;
+  height: 10px;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    #dfdfdf 25%,
+    #f0f0f0 50%,
+    #dfdfdf 75%
+  ); /*90deg left- right*/
+  background-size: 200% 100%; /*width twice of the element and same height*/
+  animation: shimmer 1.5s infinite;
+}
+
+/*********************************************************/
+/* Pagination Container */
+/* Pagination Container */
+.pagination {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Buttons (Common Style) */
+.paginationButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px; /* Rounded corners */
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  padding: 10px;
+}
+
+.paginationButton:hover {
+  background-color: #e0e0e0; /* Light gray hover effect */
+}
+
+/* Disabled Buttons */
+.paginationButton:disabled {
+  background-color: #f5f5f5;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Active Page */
+.activePage {
+  background-color: #000; /* Black for active */
+  color: #fff; /* White text */
+}
+
+/* Ellipsis */
+.ellipsis {
+  font-size: 16px;
+  color: #999;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px; /* Rounded corners */
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+}
+
+/* Navigation Buttons */
+.navButtonLeft,
+.navButtonRight {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px; /* Rounded corners */
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  color: #6c63ff; /* Purple arrow color */
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.navButtonLeft {
+  margin-left: 900px;
+}
+
+.navButton:hover {
+  background-color: #dcd6f6; /* Light purple background on hover */
+}
+
+.navButton:disabled {
+  background-color: #f5f5f5;
+  color: #aaa;
+  cursor: not-allowed;
+}

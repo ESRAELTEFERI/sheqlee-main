@@ -1,0 +1,36 @@
+.tagsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  /* padding: 16px; */
+
+  /**********align************/
+  justify-content: space-between;
+  align-items: left;
+  padding: 2rem 2rem 0 2rem;
+  /* max-width: 1200px; */
+
+  margin-right: 40px;
+  margin-left: 35px;
+}
+
+.noFound {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: end; */
+  margin-left: 550px;
+  margin-top: 50px;
+}
+
+.noFoundText {
+  color: #444444;
+  /* text-align: center; */
+  margin-top: 40px;
+  font-size: 25px;
+  font-family: "Kantumruy Pro";
+  letter-spacing: 1px;
+
+  margin-left: 485px;
+  width: 10em;
+  margin-bottom: 150px;
+}

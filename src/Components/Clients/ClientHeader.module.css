@@ -1,0 +1,47 @@
+.container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Kantumruy Pro", sans-serif;
+  text-align: center;
+  /* margin: 0; */
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.subheading {
+  font-size: 1.6rem;
+  text-align: center;
+  position: relative;
+  color: #000;
+  margin: 30px 50px 60px 230px;
+  width: 25em;
+}
+
+.login {
+  display: flex;
+  margin-left: 320px;
+}
+.loginn {
+  font-size: 1.6rem;
+}
+
+.buttonFix {
+  padding: 15px 20px;
+  font-size: 1.6rem;
+  color: #fff;
+  background-color: #8967b3;
+  border: none;
+  margin-left: 20px;
+  border-radius: 10px;
+}
+.buttonFix:hover {
+  background-color: #732d91;
+  color: #fff;
+  border: none;
+}
