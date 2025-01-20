@@ -5,12 +5,12 @@ import TagDetail from "../Components/TagsBar/TagDetail";
 import Register from "../Components/Register/Register";
 import BreadCrumbTagDetail from "../Components/TagsBar/BreadCrumbTagDetail";
 import CategoriesListPag from "../Components/JobsFilterBar/CategoriesListPag";
-import Navbar from "../Components/Header/NewHeader/Navbar";
+import Header from "../Components/Header/Main/Header";
 
 const TagDetailPage = () => {
   return (
     <>
-      <Navbar />
+      <Header />
       {/* <Header /> */}
       <BreadCrumbTagDetail />
       <TagDetail />

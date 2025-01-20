@@ -6,12 +6,12 @@ import BreadCrumbClients from "../Components/Clients/BreadCrumbClients";
 import ClientHeader from "../Components/Clients/ClientHeader";
 import PostJobButton from "../Components/Clients/PostJobButton";
 import TrustedCompanies from "../Components/Clients/TrustedCompanies";
-import Navbar from "../Components/Header/NewHeader/Navbar";
+import Header from "../Components/Header/Main/Header";
 const ClientsPage = () => {
   return (
     <>
       {/* <Header /> */}
-      <Navbar />
+      <Header />
       <BreadCrumbClients />
       <ClientHeader />
       <StatsList />

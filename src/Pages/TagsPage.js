@@ -4,12 +4,12 @@ import Footer from "../Components/Footer/Footer";
 import BreadCrumbTag from "../Components/TagsBar/BreadCrumbTag";
 import Register from "../Components/Register/Register";
 import MainTag from "../Components/TagsBar/MainTag";
-import Navbar from "../Components/Header/NewHeader/Navbar";
+import Header from "../Components/Header/Main/Header";
 
 const ClientsPage = () => {
   return (
     <>
-      <Navbar />
+      <Header />
       {/* <Header /> */}
       <BreadCrumbTag />
       <MainTag />

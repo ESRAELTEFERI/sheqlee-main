@@ -1,0 +1,291 @@
+.card {
+  max-width: 1000px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #fff;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  font-family: "Kantumruy Pro", sans-serif;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 20px;
+  gap: 70px;
+} */
+
+/* .title::before,
+.title::after {
+  content: "";
+  flex: 1;
+  border-top: 4px solid #ccc;
+  margin: 0;
+  border-radius: 5px;
+} */
+
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.icon {
+  margin-right: 40px;
+  width: 50px;
+  height: 50px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.field {
+  flex: 1;
+  margin-right: 10px;
+  color: #000;
+}
+
+.field:last-child {
+  margin-right: 0;
+}
+
+.label {
+  display: block;
+  font-size: 1.3rem;
+  padding: 1rem 0;
+  font-weight: 500;
+}
+
+.required {
+  color: red;
+}
+
+.inputWrapper {
+  width: 463px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background: #dfdfdf;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: "Kantumruy Pro", sans-serif;
+}
+
+.iconUser {
+  width: 60px;
+  height: 60px;
+}
+.iconSubject {
+  width: 60px;
+  height: 75px;
+}
+.iconEmail {
+  width: 55px;
+  height: 67px;
+}
+
+.iconUser,
+.iconSubject,
+.iconEmail {
+  background: black;
+  color: white;
+  padding: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: #dfdfdf;
+  color: #000;
+  font-size: 1.5rem;
+  padding: 1rem;
+  font-family: "Kantumruy Pro", sans-serif;
+}
+.input::placeholder {
+  font-family: "Kantumruy Pro", sans-serif;
+  color: #444444;
+  font-size: 1.5rem;
+}
+
+.toggleVisibility {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.agreement {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.checkbox {
+  appearance: none;
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+  background-color: #dfdfdf; /* Gray background */
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* .checkbox:checked::before {
+  content: "✔"; 
+  font-size: 1.5rem;
+  color: black;
+  position: absolute;
+  top: 0;
+  left: 4px;
+} */
+
+.checkbox:checked {
+  background-image: url("../../../asset/SignUp/checkmark.svg"); /* Adjust the path */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+}
+
+.checkbox:focus {
+  outline: none;
+}
+
+/* .checkbox:hover {
+  outline: none;
+} */
+
+.checkboxLabel {
+  font-size: 1rem;
+}
+
+/* .link:hover {
+  text-decoration: underline;
+} */
+
+.footer {
+  display: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 560px;
+}
+/* .footer {
+  position: absolute;
+  top: 1000px;
+  right: 195.5px;
+  display: flex;
+  align-items: center;
+}*/
+
+.footerText {
+  font-size: 1rem;
+  color: #000;
+  margin-right: 10px; /* Space between text and button*/
+}
+.registerButton {
+  background-color: #8967b3;
+  color: white;
+  font-size: 1.6rem;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.registerButton:hover {
+  background-color: #8967b3;
+}
+
+/***********************************************/
+.underlineT {
+  /* position: absolute; */
+  bottom: 0px;
+  left: 0;
+  width: 170px;
+  height: 2.5px;
+  background-color: #8967b3;
+  border-radius: 10px;
+  margin-top: 3px;
+}
+.linkT {
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 5px;
+  padding: 0 0.3rem;
+  padding-top: 2px;
+}
+
+.underlineP {
+  /* position: absolute; */
+  bottom: 0px;
+  left: 0;
+  width: 103px;
+  height: 2.5px;
+  background-color: #8967b3;
+  border-radius: 10px;
+  margin-top: 3px;
+}
+.linkP {
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 5px;
+  padding: 0 0 0 0.3rem;
+  padding-top: 2px;
+}
+.underlineL {
+  /* position: absolute; */
+  bottom: 0px;
+  left: 0;
+  width: 20px;
+  height: 2.5px;
+  background-color: #8967b3;
+  border-radius: 10px;
+  margin-top: 3px;
+}
+.linkL {
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 5px;
+  padding: 0 1.5rem 0 0.3rem;
+  padding-top: 2px;
+}
+/*********************************************/
+.moreJobs {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  border: none;
+  /* padding: 0rem 1rem; */
+  /* padding-left: 1rem;
+  padding-right: 2rem; */
+  outline: none;
+  color: #000;
+  /* font-size: ; */
+  font-family: "Kantumruy Pro", sans-serif;
+}

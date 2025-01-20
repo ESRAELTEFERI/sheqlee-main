@@ -4,13 +4,13 @@ import Footer from "../Components/Footer/Footer";
 import BreadcrumbCategories from "../Components/CategoriesBar/BreadcrumbCategories";
 import MainCategories from "../Components/CategoriesBar/MainCategories";
 import Register from "../Components/Register/Register";
-import Navbar from "../Components/Header/NewHeader/Navbar";
+import Header from "../Components/Header/Main/Header";
 
 const CategoriesPage = () => {
   return (
     <>
       {/* <Header /> */}
-      <Navbar />
+      <Header />
       <BreadcrumbCategories />
       <MainCategories />
       <Register />

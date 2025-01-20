@@ -1,6 +1,6 @@
 import React from "react";
 import LogInButton from "./LogInButton";
-import SignUpButton from "./SignUpButton";
+import SignUpButton from "../../../../Components/Header/SignUpButton";
 import classes from "./AuthButtons.module.css";
 
 const AuthButtons = () => (

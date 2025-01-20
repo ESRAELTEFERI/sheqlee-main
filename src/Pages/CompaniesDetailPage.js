@@ -4,12 +4,12 @@ import Footer from "../Components/Footer/Footer";
 import BreadCrumbCompanyDetails from "../Components/Companies/BreadCrumbCompanyDetails.js";
 import CompaniesDetail from "../Components/Companies/CompaniesDetail.js";
 import Reagister from "../Components/Register/Register.js";
-import Navbar from "../Components/Header/NewHeader/Navbar.js";
+import Header from "../Components/Header/Main/Header.js";
 const CompaniesDetailPage = () => {
   return (
     <>
       {/* <Header /> */}
-      <Navbar />
+      <Header />
       <BreadCrumbCompanyDetails />
       <CompaniesDetail />
       <p></p>

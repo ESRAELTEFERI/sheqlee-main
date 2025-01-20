@@ -4,12 +4,12 @@ import Footer from "../Components/Footer/Footer";
 import BreadCrumb from "../Components/JobsFilterBar/BreadCrumb";
 import Register from "../Components/Register/Register";
 import MainPagFilter from "../Components/JobsFilterBar/MainPagFilter";
-import Navbar from "../Components/Header/NewHeader/Navbar";
+import Header from "../Components/Header/Main/Header";
 
 const JobsPage = () => {
   return (
     <>
-      <Navbar />
+      <Header />
       {/* <Header /> */}
       <BreadCrumb />
       <MainPagFilter />

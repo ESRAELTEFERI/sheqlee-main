@@ -5,13 +5,13 @@ import BreadcrumbContact from "../Components/Contact/BreadCrumbContact.js";
 import Reagister from "../Components/Register/Register.js";
 import MainContact from "../Components/Contact/MainContact.js";
 import InputCard from "../Components/Contact/InputCard.js";
-import Navbar from "../Components/Header/NewHeader/Navbar.js";
+import Header from "../Components/Header/Main/Header.js";
 
 const ContactPage = () => {
   return (
     <>
       {/* <Header /> */}
-      <Navbar />
+      <Header />
       <BreadcrumbContact />
       <MainContact />
       <InputCard />

@@ -4,7 +4,7 @@ import Logo from "./Logo";
 import NavigationLinks from "./NavigationLink";
 import AuthButtons from "./AuthButtons";
 
-const Navbar = () => {
+const Header = () => {
   return (
     <nav className={styles.navbar}>
       {/* Logo Section */}
@@ -19,4 +19,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;

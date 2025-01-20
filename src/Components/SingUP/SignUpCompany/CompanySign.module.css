@@ -1,0 +1,125 @@
+.card {
+  max-width: 1000px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #fff;
+  padding: 1.5rem;
+  font-family: "Kantumruy Pro", sans-serif;
+  margin-top: 0;
+}
+.align {
+  display: flex;
+  gap: 1.5rem;
+}
+.back {
+  display: flex;
+  flex-direction: column;
+  /* font-size: 1rem; */
+  color: #000;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.icon {
+  margin-right: 40px;
+  width: 50px;
+  height: 50px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 1.3rem;
+  padding: 1rem 0;
+  font-weight: 500;
+}
+
+.required {
+  color: red;
+}
+
+.inputGroup {
+  width: 463px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background: #dfdfdf;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: "Kantumruy Pro", sans-serif;
+}
+
+/* .inputIcon {
+  margin-right: 10px;
+  font-size: 18px;
+  background: black;
+  color: white;
+  padding: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: #dfdfdf;
+  color: #000;
+  font-size: 1.5rem;
+  padding: 1rem;
+  font-family: "Kantumruy Pro", sans-serif;
+}
+.input::placeholder {
+  font-family: "Kantumruy Pro", sans-serif;
+  color: #444444;
+  font-size: 1.5rem;
+}
+
+.iconCompany {
+  width: 60px;
+  height: 75px;
+}
+.iconHttp {
+  width: 100px;
+  height: 67px;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.iconCompany,
+.iconHttp {
+  background: black;
+  color: white;
+  padding: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.messageGroup {
+  /* display: flex;
+  flex-direction: column; */
+  /* background: #dfdfdf; */
+  /* border-radius: 10px; */
+  /* font-family: "Kantumruy Pro", sans-serif; */
+
+  width: 463px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background: #dfdfdf;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: "Kantumruy Pro", sans-serif;
+}

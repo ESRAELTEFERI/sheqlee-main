@@ -6,13 +6,13 @@ import CategoryDetails from "../Components/CategoriesBar/CategoryDetails";
 import Register from "../Components/Register/Register";
 
 import CategoriesListPag from "../Components/JobsFilterBar/CategoriesListPag";
-import Navbar from "../Components/Header/NewHeader/Navbar";
+import Header from "../Components/Header/Main/Header";
 
 const CategoriesDetailPage = () => {
   return (
     <>
       {/* <Header /> */}
-      <Navbar />
+      <Header />
       <BreadCrumbDetails />
       <CategoryDetails />
       <CategoriesListPag />

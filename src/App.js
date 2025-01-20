@@ -11,7 +11,9 @@ import CompaniesDetailPage from "./Pages/CompaniesDetailPage";
 import ContactPage from "./Pages/ContactPage";
 import FAQPage from "./Pages/FAQPage";
 import ScrollToTop from "./Components/ScrollToTop";
-// import Logo from "./Components/Header/NewHeader/Logo";
+import SignUpPageCompany from "./Pages/SignUpPageCompany";
+import SignUpPageFreelancers from "./Pages/SignUpPageFreelancers";
+import LogInPage from "./Pages/LogInPage";
 
 const App = () => {
   return (
@@ -36,6 +38,9 @@ const App = () => {
         />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/faq" element={<FAQPage />} />
+        <Route path="/signup" element={<SignUpPageCompany />} />
+        <Route path="/signupfreelancers" element={<SignUpPageFreelancers />} />
+        <Route path="/login" element={<LogInPage />} />
       </Routes>
     </Router>
   );

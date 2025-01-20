@@ -6,14 +6,14 @@ import TagsList from "../Components/Tags/TagList";
 import ContentsList from "../Components/JobPostContent/ContentList";
 import Register from "../Components/Register/Register";
 import PlatformStats from "../Components/PlatformStatastics/PlatformStat";
-import Navbar from "../Components/Header/NewHeader/Navbar";
+import Header from "../Components/Header/Main/Header";
 // import JobsData from "../Components/Jobs/JobsData";
 
 const HomePage = () => {
   return (
     <>
       {/* <Header /> */}
-      <Navbar />
+      <Header />
       <MainSection />
       <TagsList />
       <ContentsList />
