@@ -5,6 +5,7 @@ import EMAIL from "../../../asset/SignUp/emaill.svg";
 import KEY from "../../../asset/SignUp/key.svg";
 import USER from "../../../asset/SignUp/user.svg";
 import EYE from "../../../asset/SignUp/eye-slash.svg";
+import { NavLink } from "react-router-dom";
 
 const FreelancersInfo = ({ infoData, onInfoDataChange }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -127,10 +128,10 @@ const FreelancersInfo = ({ infoData, onInfoDataChange }) => {
                   <div className={styles.underlineT}> </div>
                 </a>
                 and{" "}
-                <a href="#" className={styles.linkP}>
+                <NavLink to="/privacypolicy" className={styles.linkP}>
                   Privacy Policy
                   <div className={styles.underlineP}> </div>
-                </a>
+                </NavLink>
                 .
               </div>
             </label>

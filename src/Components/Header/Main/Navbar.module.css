@@ -34,7 +34,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 40px; /* Add space at both ends */
+  padding: 10px 70px 10px 20px; /* Add space at both ends */
   background: #f7f7f7;
   height: 125px;
   font-family: "Kantumruy Pro";
@@ -95,12 +95,10 @@
   position: relative;
   transition: color 0.3s ease, text-decoration 0.3s ease;
   gap: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: "Kantumruy Pro", sans-serif;
 }
-
-/* .nav .navLink:hover,
-.nav .navLink.active {
-  color: var(--color-primary-800); 
-} */
 
 .nav .navLink::after {
   content: "";
@@ -127,10 +125,6 @@
   gap: 0.33rem;
   position: relative;
 }
-
-/* .nav .dropdown:hover {
-  color: var(--color-primary-800);
-} */
 
 .nav .dropdownArrow {
   width: 9px;
@@ -185,4 +179,153 @@
   background-color: #8967b0;
   color: #fff;
   border: none;
+}
+
+/*******************************************/
+
+.postJobButton {
+  background-color: #8967b3;
+  color: #fff;
+  border: none;
+  padding: 15px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: "Kantumruy Pro", sans-serif;
+  border-radius: 12px;
+}
+.postJobButton:hover {
+  background-color: #8967b0;
+  color: #fff;
+  border: none;
+}
+.loggedInActions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* .dropdown {
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+} */
+
+.logoutButton {
+  background: transparent;
+  color: #333;
+  border: none;
+  cursor: pointer;
+}
+
+.UserIcon {
+  background-color: #dfdfdf;
+  padding: 5px;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+.IIIcon,
+.IIcon {
+  width: 15px;
+  height: 15px;
+  margin-right: 15px;
+  align-items: center;
+}
+
+.IIIcon {
+  margin-bottom: 5px;
+}
+/***************************************************/
+.navv {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  font-family: "Kantumruy Pro", sans-serif;
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.navv span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* Default gap */
+  transition: gap 0.3s ease; /* Smooth transition when gap changes */
+}
+
+.navv span.activeDropdown {
+  gap: 6rem; /* Increased gap when dropdown is active */
+}
+
+.navv .dropdownArrow {
+  width: 9px;
+  height: 6px;
+  transition: transform 0.3s ease;
+  margin-bottom: 1px;
+}
+
+/* .navv .dropdownArrow.active {
+  transform: rotate(180deg);
+} */
+
+.navv .dropdownArrow:hover {
+  transform: rotate(180deg);
+}
+/**************************************/
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-top: 8px;
+  z-index: 1000;
+  width: 190px;
+}
+
+.dropdownMenu ul {
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin-top: 0;
+}
+
+.dropdownItem {
+  padding: 15px 15px 0 15px;
+  /* font-size: 14px; */
+  color: #000;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.dropdownItem:hover {
+  background-color: #f5f5f5;
+}
+
+/* .navLink {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+} */
+.underline {
+  /* position: absolute; */
+  bottom: 0px;
+  left: 0;
+  /* width: 103px; */
+  height: 2px;
+  background-color: #dfdfdf;
+  border-radius: 10px;
+  margin-top: 3px;
 }

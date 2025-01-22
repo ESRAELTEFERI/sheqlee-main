@@ -4,6 +4,7 @@ import HEAD from "../../../asset/SignUp/professional_registration.svg";
 import CompanySign from "./CompanySign";
 import CompanyInfo from "./CompanyInfo";
 import { NavLink } from "react-router-dom";
+import GoogleButton from "../GoogleButton";
 
 function MainSignUp() {
   const [companyData, setCompanyData] = useState({
@@ -136,6 +137,7 @@ function MainSignUp() {
           </div>
         </span>
       </div>
+      <GoogleButton />
     </>
   );
 }

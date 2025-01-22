@@ -84,7 +84,11 @@ const Footer = () => {
             <span className={classes.underline}> </span>
           </div>
           <ul>
-            <li>Privacy Policy</li>
+            <li>
+              <NavLink to="/privacypolicy" className={classes.navLink}>
+                Privacy Policy
+              </NavLink>
+            </li>
             <li>Terms and Conditions</li>
             <li>Cookie Policy</li>
           </ul>

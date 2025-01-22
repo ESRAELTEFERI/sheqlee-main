@@ -1,0 +1,218 @@
+@font-face {
+  font-family: "Kantumruy Pro";
+  src: url("../../../../node_modules/@fontsource/kantumruy-pro/files/kantumruy-pro-khmer-600-normal.woff2")
+      format("woff2"),
+    url("../../../../node_modules/@fontsource/kantumruy-pro/files/kantumruy-pro-khmer-600-normal.woff")
+      format("woff");
+
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Kantumruy Pro";
+  src: url("../../../../node_modules/@fontsource/kantumruy-pro/files/kantumruy-pro-khmer-500-normal.woff2")
+      format("woff2"),
+    url("../../../../node_modules/@fontsource/kantumruy-pro/files/kantumruy-pro-khmer-500-normal.woff")
+      format("woff");
+
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Kantumruy Pro";
+  src: url("../../../../node_modules/@fontsource/kantumruy-pro/files/kantumruy-pro-khmer-400-normal.woff2")
+      format("woff2"),
+    url("../../../../node_modules/@fontsource/kantumruy-pro/files/kantumruy-pro-khmer-400-normal.woff")
+      format("woff");
+
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px; /* Add space at both ends */
+  background: #f7f7f7;
+  height: 125px;
+  font-family: "Kantumruy Pro";
+  font-weight: 500;
+}
+
+/* Logo Section */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 55px;
+  height: 53px;
+  margin-left: 35px;
+}
+
+.brandName {
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: "Recoleta", sans-serif;
+  color: #000;
+  margin-left: 25px;
+}
+
+/* Navigation Links */
+.nav {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  font-family: "Kantumruy Pro", sans-serif;
+  /* font-size: 1.2rem;
+  font-weight: 400; */
+  color: #000;
+}
+
+/* Merge navigation links and buttons */
+.navLinksAndAuth {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/***************************************************************/
+.nav .navLink {
+  text-decoration: none;
+  /* color: var(--color-primary-400); */
+  position: relative;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+  gap: 1rem;
+}
+
+/* .nav .navLink:hover,
+.nav .navLink.active {
+  color: var(--color-primary-800); 
+} */
+
+.nav .navLink::after {
+  content: "";
+  position: absolute;
+  bottom: -50px; /* Adjusts underline position */
+  left: 50%;
+  width: 0px; /* Initial width */
+  height: 6px; /* Thickness of underline */
+  background-color: #8967b3;
+  transform: translateX(-50%);
+  transition: width 0.3s ease; /* Smooth animation */
+}
+
+.nav .navLink:hover::after,
+.nav .navLink.active::after {
+  width: 100%; /* Full underline on hover or active */
+}
+
+/* Dropdown Styling */
+.nav .dropdown {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.33rem;
+  position: relative;
+}
+
+/* .nav .dropdown:hover {
+  color: var(--color-primary-800);
+} */
+
+.nav .dropdownArrow {
+  width: 9px;
+  height: 6px;
+  transition: transform 0.3s ease;
+  margin-bottom: 1px;
+}
+
+.nav .dropdown:hover .dropdownArrow {
+  transform: rotate(180deg);
+}
+
+/* *************Authentication Buttons */
+.authButtons {
+  display: flex;
+  gap: 25px;
+}
+
+.loginButton {
+  background: transparent;
+  border: 3px solid #8967b3;
+  color: #000;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: "Kantumruy Pro", sans-serif;
+  border-radius: 12px;
+}
+
+.loginButton:hover {
+  border: 3px solid #8967b3;
+  background-color: #f7f7f7;
+  color: #000;
+}
+
+.signupButton {
+  background-color: #8967b3;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: "Kantumruy Pro", sans-serif;
+  border-radius: 12px;
+}
+
+.signupButton:hover {
+  background-color: #8967b0;
+  color: #fff;
+  border: none;
+}
+
+/*******************************************/
+
+.postJobButton {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #8967b3;
+  color: white;
+}
+
+.loggedInActions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dropdown {
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+}
+
+.logoutButton {
+  background: transparent;
+  color: #333;
+  border: none;
+  cursor: pointer;
+}

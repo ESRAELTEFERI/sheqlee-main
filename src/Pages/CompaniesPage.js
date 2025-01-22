@@ -3,13 +3,13 @@ import React from "react";
 import Footer from "../Components/Footer/Footer";
 import MainCompany from "../Components/Companies/MainCompany";
 import BreadcrumbCompanies from "../Components/Companies/BreadCrumbCompanies";
-import Header from "../Components/Header/Main/Header";
+// import Header from "../Components/Header/Main/Header";
 
 const CompaniesPage = () => {
   return (
     <>
       {/* <Header /> */}
-      <Header />
+      {/* <Header /> */}
       <BreadcrumbCompanies />
       <MainCompany />
       <Footer />

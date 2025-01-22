@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 
 import dropDawn from "../../../asset/NavCathagories/arrow_down.png";
 import classes from "./Navbar.module.css";
+import { AuthContext } from "../../../Context/AuthContext";
 
 const NavigationLinks = () => {
+  const { isAuthenticated } = useContext(AuthContext); // Get login state
+
   return (
     <ul className={classes.nav}>
       <li>
@@ -34,16 +37,20 @@ const NavigationLinks = () => {
           />
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="/clients"
-          className={({ isActive }) =>
-            isActive ? `${classes.navLink} ${classes.active}` : classes.navLink
-          }
-        >
-          Clients
-        </NavLink>
-      </li>
+      {!isAuthenticated && (
+        <li>
+          <NavLink
+            to="/clients"
+            className={({ isActive }) =>
+              isActive
+                ? `${classes.navLink} ${classes.active}`
+                : classes.navLink
+            }
+          >
+            Clients
+          </NavLink>
+        </li>
+      )}
     </ul>
   );
 };

@@ -4,6 +4,7 @@ import EMAIL from "../../../asset/SignUp/emaill.svg";
 import KEY from "../../../asset/SignUp/key.svg";
 import USER from "../../../asset/SignUp/user.svg";
 import EYE from "../../../asset/SignUp/eye-slash.svg";
+import { NavLink } from "react-router-dom";
 
 // const CompanyInfo = ({ onInfoDataChange }) => {
 //   const [showPassword, setShowPassword] = useState(false);
@@ -143,15 +144,15 @@ const CompanyInfo = ({ infoData, onInfoDataChange }) => {
             <label htmlFor="agreement" className={styles.checkboxLabel}>
               <div className={styles.moreJobs}>
                 By creating an account, you agree to our{" "}
-                <a href="#" className={styles.linkT}>
+                <NavLink to="/privacypolicy" className={styles.linkP}>
                   Terms and Conditions
                   <div className={styles.underlineT}> </div>
-                </a>
+                </NavLink>
                 and{" "}
-                <a href="#" className={styles.linkP}>
+                <NavLink to="/privacypolicy" className={styles.linkP}>
                   Privacy Policy
                   <div className={styles.underlineP}> </div>
-                </a>
+                </NavLink>
                 .
               </div>
             </label>

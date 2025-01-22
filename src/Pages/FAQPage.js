@@ -5,12 +5,12 @@ import BreadcrumbFAQ from "../Components/FAQ/BreadCrumbFAQ.js";
 import Reagister from "../Components/Register/Register.js";
 import MainFAQ from "../Components/FAQ/MainFAQ.js";
 import ToggleTabs from "../Components/FAQ/ToggleTabs.js";
-import Header from "../Components/Header/Main/Header.js";
+// import Header from "../Components/Header/Main/Header.js";
 
 const FAQPage = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       {/* <Header /> */}
       <BreadcrumbFAQ />
       <MainFAQ />
