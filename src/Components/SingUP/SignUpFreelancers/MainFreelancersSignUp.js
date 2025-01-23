@@ -33,7 +33,7 @@ function MainFreelancersSignUp() {
     }
 
     // Combine both data objects into a single payload
-    const combinedData = { ...infoData };
+    const combinedData = { ...infoData, userType: "freelancer" };
 
     // Save to localStorage
     localStorage.setItem("registrationData", JSON.stringify(combinedData));

@@ -57,7 +57,11 @@ function MainSignUp() {
     };
 
     // Combine both data objects into a single payload
-    const combinedData = { ...updatedCompanyData, ...infoData };
+    const combinedData = {
+      ...updatedCompanyData,
+      ...infoData,
+      userType: "company",
+    };
 
     // Save to localStorage
     localStorage.setItem("registrationData", JSON.stringify(combinedData));

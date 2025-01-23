@@ -1,30 +1,28 @@
-// import React, { useState } from "react";
+// import React, { useState, useContext } from "react";
 // import styles from "./MainLogIn.module.css";
 // import LogInInfo from "./LogInInfo";
 // import { NavLink, useNavigate } from "react-router-dom";
+// import { AuthContext } from "../../Context/AuthContext";
 
 // function MainLogIn({ onLogin }) {
 //   const [infoData, setInfoData] = useState({ email: "", password: "" });
 //   const [error, setError] = useState("");
 //   const navigate = useNavigate();
+//   const { login } = useContext(AuthContext); // Use AuthContext
 
 //   const handleLogin = () => {
-// Simulate authentication logic (to be replaced with  API call)
-//   if (
-//     infoData.email === "test@example.com" &&
-//     infoData.password === "password123"
-//   ) {
-//     onLogin(true);
-//     navigate("/dashboard");
-//   } else {
-//     setError("Invalid email or password. Please try again.");
-//   }
-// };
+//     if (login(infoData.email, infoData.password)) {
+//       onLogin(true);
+//       navigate("/dashboard"); // Redirect to the dashboard on successful login
+//     } else {
+//       setError("Invalid email or password. Please try again.");
+//     }
+//   };
 
-// const handleChange = (e) => {
-//   const { id, value } = e.target;
-//   setInfoData((prev) => ({ ...prev, [id]: value }));
-// };
+//   const handleChange = (e) => {
+//     const { id, value } = e.target;
+//     setInfoData((prev) => ({ ...prev, [id]: value }));
+//   };
 
 //   return (
 //     <>
@@ -55,16 +53,15 @@ import LogInInfo from "./LogInInfo";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthContext";
 
-function MainLogIn({ onLogin }) {
+function MainLogIn() {
   const [infoData, setInfoData] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const { login } = useContext(AuthContext); // Use AuthContext
+  const { login } = useContext(AuthContext);
 
   const handleLogin = () => {
     if (login(infoData.email, infoData.password)) {
-      onLogin(true);
-      navigate("/dashboard"); // Redirect to the dashboard on successful login
+      navigate("/dashboard"); // Redirect on successful login
     } else {
       setError("Invalid email or password. Please try again.");
     }

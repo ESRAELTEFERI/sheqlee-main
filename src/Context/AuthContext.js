@@ -1,25 +1,59 @@
+// import React, { createContext, useState } from "react";
+
+// export const AuthContext = createContext();
+
+// const AuthProvider = ({ children }) => {
+//   const [isAuthenticated, setIsAuthenticated] = useState(true);
+//   const [user, setUser] = useState(null);
+
+//   const login = (email, password) => {
+//     if (email === "test@example.com" && password === "password123") {
+//       setIsAuthenticated(true);
+//       setUser({ name: "Microsoft", email });
+//       return true;
+//     }
+//     return false;
+//   };
+
+//   const logout = () => {
+//     setIsAuthenticated(false);
+//     setUser(null);
+//   };
+
+//   return (
+//     <AuthContext.Provider value={{ isAuthenticated, user, login, logout }}>
+//       {children}
+//     </AuthContext.Provider>
+//   );
+// };
+
+// export default AuthProvider;
+
 import React, { createContext, useState } from "react";
 
-// Create the AuthContext
 export const AuthContext = createContext();
 
-// AuthContext Provider
 const AuthProvider = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(true); // Authentication state
-  const [user, setUser] = useState(null); // User information
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState(null);
 
-  // Function to log in
   const login = (email, password) => {
-    // Simulate a login process (Replace this with an actual API call)
-    if (email === "test@example.com" && password === "password123") {
-      setIsAuthenticated(true); // Set to true on successful login
-      setUser({ name: "Microsoft", email }); // Mock user details
-      return true; // Indicate success
+    // Retrieve user data from localStorage (mock database)
+    const savedData = JSON.parse(localStorage.getItem("registrationData"));
+
+    if (
+      savedData &&
+      savedData.email === email &&
+      savedData.password === password
+    ) {
+      setIsAuthenticated(true);
+      setUser({ ...savedData }); // Includes userType, email, etc.
+      return true;
     }
-    return false; // Indicate failure
+
+    return false;
   };
 
-  // Function to log out
   const logout = () => {
     setIsAuthenticated(false);
     setUser(null);

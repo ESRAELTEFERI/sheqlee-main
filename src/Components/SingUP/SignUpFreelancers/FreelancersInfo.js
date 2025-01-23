@@ -123,10 +123,10 @@ const FreelancersInfo = ({ infoData, onInfoDataChange }) => {
             <label htmlFor="agreement" className={styles.checkboxLabel}>
               <div className={styles.moreJobs}>
                 By creating an account, you agree to our{" "}
-                <a href="#" className={styles.linkT}>
+                <NavLink href="#" className={styles.linkT}>
                   Terms and Conditions
                   <div className={styles.underlineT}> </div>
-                </a>
+                </NavLink>
                 and{" "}
                 <NavLink to="/privacypolicy" className={styles.linkP}>
                   Privacy Policy

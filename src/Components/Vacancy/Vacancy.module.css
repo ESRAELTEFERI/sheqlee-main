@@ -1,0 +1,324 @@
+.card {
+  max-width: 1000px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #fff;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  font-family: "Kantumruy Pro", sans-serif;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.inputGroup {
+  /* width: 463px; */
+  padding: 0;
+  display: flex;
+  align-items: center;
+  background: #f7f7f7;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: "Kantumruy Pro", sans-serif;
+  margin-top: 30px;
+}
+.backk {
+  display: flex;
+  flex-direction: column;
+  /* font-size: 1rem; */
+  color: #000;
+  justify-items: center;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.text {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.iconHead {
+  width: 90px;
+  height: 90px;
+
+  /* width: 100px; */
+
+  padding: 1rem 2rem;
+  /* padding-right: ; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* padding-left: 50px;
+  padding-right: 50px; */
+  background: black;
+}
+
+.underline {
+  /* position: absolute; */
+  bottom: 0px;
+  left: 0;
+  width: 120px;
+  height: 2.5px;
+  background-color: #8967b3;
+  border-radius: 10px;
+  margin-top: 3px;
+}
+.link {
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 5px;
+  padding: 0 0.3rem;
+  padding-top: 2px;
+}
+.moreJobss {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  border: none;
+  /* padding: 0rem 1rem; */
+  padding-left: 1rem;
+  padding-right: 2rem;
+  outline: none;
+  color: #000;
+  font-size: 1.1rem;
+  font-family: "Kantumruy Pro", sans-serif;
+}
+/******************************/
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.field {
+  flex: 1;
+  margin-right: 10px;
+  color: #000;
+}
+
+.field:last-child {
+  margin-right: 0;
+}
+
+.label {
+  display: block;
+  font-size: 1.3rem;
+  padding: 1rem 0;
+  font-weight: 500;
+}
+
+.required {
+  color: red;
+}
+
+.inputWrapper {
+  width: 463px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background: #dfdfdf;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: "Kantumruy Pro", sans-serif;
+}
+
+.iconUser {
+  width: 60px;
+  height: 60px;
+}
+.iconSubject {
+  width: 60px;
+  height: 75px;
+}
+.iconEmail {
+  width: 55px;
+  height: 67px;
+}
+
+.iconUser,
+.iconSubject,
+.iconEmail {
+  background: black;
+  color: white;
+  padding: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: #dfdfdf;
+  color: #000;
+  font-size: 1.5rem;
+  padding: 1rem;
+  font-family: "Kantumruy Pro", sans-serif;
+}
+.input::placeholder {
+  font-family: "Kantumruy Pro", sans-serif;
+  color: #444444;
+  font-size: 1.5rem;
+}
+
+.toggleVisibility {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/*********************************************/
+.moreJobs {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  border: none;
+  /* padding: 0rem 1rem; */
+  /* padding-left: 1rem;
+  padding-right: 2rem; */
+  outline: none;
+  color: #000;
+  /* font-size: ; */
+  font-family: "Kantumruy Pro", sans-serif;
+}
+
+/*****************/
+/* .messageGroup {
+  display: flex;
+  flex-direction: column;
+  background: #dfdfdf;
+  border-radius: 10px;
+  font-family: "Kantumruy Pro", sans-serif;
+} */
+.textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 1rem;
+  font-size: 1rem;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  background: #dfdfdf;
+  resize: none;
+  outline: none;
+  font-family: "Kantumruy Pro", sans-serif;
+}
+.textarea::placeholder {
+  font-family: "Kantumruy Pro", sans-serif;
+  color: #444444;
+  font-size: 1.3rem;
+}
+
+.counter {
+  text-align: right;
+  font-size: 1.1rem;
+  color: #000;
+  padding: 1rem;
+  padding-bottom: 0.7rem;
+}
+
+/**************************************/
+.agreement {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.checkbox {
+  appearance: none;
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+  background-color: #dfdfdf; /* Gray background */
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox:checked {
+  background-image: url("../../asset/SignUp/checkmark.svg"); /* Adjust the path */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+}
+
+.checkbox:focus {
+  outline: none;
+}
+
+.checkboxLabel {
+  font-size: 1rem;
+}
+
+/**********************************************************/
+.authButtons {
+  display: flex;
+  gap: 25px;
+}
+
+.whiteButton {
+  background: transparent;
+  border: 3px solid #8967b3;
+  color: #000;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: "Kantumruy Pro", sans-serif;
+  border-radius: 12px;
+  margin-left: 500px;
+}
+
+.whiteButton:hover {
+  border: 3px solid #8967b3;
+  background-color: #f7f7f7;
+  color: #000;
+}
+
+.purpleButton {
+  background-color: #8967b3;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: "Kantumruy Pro", sans-serif;
+  border-radius: 12px;
+}
+
+.purpleButton:hover {
+  background-color: #8967b0;
+  color: #fff;
+  border: none;
+}
+.underlineGray {
+  /* position: absolute; */
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background-color: #dfdfdf;
+  border-radius: 10px;
+  margin: 30px;
+}

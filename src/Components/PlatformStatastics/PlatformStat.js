@@ -1,14 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styles from "./PlatformStat.module.css";
 import { stats } from "./PlatformData";
+import { AuthContext } from "../../Context/AuthContext";
 
 const PlatformStats = () => {
   const [loading, setLoading] = useState(true);
+  const { isAuthenticated, user } = useContext(AuthContext);
+
+  // Determine whether to show PlatformStats
+  const showPlatformStats =
+    !isAuthenticated || (isAuthenticated && user?.userType === "company");
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000); // Simulate a 2-second load
     return () => clearTimeout(timer);
   }, []);
+
+  if (!showPlatformStats) return null; // Don't render if conditions are not met
+
   return (
     <div className={styles.platformStats}>
       <h2 className={styles.title}>Platform stats</h2>

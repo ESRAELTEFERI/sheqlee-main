@@ -1,23 +1,6 @@
-// import React from "react";
-// import styles from "./Navbar.module.css";
-// import SignUp from "./SignUp";
-// import LogIn from "./LogIn";
-
-// const AuthButtons = () => {
-//   return (
-//     <div className={styles.authButtons}>
-//       <LogIn />
-//       <SignUp />
-//     </div>
-//   );
-// };
-
-// export default AuthButtons;
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Navbar.module.css";
-import SignUp from "./SignUp";
-import LogIn from "./LogIn";
 import dropDawn from "../../../asset/NavCathagories/arrow_down.png";
 import USER from "../../../asset/Users/settings.svg";
 import COM from "../../../asset/Dashboard/companyyyy.svg";
@@ -25,7 +8,7 @@ import DASHBOARD from "../../../asset/Dashboard/dashboard.svg";
 import LOGOUT from "../../../asset/Dashboard/logout.svg";
 import SETTINGS from "../../../asset/Dashboard/ssettings.svg";
 
-const AuthButtons = ({ isLoggedIn, onLogout }) => {
+const AuthButtons = ({ isLoggedIn, userType, onLogout }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -34,25 +17,48 @@ const AuthButtons = ({ isLoggedIn, onLogout }) => {
   };
 
   const handlePostJobClick = () => {
-    navigate("/postjob");
+    navigate("/vacancy");
+  };
+
+  const handleNavigation = (route) => {
+    navigate(route);
+  };
+
+  const handleLogout = () => {
+    if (onLogout) {
+      onLogout(); // Perform any logout logic, e.g., clearing tokens
+    }
+    navigate("/"); // Redirect to homepage after logout
   };
 
   if (isLoggedIn) {
     return (
       <div className={styles.loggedInActions}>
-        <button className={styles.postJobButton} onClick={handlePostJobClick}>
-          Post a Job
-        </button>
-        <img src={USER} alt="Company icon" className={styles.UserIcon} />
+        {userType === "company" && (
+          <button className={styles.postJobButton} onClick={handlePostJobClick}>
+            Post a Job
+          </button>
+        )}
+        {userType === "freelancer" && (
+          <button
+            className={styles.postJobButton}
+            onClick={() => navigate("/my-jobs")}
+          >
+            Edit profile
+          </button>
+        )}
+        {userType === "company" && (
+          <img src={USER} alt="User Icon" className={styles.UserIcon} />
+        )}
         <div className={styles.navv}>
           <span
-            onClick={toggleDropdown} // Toggle the dropdown
+            onClick={toggleDropdown}
             className={isDropdownOpen ? styles.activeDropdown : ""}
           >
-            Microsoft{" "}
+            {userType === "company" ? "Microsoft" : "Muruts Yifter"}
             <img
               src={dropDawn}
-              alt="drop-down arrow"
+              alt="Dropdown Arrow"
               className={`${styles.dropdownArrow} ${
                 isDropdownOpen ? styles.active : ""
               }`}
@@ -62,36 +68,59 @@ const AuthButtons = ({ isLoggedIn, onLogout }) => {
           {isDropdownOpen && (
             <div className={styles.dropdownMenu}>
               <ul>
-                <li className={styles.dropdownItem}>
+                <li
+                  className={styles.dropdownItem}
+                  onClick={() =>
+                    handleNavigation(
+                      userType === "freelancer"
+                        ? "/dashboard-freelance"
+                        : "/dashboard-company"
+                    )
+                  }
+                >
                   <img
                     src={DASHBOARD}
-                    alt="Company icon"
+                    alt="Dashboard Icon"
                     className={styles.IIcon}
                   />
                   Dashboard
                 </li>
                 <div className={styles.underline}> </div>
-
-                <li className={styles.dropdownItem}>
-                  <img src={COM} alt="Company icon" className={styles.IIIcon} />
-                  Company profile
-                  {/* </li>
-                  <div></div>
-
-                <li className={styles.dropdownItem}> */}
+                {userType === "company" && (
+                  <li
+                    className={styles.dropdownItem}
+                    onClick={() => handleNavigation("/company-profile")}
+                  >
+                    <img
+                      src={COM}
+                      alt="Company Icon"
+                      className={styles.IIIcon}
+                    />
+                    Company Profile
+                  </li>
+                )}
+                <li
+                  className={styles.dropdownItem}
+                  onClick={() =>
+                    handleNavigation(
+                      userType === "freelancer"
+                        ? "/account-settings-freelancer"
+                        : "/account-settings-company"
+                    )
+                  }
+                >
                   <img
                     src={SETTINGS}
-                    alt="Company icon"
+                    alt="Settings Icon"
                     className={styles.IIcon}
                   />
-                  Account setting
+                  Account Settings
                 </li>
                 <div className={styles.underline}> </div>
-
-                <li className={styles.dropdownItem} onClick={onLogout}>
+                <li className={styles.dropdownItem} onClick={handleLogout}>
                   <img
                     src={LOGOUT}
-                    alt="Company icon"
+                    alt="Logout Icon"
                     className={styles.IIcon}
                   />
                   Logout
@@ -100,17 +129,21 @@ const AuthButtons = ({ isLoggedIn, onLogout }) => {
             </div>
           )}
         </div>
-        {/* <button className={styles.logoutButton} onClick={onLogout}>
-          Logout
-        </button> */}
       </div>
     );
   }
 
   return (
     <div className={styles.authButtons}>
-      <LogIn />
-      <SignUp />
+      <button className={styles.loginButton} onClick={() => navigate("/login")}>
+        Log in
+      </button>
+      <button
+        className={styles.signupButton}
+        onClick={() => navigate("/signup")}
+      >
+        Sign up
+      </button>
     </div>
   );
 };

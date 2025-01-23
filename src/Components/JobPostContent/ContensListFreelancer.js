@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import classes from "./ContentList.module.css";
-import arrowRight from "../../asset/NavCathagories/arrow_right.png";
 import ContentMainList from "./ContentMainList";
 import { Contents } from "./ContentData";
 import { useNavigate } from "react-router-dom";
 
-const ContentsList = () => {
+const ContentsListFreelancer = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
@@ -24,31 +23,21 @@ const ContentsList = () => {
   return (
     <div className={classes.background}>
       <div className={classes.align}>
-        <div className={classes.head}>
-          <span className={classes.hh2}>Latest job posts</span>
-          <div className={classes.moreJobs}>
-            {loading ? (
-              <span className={classes.skeletonSpan2}> </span>
-            ) : (
-              <span
-                className={classes.linkJobs}
-                onClick={handleMoreContentsClick}
-              >
-                {remainingContents}+ more jobs
-              </span>
-            )}
-            <img src={arrowRight} alt="ArrowRight" className={classes.arrow} />
-            <div className={classes.underline}> </div>
-          </div>
-        </div>
         <ContentMainList
           displayedContents={displayedContents}
           remainingContents={remainingContents}
           loading={loading}
         />
+
+        <button
+          className={classes.viewButton}
+          onClick={handleMoreContentsClick}
+        >
+          View all job posts
+        </button>
       </div>
     </div>
   );
 };
 
-export default ContentsList;
+export default ContentsListFreelancer;
