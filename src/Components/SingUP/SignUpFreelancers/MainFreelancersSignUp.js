@@ -32,12 +32,16 @@ function MainFreelancersSignUp() {
       return;
     }
 
-    // Combine both data objects into a single payload
-    const combinedData = { ...infoData, userType: "freelancer" };
+    const existingFreelancers =
+      JSON.parse(localStorage.getItem("freelancers")) || [];
 
-    // Save to localStorage
-    localStorage.setItem("registrationData", JSON.stringify(combinedData));
-    alert("Data successfully saved to local storage!");
+    const updatedFreelancers = [
+      ...existingFreelancers,
+      { ...infoData, userType: "freelancer" },
+    ];
+
+    localStorage.setItem("freelancers", JSON.stringify(updatedFreelancers));
+    alert("Freelancer registered successfully!");
 
     setInfoData({
       fullName: "",

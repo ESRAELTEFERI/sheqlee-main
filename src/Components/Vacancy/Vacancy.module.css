@@ -1,5 +1,5 @@
 .card {
-  max-width: 1000px;
+  max-width: 800px;
   margin: 2rem auto;
   display: flex;
   flex-direction: column;
@@ -9,6 +9,11 @@
   font-family: "Kantumruy Pro", sans-serif;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.review {
+  font-weight: 400;
+  padding: 10px;
 }
 .inputGroup {
   /* width: 463px; */
@@ -33,22 +38,26 @@
 .title {
   display: flex;
   align-items: center;
-  font-size: 2.5rem;
+  font-size: 2.7rem;
+  font-family: "Kantumruy Pro", sans-serif;
   font-weight: 600;
   margin-bottom: 0;
+  /* margin-left: 300px; */
 }
 .text {
   margin-top: 0;
   font-size: 1.5rem;
+  font-weight: 500;
+  /* margin-left: 220px; */
 }
 
 .iconHead {
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 100px;
 
   /* width: 100px; */
 
-  padding: 1rem 2rem;
+  padding: 0 2rem;
   /* padding-right: ; */
   display: flex;
   align-items: center;
@@ -87,6 +96,7 @@
   /* padding: 0rem 1rem; */
   padding-left: 1rem;
   padding-right: 2rem;
+  padding-top: 0;
   outline: none;
   color: #000;
   font-size: 1.1rem;
@@ -96,7 +106,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .row {
@@ -108,13 +118,14 @@
 
 .field {
   flex: 1;
-  margin-right: 10px;
+  margin-right: 20px;
   color: #000;
 }
 
-.field:last-child {
+/* .field:last-child {
+  margin-left: 20px;
   margin-right: 0;
-}
+} */
 
 .label {
   display: block;
@@ -125,10 +136,12 @@
 
 .required {
   color: red;
+  font-weight: 600;
+  margin-right: 10px;
 }
 
 .inputWrapper {
-  width: 463px;
+  /* width: 463px; */
   height: 60px;
   display: flex;
   align-items: center;
@@ -168,14 +181,14 @@
   outline: none;
   background: #dfdfdf;
   color: #000;
-  font-size: 1.5rem;
-  padding: 1rem;
+  font-size: 1.4rem;
+  padding: 1rem 2rem;
   font-family: "Kantumruy Pro", sans-serif;
 }
 .input::placeholder {
   font-family: "Kantumruy Pro", sans-serif;
   color: #444444;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .toggleVisibility {
@@ -196,18 +209,19 @@
   padding-right: 2rem; */
   outline: none;
   color: #000;
-  /* font-size: ; */
+
   font-family: "Kantumruy Pro", sans-serif;
+  font-size: 1.1rem;
 }
 
 /*****************/
-/* .messageGroup {
+.messageGroup {
   display: flex;
   flex-direction: column;
   background: #dfdfdf;
   border-radius: 10px;
   font-family: "Kantumruy Pro", sans-serif;
-} */
+}
 .textarea {
   width: 100%;
   min-height: 200px;
@@ -220,6 +234,7 @@
   resize: none;
   outline: none;
   font-family: "Kantumruy Pro", sans-serif;
+  margin-top: 0;
 }
 .textarea::placeholder {
   font-family: "Kantumruy Pro", sans-serif;
@@ -240,11 +255,12 @@
   display: flex;
   align-items: center;
   margin-bottom: 0;
+  margin-top: 25px;
 }
 
 .checkbox {
   appearance: none;
-  margin-right: 10px;
+  margin-right: 20px;
   width: 25px;
   height: 25px;
   background-color: #dfdfdf; /* Gray background */
@@ -272,24 +288,43 @@
 .authButtons {
   display: flex;
   gap: 25px;
+  margin-bottom: 60px;
+  margin-top: 40px;
 }
-
+.authButtonn {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
 .whiteButton {
   background: transparent;
-  border: 3px solid #8967b3;
+  border: 4px solid #8967b3;
   color: #000;
-  padding: 10px 15px;
+  padding: 12px 30px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: 500;
   font-family: "Kantumruy Pro", sans-serif;
   border-radius: 12px;
-  margin-left: 500px;
+  margin-left: 180px;
+}
+.whiteButtonn {
+  background: transparent;
+  border: 4px solid #8967b3;
+  color: #000;
+  padding: 12px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-family: "Kantumruy Pro", sans-serif;
+  border-radius: 12px;
+  margin: 0;
 }
 
 .whiteButton:hover {
-  border: 3px solid #8967b3;
+  border: 4px solid #8967b3;
   background-color: #f7f7f7;
   color: #000;
 }
@@ -298,13 +333,18 @@
   background-color: #8967b3;
   color: #fff;
   border: none;
-  padding: 10px 15px;
+  padding: 12px 30px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 500;
   font-family: "Kantumruy Pro", sans-serif;
   border-radius: 12px;
+}
+.purplee {
+  font-weight: 300;
+  font-family: "Kantumruy Pro", sans-serif;
+  font-size: 1.4rem;
 }
 
 .purpleButton:hover {
@@ -317,8 +357,62 @@
   bottom: 0px;
   left: 0;
   width: 100%;
-  height: 2.5px;
+  height: 4px;
   background-color: #dfdfdf;
   border-radius: 10px;
-  margin: 30px;
+  margin: 0;
+}
+
+/************************/
+.iconHours {
+  width: 100px;
+  height: 67px;
+  font-size: 1.3rem;
+  font-weight: 400;
+
+  background: black;
+  color: white;
+  padding: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconMoney {
+  width: 58px;
+  height: 67px;
+  font-size: 1.3rem;
+  font-weight: 400;
+
+  background: black;
+  color: white;
+  padding: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.inputSalary {
+  width: 100px;
+  flex: 1;
+  border: none;
+  outline: none;
+  background: #dfdfdf;
+  color: #000;
+  font-size: 1.5rem;
+  padding: 1rem;
+  font-family: "Kantumruy Pro", sans-serif;
+}
+
+.inputSalary::placeholder {
+  font-family: "Kantumruy Pro", sans-serif;
+  color: #444444;
+  font-size: 1.5rem;
+}
+
+.textt {
+  font-size: 1.1rem;
+  font-family: "Kantumruy Pro", sans-serif;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }

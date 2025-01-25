@@ -17,15 +17,16 @@ function VacancyDetail() {
             </NavLink>
           </div>
         </div>
-      </div>
-
-      <div className={styles.card}>
-        <h2 className={styles.title}>Review & publish [2/2]</h2>
+        <h2 className={styles.title}>
+          Review & publish <span className={styles.review}>[2/2]</span>{" "}
+        </h2>
         <p className={styles.text}>Review job details before publishing.</p>
 
-        <div className={styles.authButtons}>
-          <button className={styles.whiteButton}>Edit</button>
-          <button className={styles.purpleButton}>Publish job</button>
+        <div className={styles.card}>
+          <div className={styles.authButtonn}>
+            <button className={styles.whiteButtonn}>Edit</button>
+            <button className={styles.purpleButton}>Publish job</button>
+          </div>
         </div>
       </div>
     </>

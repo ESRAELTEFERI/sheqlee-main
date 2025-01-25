@@ -1,5 +1,5 @@
 import React from "react";
-import BreadCrumbCom from "../Components/After/BreadCrumbCom.js";
+import BreadCrumbCom from "../Components/After/BreadCrumbFreeDash.js";
 import ComProfile from "../Components/After/ComProfile.js";
 import Footer from "../Components/Footer/Footer.js";
 

@@ -4,7 +4,7 @@ import ARROW from "../../asset/BreadCrumb/keyboard-arrow-down.svg";
 import ICON from "../../asset/BreadCrumb/placeholder.svg";
 import { Link } from "react-router-dom";
 
-const BreadCrumbCom = () => {
+const BreadCrumbComSetting = () => {
   return (
     <div className={classes.breadcrumb}>
       <img src={ICON} alt="Icon" className={classes.icon} />
@@ -13,11 +13,11 @@ const BreadCrumbCom = () => {
       </Link>
       {/* <span className={classes.separator}>&gt;</span> */}
       <img src={ARROW} alt="Bread-crumb" className={classes.separator} />
-      <Link to="/company-profile" className={classes.navLinkkk}>
-        Profile
+      <Link to="/dashboard-company" className={classes.navLinkkk}>
+        Dashboard
       </Link>
     </div>
   );
 };
 
-export default BreadCrumbCom;
+export default BreadCrumbComSetting;

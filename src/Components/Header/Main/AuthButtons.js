@@ -42,7 +42,7 @@ const AuthButtons = ({ isLoggedIn, userType, onLogout }) => {
         {userType === "freelancer" && (
           <button
             className={styles.postJobButton}
-            onClick={() => navigate("/my-jobs")}
+            onClick={() => navigate("/edit-profile")}
           >
             Edit profile
           </button>

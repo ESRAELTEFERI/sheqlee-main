@@ -63,9 +63,14 @@ function MainSignUp() {
       userType: "company",
     };
 
-    // Save to localStorage
-    localStorage.setItem("registrationData", JSON.stringify(combinedData));
-    alert("Data successfully saved to local storage!");
+    // Fetch existing companies from localStorage or initialize an empty array
+    const existingCompanies =
+      JSON.parse(localStorage.getItem("companies")) || [];
+    const updatedCompanies = [...existingCompanies, combinedData];
+
+    // Save updated list of companies to localStorage
+    localStorage.setItem("companies", JSON.stringify(updatedCompanies));
+    alert("Company registered successfully!");
 
     // Clear Inputs by Resetting State
     setCompanyData({

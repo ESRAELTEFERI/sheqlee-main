@@ -1,0 +1,27 @@
+.container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Kantumruy Pro", sans-serif;
+  text-align: center;
+}
+.iconCat {
+  width: 90px;
+  height: 90px;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.subheading {
+  font-size: 1.6rem;
+  text-align: center;
+  position: relative;
+  color: #000;
+  margin: 30px 50px 0 230px;
+  width: 25em;
+}

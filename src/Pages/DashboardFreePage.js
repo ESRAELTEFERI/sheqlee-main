@@ -1,13 +1,13 @@
 import React from "react";
-import BreadCrumbCom from "../Components/After/BreadCrumbCom.js";
-// import DashCom from "../Components/After/DashCom.js";
+import BreadCrumbFreeDash from "../Components/After/BreadCrumbFreeDash.js";
+import DashFree from "../Components/After/DashFree.js";
 import Footer from "../Components/Footer/Footer.js";
 
 const DashboardFreePage = () => {
   return (
     <>
-      <BreadCrumbCom />
-      {/* <DashCom /> */}
+      <BreadCrumbFreeDash />
+      <DashFree />
       <Footer />
     </>
   );

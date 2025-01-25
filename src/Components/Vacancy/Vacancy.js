@@ -3,7 +3,6 @@ import styles from "./Vacancy.module.css";
 import { useNavigate } from "react-router-dom";
 import TEMPLETE from "../../asset/SignUp/template.svg";
 import { NavLink } from "react-router-dom";
-import COMAN from "../../asset/SignUp/compan.svg";
 import RichTextField from "./RichTextField";
 
 function Vacancy() {
@@ -26,14 +25,16 @@ function Vacancy() {
             </NavLink>
           </div>
         </div>
-      </div>
-
-      <div className={styles.card}>
-        <h2 className={styles.title}>Add a vacancy [1/2]</h2>
+        <h2 className={styles.title}>
+          Add a vacancy <span className={styles.review}>[1/2]</span>{" "}
+        </h2>
         <p className={styles.text}>
           Next and final step is preview and confirmation.
         </p>
-        <form className={styles.align}>
+      </div>
+
+      <div className={styles.card}>
+        <form className={styles.form}>
           <div className={styles.field}>
             <label className={styles.label} htmlFor="text">
               Job title <span className={styles.required}>*</span>
@@ -117,44 +118,43 @@ function Vacancy() {
                 <span className={styles.required}>*</span>
               </label>
               <div className={styles.inputWrapper}>
-                <img
-                  src={COMAN}
-                  alt="idea icon"
-                  className={styles.iconSubject}
-                />
+                <span className={styles.iconMoney}>
+                  $ {/* This represents the domain sufixfix */}
+                </span>
                 <input
                   type="password"
                   id="confirmPassword"
-                  className={styles.input}
+                  className={styles.inputSalary}
                   placeholder="Enter salary..."
                   // value={infoData.confirmPassword}
                   // onChange={handleChange}
                   required
                 />
-                <img
-                  src={COMAN}
-                  alt="idea icon"
-                  className={styles.iconSubject}
-                />
+                <span className={styles.iconHours}>
+                  /hours {/* This represents the domain sufixfix */}
+                </span>
               </div>
             </div>
           </div>
         </form>
         <>
           {/* Message Input */}
-          <label htmlFor="message" className={styles.label}>
-            Message
-          </label>
-          <div className={styles.messageGroup}>
-            <textarea
-              // id="message"
-              className={styles.textarea}
-              placeholder="We are looking for a Flutter developer with 2 years experience."
-              // value={message}
-              // onChange={handleMessageChange}
-            />
-            <div className={styles.counter}>
-              {/* {message.length}/{maxLength} */}
+          <div>
+            <label htmlFor="message" className={styles.label}>
+              Message
+            </label>
+            <div className={styles.messageGroup}>
+              <textarea
+                // id="message"
+                className={styles.textarea}
+                placeholder="We are looking for a Flutter developer with 2 years experience."
+                // value={message}
+                // onChange={handleMessageChange}
+              />
+              <div className={styles.counter}>
+                {/* {message.length}/{maxLength} */}
+                200
+              </div>
             </div>
           </div>
         </>
@@ -195,11 +195,11 @@ function Vacancy() {
                 // onChange={handleChange}
                 required
               />
-              <span
+              {/* <span
                 className={styles.toggleVisibility}
                 // onClick={togglePasswordVisibility}
                 style={{ cursor: "pointer" }}
-              ></span>
+              ></span> */}
             </div>
           </div>
           <div className={styles.field}>
@@ -237,16 +237,18 @@ function Vacancy() {
         <div className={styles.authButtons}>
           <button className={styles.whiteButton}>Save draft</button>
           <button className={styles.purpleButton} onClick={handleNext}>
-            Next [preview & confirm]
+            Next <span className={styles.purplee}>[preview & confirm]</span>
           </button>
         </div>
-        <div className={styles.underlineGray}> </div>
+        <div>
+          <div className={styles.underlineGray}> </div>
 
-        <div style={{ display: "flex" }}>
-          <p>
-            <span className={styles.required}>*</span>
-            fields are required.
-          </p>
+          <div style={{ display: "flex" }}>
+            <p className={styles.textt}>
+              <span className={styles.required}>*</span>
+              fields are required.
+            </p>
+          </div>
         </div>
       </div>
     </>

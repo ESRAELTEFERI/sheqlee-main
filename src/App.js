@@ -26,10 +26,12 @@ import PrivacyPolicyPage from "./Pages/PravacyPolicyPage";
 import Header from "./Components/Header/Main/Header";
 import VacancyPage from "./Pages/VacancyPage";
 import VacancyTwoPage from "./Pages/VacancyTwoPage";
-// import DashboardFreePage from "./Pages/DashboardFreePage";
 import DashboardComPage from "./Pages/DashboardComPage";
 import ComProfilePage from "./Pages/ComProfilePage";
 import ComSettingPage from "./Pages/ComSettingPage";
+import DashboardFreePage from "./Pages/DashboardFreePage";
+import EditProfilePage from "./Pages/EditProfilePage";
+import FreeSettingsPage from "./Pages/FreeSettingsPage";
 
 const App = () => {
   // State to track login status
@@ -78,16 +80,18 @@ const App = () => {
         />
         <Route path="/vacancy" element={<VacancyPage />} />
         <Route path="/vacancy-2" element={<VacancyTwoPage />} />
+        <Route path="/edit-profile" element={<EditProfilePage />} />
 
-        {/* <Route path="/dashboard-freelance" element={<DashboardFreePage />} /> */}
         <Route path="/dashboard-company" element={<DashboardComPage />} />
         <Route path="/company-profile" element={<ComProfilePage />} />
         <Route path="/account-settings-company" element={<ComSettingPage />} />
-        {/* 
+
+        <Route path="/dashboard-freelance" element={<DashboardFreePage />} />
+
         <Route
           path="/account-settings-freelancer"
-          element={<SettingFreePage />}
-        */}
+          element={<FreeSettingsPage />}
+        />
       </Routes>
     </Router>
   );

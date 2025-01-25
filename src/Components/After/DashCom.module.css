@@ -6,8 +6,8 @@
   text-align: center;
 }
 .iconCat {
-  width: 90px;
-  height: 90px;
+  width: 60px;
+  height: 60px;
 }
 
 .heading {
@@ -22,8 +22,8 @@
   text-align: center;
   position: relative;
   color: #000;
-  margin: 30px 50px 60px 230px;
-  width: 25em;
+  margin: 10px 50px 0 300px;
+  width: 20em;
 }
 .post {
   background-color: #8967b3;
@@ -31,10 +31,12 @@
   border: none;
   padding: 15px 30px;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 500;
   font-family: "Kantumruy Pro", sans-serif;
   border-radius: 10px;
+  margin-bottom: 50px;
+  margin-top: 80px;
 }
 
 .post:hover {

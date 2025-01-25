@@ -1,12 +1,12 @@
 import React from "react";
-import BreadCrumbCom from "../Components/After/BreadCrumbCom.js";
+import BreadCrumbComSetting from "../Components/After/BreadCrumbComSetting.js";
 import ComSetting from "../Components/After/ComSetting.js";
 import Footer from "../Components/Footer/Footer.js";
 
 const ComSettingPage = () => {
   return (
     <>
-      <BreadCrumbCom />
+      <BreadCrumbComSetting />
       <ComSetting />
       <Footer />
     </>
