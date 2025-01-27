@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./DashCom.module.css";
-import SETTING from "../../asset/After/settings.svg";
+import SETTING from "../../../asset/After/settings.svg";
 
 function ComSetting() {
   return (

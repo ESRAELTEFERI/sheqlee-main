@@ -1,16 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Vacancy.module.css";
 import { useNavigate } from "react-router-dom";
 import TEMPLETE from "../../asset/SignUp/template.svg";
 import { NavLink } from "react-router-dom";
 import RichTextField from "./RichTextField";
+import { Contents } from "../JobPostContent/ContentData";
+import { tags } from "../Tags/TagData";
 
 function Vacancy() {
+  const [jobTitle, setJobTitle] = useState("");
+  const [selectedCategories, setSelectedCategories] = useState("");
+  const [selectedType, setSelectedType] = useState("");
+  const [selectedLevel, setSelectedLevel] = useState("");
+  const [selectedTag, setSelectedTag] = useState("");
+  const [salary, setSalary] = useState("");
+  const [message, setMessage] = useState("");
+  const [requirements, setRequirements] = useState("");
+  const [skills, setSkills] = useState("");
+
   const navigate = useNavigate(); // Initialize the navigate function
 
+  const uniqueCategories = Array.from(
+    new Set(Contents.map((item) => item.title))
+  );
+  const uniqueTypes = Array.from(new Set(Contents.map((item) => item.company)));
+
+  const uniqueLevels = Array.from(new Set(Contents.map((item) => item.level)));
+
+  const uniquetags = Array.from(new Set(tags.map((item) => item.name)));
+
   const handleNext = () => {
-    navigate("/vacancy-2"); // Redirect to /vacancy-2
+    navigate("/vacancy-2", {
+      state: {
+        jobTitle,
+        selectedCategories,
+        selectedType,
+        selectedLevel,
+        selectedTag,
+        salary,
+        message,
+        requirements,
+        skills,
+      },
+    });
   };
+
+  // const handleNext = () => {
+  //   navigate("/vacancy-2"); // Redirect to /vacancy-2
+  // };
 
   return (
     <>
@@ -45,10 +82,11 @@ function Vacancy() {
                 id="password"
                 className={styles.input}
                 placeholder="Senior mobile app developer using Flutter"
-                // value={infoData.password}
-                // onChange={handleChange}
+                value={jobTitle}
+                onChange={(e) => setJobTitle(e.target.value)}
                 required
               />
+
               <span
                 className={styles.toggleVisibility}
                 // onClick={togglePasswordVisibility}
@@ -62,15 +100,20 @@ function Vacancy() {
                 Category <span className={styles.required}>*</span>
               </label>
               <div className={styles.inputWrapper}>
-                <input
-                  type="text"
-                  id="fullName"
-                  className={styles.input}
-                  placeholder="Select category..."
-                  // value={infoData.fullName}
-                  // onChange={handleChange}
-                  required
-                />
+                <div className={styles["select-container"]}>
+                  <select
+                    value={selectedCategories}
+                    onChange={(e) => setSelectedCategories(e.target.value)}
+                    className={styles.dropdown}
+                  >
+                    <option value="">Select category...</option>
+                    {uniqueCategories.map((type, index) => (
+                      <option key={index} value={type}>
+                        {type}
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </div>
             </div>
             <div className={styles.field}>
@@ -78,15 +121,20 @@ function Vacancy() {
                 Job type <span className={styles.required}>*</span>
               </label>
               <div className={styles.inputWrapper}>
-                <input
-                  type="email"
-                  id="email"
-                  className={styles.input}
-                  placeholder="Select type..."
-                  // value={infoData.email}
-                  // onChange={handleChange}
-                  required
-                />
+                <div className={styles["select-container"]}>
+                  <select
+                    value={selectedType}
+                    onChange={(e) => setSelectedType(e.target.value)}
+                    className={styles.dropdown}
+                  >
+                    <option value="">Select type...</option>
+                    {uniqueTypes.map((type, index) => (
+                      <option key={index} value={type}>
+                        {type}
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </div>
             </div>
           </div>
@@ -96,15 +144,21 @@ function Vacancy() {
                 Skill level <span className={styles.required}>*</span>
               </label>
               <div className={styles.inputWrapper}>
-                <input
-                  type="text"
-                  id="password"
-                  className={styles.input}
-                  placeholder="Add skill level..."
-                  // value={infoData.password}
-                  // onChange={handleChange}
-                  required
-                />
+                <div className={styles["select-container"]}>
+                  <select
+                    value={selectedLevel}
+                    onChange={(e) => setSelectedLevel(e.target.value)}
+                    className={styles.dropdown}
+                  >
+                    <option value="">Add skill level...</option>
+                    {uniqueLevels.map((type, index) => (
+                      <option key={index} value={type}>
+                        {type}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
                 <span
                   className={styles.toggleVisibility}
                   // onClick={togglePasswordVisibility}
@@ -122,12 +176,12 @@ function Vacancy() {
                   $ {/* This represents the domain sufixfix */}
                 </span>
                 <input
-                  type="password"
+                  type="text"
                   id="confirmPassword"
                   className={styles.inputSalary}
                   placeholder="Enter salary..."
-                  // value={infoData.confirmPassword}
-                  // onChange={handleChange}
+                  value={salary}
+                  onChange={(e) => setSalary(e.target.value)}
                   required
                 />
                 <span className={styles.iconHours}>
@@ -148,8 +202,8 @@ function Vacancy() {
                 // id="message"
                 className={styles.textarea}
                 placeholder="We are looking for a Flutter developer with 2 years experience."
-                // value={message}
-                // onChange={handleMessageChange}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
               />
               <div className={styles.counter}>
                 {/* {message.length}/{maxLength} */}
@@ -161,12 +215,17 @@ function Vacancy() {
         <div>
           <RichTextField
             label="Requirements"
-            placeholder="Requirements..."
+            placeholder="Enter job requirements..."
+            value={requirements}
+            onChange={(content) => setRequirements(content)}
             required={true}
           />
+
           <RichTextField
             label="How to apply"
             placeholder="Description..."
+            value={skills}
+            onChange={(content) => setSkills(content)} // Correctly handle Quill content
             required={false}
           />
           <RichTextField
@@ -186,15 +245,21 @@ function Vacancy() {
               <span className={styles.required}>*</span>
             </label>
             <div className={styles.inputWrapper}>
-              <input
-                type="text"
-                id="password"
-                className={styles.input}
-                placeholder="NodeJS, AWS, PostgreSQL"
-                // value={infoData.password}
-                // onChange={handleChange}
-                required
-              />
+              <div className={styles["select-container"]}>
+                <select
+                  value={selectedTag}
+                  onChange={(e) => setSelectedTag(e.target.value)}
+                  className={styles.dropdown}
+                >
+                  <option value="">NodeJS, AWS, PostgreSQL</option>
+                  {uniquetags.map((type, index) => (
+                    <option key={index} value={type}>
+                      {type}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
               {/* <span
                 className={styles.toggleVisibility}
                 // onClick={togglePasswordVisibility}
@@ -203,13 +268,13 @@ function Vacancy() {
             </div>
           </div>
           <div className={styles.field}>
-            <label className={styles.label} htmlFor="Apply link ">
+            <label className={styles.label} htmlFor="email ">
               Apply link <span className={styles.required}>*</span>
             </label>
             <div className={styles.inputWrapper}>
               <input
-                type="text"
-                id="confirmPassword"
+                type="email"
+                id="email"
                 className={styles.input}
                 placeholder="URL or email"
                 // value={infoData.confirmPassword}

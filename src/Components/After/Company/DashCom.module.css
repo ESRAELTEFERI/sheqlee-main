@@ -1,0 +1,46 @@
+.container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Kantumruy Pro", sans-serif;
+  text-align: center;
+}
+.iconCat {
+  width: 60px;
+  height: 60px;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.subheading {
+  font-size: 1.6rem;
+  text-align: center;
+  position: relative;
+  color: #000;
+  margin: 10px 50px 0 300px;
+  width: 20em;
+}
+.post {
+  background-color: #8967b3;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: "Kantumruy Pro", sans-serif;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  margin-top: 80px;
+}
+
+.post:hover {
+  background-color: #8967b3;
+  color: #fff;
+  border: none;
+}

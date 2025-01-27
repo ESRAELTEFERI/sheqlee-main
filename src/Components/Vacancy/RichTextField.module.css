@@ -3,14 +3,16 @@
   margin-bottom: 20px;
   font-family: "Kantumruy Pro", sans-serif;
 }
-.editt {
+
+/* .editt {
   display: flex;
   flex-direction: column;
   background: #444444;
-  /* border-radius: 40px; */
   border: none;
   color: #fff;
-}
+  padding: 10px;
+  border-radius: 8px;
+} */
 
 /* Label styling */
 .label {
@@ -18,125 +20,78 @@
   font-size: 1.3rem;
   padding: 1rem 0;
   font-weight: 500;
+  color: #000;
 }
 
 /* Required indicator */
 .required {
   color: red;
+  margin-left: 5px;
 }
 
 /* Toolbar styling */
-/* .toolbar {
+.toolbar {
   display: flex;
   align-items: center;
-  background-color: #333;
-  border: 1px solid #444;
-  padding: 5px;
-  border-radius: 4px 4px 0 0;
-} */
+  background-color: #444444;
+  padding: 0 30px;
+  border-radius: 14px 14px 0 0;
+  margin-bottom: 0;
+}
 
 /* Toolbar button styling */
-/* .toolbarButton {
+.toolbarButton {
   background: none;
   border: none;
   color: white;
-  font-size: 14px;
+  font-size: 25px;
   margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 0;
   cursor: pointer;
-  padding: 5px;
-} */
+  padding: 8px;
+  border-radius: 4px;
+  /* transition: background-color 0.2s, color 0.2s; */
+}
+
+.toolbarButton:hover {
+  background-color: #555;
+  color: #ddd;
+}
 
 /* Divider between toolbar groups */
 .divider {
   width: 2px;
-  height: 30px;
+  height: 63px;
   background-color: #fff;
   margin: 0 10px;
+  padding: 0;
 }
 
-/* Textarea styling */
-/* .textarea {
-  width: 100%;
-  height: 80px;
-  padding: 10px;
-  font-size: 14px;
+/* Editor styling */
+.editorContainer {
   border: none;
-  background-color: #fff;
-  border-radius: 0 0 4px 4px;
-  resize: none;
-  outline: none;
-}
-.textarea::placeholder {
-  font-family: "Kantumruy Pro", sans-serif;
-  color: #444444;
-  font-size: 1.3rem;
-}
-.textarea:focus {
-  border-color: #8900ff;
-} */
-
-.editor {
-  min-height: 200px;
-  border: none;
-  border-radius: 0;
   background-color: #dfdfdf;
   color: #000;
   font-size: 1.3rem;
   font-family: "Kantumruy Pro", sans-serif;
   font-weight: 400;
-}
-/* .editor::placeholder {
-  font-family: "Kantumruy Pro", sans-serif;
-  color: #444444;
-  font-size: 1.rem;
-} */
-/* RichTextField.module.css */
-
-/* Ensure the Quill toolbar has a black background */
-/* Set the background color of the toolbar */
-:global(.ql-toolbar) {
-  background-color: black;
-  border: none;
+  min-height: 200px;
+  padding: 10px;
+  border-radius: 0 0 14px 14px;
+  outline: none;
+  margin: 0;
 }
 
-/* Style buttons in the toolbar */
-:global(.ql-toolbar .ql-formats button) {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
+.editorContainer:focus {
+  border-color: #8900ff;
+  box-shadow: 0 0 3px #8900ff;
 }
 
-/* Style the SVG icons inside the buttons */
-:global(.ql-toolbar .ql-formats button svg) {
-  fill: white; /* Change SVG icon color to white */
-}
-
-/* Hover effect for buttons */
-:global(.ql-toolbar .ql-formats button:hover svg) {
-  fill: #ccc; /* Lighter color on hover */
-}
-
-/* Style dropdowns in the toolbar */
-:global(.ql-toolbar .ql-picker-label) {
-  color: white;
-  background-color: black;
-}
-
-:global(.ql-toolbar .ql-picker-options) {
-  background-color: black;
-  border: 1px solid white;
-}
-
-:global(.ql-toolbar .ql-picker-item:hover) {
-  background-color: #333;
-  color: white;
-}
-
-/* Style dropdown SVG icons (if applicable) */
-:global(.ql-toolbar .ql-picker-label svg) {
-  fill: white;
-}
-:global(.ql-toolbar .ql-formats button svg) {
-  fill: white !important;
+/* Placeholder styling (Draft.js doesn’t use `::placeholder` directly, but you can mimic it with a custom class for empty content) */
+.editorContainer.empty::before {
+  content: attr(data-placeholder);
+  color: #444;
+  font-style: normal;
+  pointer-events: none;
 }

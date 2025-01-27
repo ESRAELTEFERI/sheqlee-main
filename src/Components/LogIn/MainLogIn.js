@@ -12,11 +12,22 @@ function MainLogIn() {
 
   const handleLogin = () => {
     if (login(infoData.email, infoData.password)) {
-      navigate("/dashboard"); // Redirect on successful login
+      navigate("/"); // Redirect on successful login
     } else {
       setError("Invalid email or password. Please try again.");
     }
   };
+  /*********************************** */
+  // const handleLogin = () => {
+  //   if (login(infoData.email, infoData.password)) {
+  //     const userType = JSON.parse(localStorage.getItem("currentUser")).userType;
+  //     navigate(userType === "company" ? "/dashboard-company" : "/dashboard-freelance");
+  //   } else {
+  //     setError("Invalid email or password. Please try again.");
+  //   }
+  // };
+
+  /************************************* */
 
   const handleChange = (e) => {
     const { id, value } = e.target;

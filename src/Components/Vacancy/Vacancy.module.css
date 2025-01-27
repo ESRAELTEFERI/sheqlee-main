@@ -416,3 +416,44 @@
   margin-top: 10px;
   margin-bottom: 30px;
 }
+/***********Select*************************************************/
+.select-container {
+  position: relative;
+  display: inline-block;
+  width: 100%; /* Optional: Set a specific width */
+}
+
+.dropdown {
+  width: 100%; /*Ensure full width*/
+  -webkit-appearance: none; /* For Safari */
+  -moz-appearance: none; /* For Firefox */
+  appearance: none; /* Remove default arrow */
+  background: none; /* Remove background to use custom icon */
+  height: 58px;
+  padding: 10px;
+  padding-left: 20px;
+  font-size: 21px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #dfdfdf;
+  color: #444444;
+  font-family: "Kantumruy Pro", sans-serif;
+}
+
+.dropdown:focus {
+  outline: none; /* Remove default focus outline */
+  border-color: #ddd; /* Set border color when input is focused */
+}
+
+.select-container::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 20px; /*Adjust the distance from the right*/
+  transform: translateY(-50%); /* Center vertically */
+  width: 14px; /* Adjust the width of the icon */
+  height: 14px; /* Adjust the height of the icon */
+  background: url("../../asset/Filter/arrow-down.svg") no-repeat center center; /* Use your custom icon */
+  background-size: contain; /* Ensure the icon fits within the size */
+  pointer-events: none; /* Ensure the icon doesn't interfere with clicking */
+}

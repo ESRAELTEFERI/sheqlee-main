@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Vacancy.module.css";
 import TEMPLETE from "../../asset/SignUp/template.svg";
 import { NavLink } from "react-router-dom";
+import VacancyPreview from "./VacancyPreview";
 
 function VacancyDetail() {
   return (
@@ -28,6 +29,7 @@ function VacancyDetail() {
             <button className={styles.purpleButton}>Publish job</button>
           </div>
         </div>
+        <VacancyPreview />
       </div>
     </>
   );

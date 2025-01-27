@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./DashCom.module.css";
-import COMPANY from "../../asset/After/company.svg";
+import COMPANY from "../../../asset/After/company.svg";
 
 function ComProfile() {
   return (

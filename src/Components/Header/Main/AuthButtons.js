@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import dropDawn from "../../../asset/NavCathagories/arrow_down.png";
@@ -11,6 +11,7 @@ import SETTINGS from "../../../asset/Dashboard/ssettings.svg";
 const AuthButtons = ({ isLoggedIn, userType, onLogout }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const navigate = useNavigate();
+  const dropdownRef = useRef(null);
 
   const toggleDropdown = () => {
     setIsDropdownOpen((prev) => !prev);
@@ -21,15 +22,33 @@ const AuthButtons = ({ isLoggedIn, userType, onLogout }) => {
   };
 
   const handleNavigation = (route) => {
+    setIsDropdownOpen(false); // Close the dropdown
     navigate(route);
   };
 
   const handleLogout = () => {
+    setIsDropdownOpen(false); // Close the dropdown
     if (onLogout) {
       onLogout(); // Perform any logout logic, e.g., clearing tokens
     }
     navigate("/"); // Redirect to homepage after logout
   };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false); // Close the dropdown
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Cleanup the event listener on unmount
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   if (isLoggedIn) {
     return (
@@ -50,7 +69,7 @@ const AuthButtons = ({ isLoggedIn, userType, onLogout }) => {
         {userType === "company" && (
           <img src={USER} alt="User Icon" className={styles.UserIcon} />
         )}
-        <div className={styles.navv}>
+        <div className={styles.navv} ref={dropdownRef}>
           <span
             onClick={toggleDropdown}
             className={isDropdownOpen ? styles.activeDropdown : ""}
@@ -86,35 +105,37 @@ const AuthButtons = ({ isLoggedIn, userType, onLogout }) => {
                   Dashboard
                 </li>
                 <div className={styles.underline}> </div>
-                {userType === "company" && (
+                <li>
+                  {userType === "company" && (
+                    <li
+                      className={styles.dropdownItem}
+                      onClick={() => handleNavigation("/company-profile")}
+                    >
+                      <img
+                        src={COM}
+                        alt="Company Icon"
+                        className={styles.IIIcon}
+                      />
+                      Company Profile
+                    </li>
+                  )}
                   <li
                     className={styles.dropdownItem}
-                    onClick={() => handleNavigation("/company-profile")}
+                    onClick={() =>
+                      handleNavigation(
+                        userType === "freelancer"
+                          ? "/account-settings-freelancer"
+                          : "/account-settings-company"
+                      )
+                    }
                   >
                     <img
-                      src={COM}
-                      alt="Company Icon"
-                      className={styles.IIIcon}
+                      src={SETTINGS}
+                      alt="Settings Icon"
+                      className={styles.IIcon}
                     />
-                    Company Profile
+                    Account Settings
                   </li>
-                )}
-                <li
-                  className={styles.dropdownItem}
-                  onClick={() =>
-                    handleNavigation(
-                      userType === "freelancer"
-                        ? "/account-settings-freelancer"
-                        : "/account-settings-company"
-                    )
-                  }
-                >
-                  <img
-                    src={SETTINGS}
-                    alt="Settings Icon"
-                    className={styles.IIcon}
-                  />
-                  Account Settings
                 </li>
                 <div className={styles.underline}> </div>
                 <li className={styles.dropdownItem} onClick={handleLogout}>

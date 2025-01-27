@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {
-  BrowserRouter as Router,
+  // BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
@@ -42,7 +42,8 @@ const App = () => {
   const handleLogout = () => setIsLoggedIn(false);
 
   return (
-    <Router>
+    <>
+      {/* // <Router> */}
       <ScrollToTop />
       <Header isLoggedIn={isLoggedIn} onLogout={handleLogout} />
       <Routes>
@@ -93,7 +94,8 @@ const App = () => {
           element={<FreeSettingsPage />}
         />
       </Routes>
-    </Router>
+      {/* </Router> */}
+    </>
   );
 };
 
