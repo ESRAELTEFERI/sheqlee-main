@@ -12,6 +12,9 @@ const AuthProvider = ({ children }) => {
     if (savedUser) {
       setIsAuthenticated(true);
       setUser(savedUser);
+    } else {
+      setIsAuthenticated(false);
+      setUser(null);
     }
   }, []);
 
@@ -51,6 +54,7 @@ const AuthProvider = ({ children }) => {
   const logout = () => {
     setIsAuthenticated(false);
     setUser(null);
+    localStorage.removeItem("currentUser"); // Clear user session from localStorage
   };
 
   return (

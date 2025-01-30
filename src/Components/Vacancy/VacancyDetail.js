@@ -3,8 +3,18 @@ import styles from "./Vacancy.module.css";
 import TEMPLETE from "../../asset/SignUp/template.svg";
 import { NavLink } from "react-router-dom";
 import VacancyPreview from "./VacancyPreview";
+import Button from "./Buttons";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function VacancyDetail() {
+  const { state } = useLocation();
+  const navigate = useNavigate();
+
+  if (!state) {
+    navigate("/vacancy");
+    return null;
+  }
+
   return (
     <>
       <div className={styles.backk}>
@@ -23,12 +33,7 @@ function VacancyDetail() {
         </h2>
         <p className={styles.text}>Review job details before publishing.</p>
 
-        <div className={styles.card}>
-          <div className={styles.authButtonn}>
-            <button className={styles.whiteButtonn}>Edit</button>
-            <button className={styles.purpleButton}>Publish job</button>
-          </div>
-        </div>
+        <Button jobData={state} />
         <VacancyPreview />
       </div>
     </>

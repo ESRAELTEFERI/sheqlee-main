@@ -1,12 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthContext";
 import classes from "./MainBody.module.css";
 import Modal from "./Modal";
 
 const LeftSection = () => {
   const [isModalOpen, setModalOpen] = useState(false);
+  const { isAuthenticated, user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-  const openModal = () => setModalOpen(true);
-  const closeModal = () => setModalOpen(false);
+  // const openModal = () => setModalOpen(true);
+  // const closeModal = () => setModalOpen(false);
+  const handleButtonClick = () => {
+    if (isAuthenticated && user?.userType === "company") {
+      navigate("/vacancy");
+    } else {
+      setModalOpen(true);
+    }
+  };
 
   return (
     <div className={classes.leftSection}>
@@ -21,10 +32,10 @@ const LeftSection = () => {
       </p>
       {/* Modal  */}
       <div>
-        <button className={`${classes.ModalButton} `} onClick={openModal}>
+        <button className={classes.ModalButton} onClick={handleButtonClick}>
           Post your projects
         </button>
-        <Modal isOpen={isModalOpen} onClose={closeModal} />
+        <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
       </div>
     </div>
   );

@@ -1,0 +1,122 @@
+.container {
+  /* padding: 40px; */
+  /* max-width: 1200px; */
+  /* margin: 0 auto; */
+  font-family: "Kantumruy Pro", sans-serif;
+  /* text-align: center; */
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px auto;
+  font-size: 1rem;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+th,
+td {
+  border-bottom: 2px solid #c7c7c7;
+  padding: 20px;
+  text-align: left;
+}
+
+th {
+  background-color: #444444;
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: "Kantumruy Pro", sans-serif;
+  padding: 30px 20px;
+  color: #fff;
+}
+tbody td {
+  background-color: #dfdfdf;
+}
+tbody tr {
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-family: "Kantumruy Pro", sans-serif;
+}
+
+tbody tr:last-child td {
+  /* border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px; */
+  border-bottom: none;
+}
+th:nth-child(1),
+td:nth-child(1) {
+  width: 50%; /* Make the skill column wider */
+}
+.delete {
+  background: #8967b3;
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+.iconss {
+  width: 16px;
+  height: 16px;
+}
+
+.skill {
+  display: flex;
+  justify-content: end;
+}
+.addSkill {
+  background-color: #8967b3;
+  color: white;
+  padding: 13px 22px;
+  border: none;
+  cursor: pointer;
+  border-radius: 7px;
+  margin-top: 25px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-family: "Kantumruy Pro", sans-serif;
+}
+
+.addSkill:hover {
+  background-color: #8967b3;
+}
+/******************************************************************/
+.row {
+  background-color: #f8f8f8;
+}
+
+.levelButton {
+  min-width: 40px;
+  background-color: #a0a0a0;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  margin: 2px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: black;
+  color: white;
+}
+
+.deleteButton {
+  background: #8967b3;
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.deleteButton:hover {
+  background: #8967b3;
+}
+.closeModall {
+  display: inline-block;
+  margin-right: 70px;
+  margin-bottom: 550px;
+}

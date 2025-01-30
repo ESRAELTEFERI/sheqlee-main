@@ -29,7 +29,7 @@ const AuthButtons = ({ isLoggedIn, userType, onLogout }) => {
   const handleLogout = () => {
     setIsDropdownOpen(false); // Close the dropdown
     if (onLogout) {
-      onLogout(); // Perform any logout logic, e.g., clearing tokens
+      onLogout();
     }
     navigate("/"); // Redirect to homepage after logout
   };
@@ -44,7 +44,7 @@ const AuthButtons = ({ isLoggedIn, userType, onLogout }) => {
 
     document.addEventListener("mousedown", handleClickOutside);
 
-    // Cleanup the event listener on unmount
+    // Cleanup the event listener
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };

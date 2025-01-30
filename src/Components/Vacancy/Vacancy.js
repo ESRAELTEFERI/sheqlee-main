@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Vacancy.module.css";
-import { useNavigate } from "react-router-dom";
 import TEMPLETE from "../../asset/SignUp/template.svg";
 import { NavLink } from "react-router-dom";
 import RichTextField from "./RichTextField";
 import { Contents } from "../JobPostContent/ContentData";
 import { tags } from "../Tags/TagData";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Vacancy() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Initialize form state
   const [jobTitle, setJobTitle] = useState("");
   const [selectedCategories, setSelectedCategories] = useState("");
   const [selectedType, setSelectedType] = useState("");
@@ -17,8 +21,10 @@ function Vacancy() {
   const [message, setMessage] = useState("");
   const [requirements, setRequirements] = useState("");
   const [skills, setSkills] = useState("");
+  const [description, setDescription] = useState("");
+  const [apply, setApply] = useState("");
 
-  const navigate = useNavigate(); // Initialize the navigate function
+  // const navigate = useNavigate(); // Initialize the navigate function
 
   const uniqueCategories = Array.from(
     new Set(Contents.map((item) => item.title))
@@ -29,9 +35,67 @@ function Vacancy() {
 
   const uniquetags = Array.from(new Set(tags.map((item) => item.name)));
 
+  // Load saved draft from localStorage
+  useEffect(() => {
+    if (location.state) {
+      // If data is passed via navigation (editing), use that
+      setJobTitle(location.state.jobTitle || "");
+      setSelectedCategories(location.state.selectedCategories || "");
+      setSelectedType(location.state.selectedType || "");
+      setSelectedLevel(location.state.selectedLevel || "");
+      setSelectedTag(location.state.selectedTag || "");
+      setSalary(location.state.salary || "");
+      setMessage(location.state.message || "");
+      setRequirements(location.state.requirements || "");
+      setSkills(location.state.skills || "");
+      setDescription(location.state.description || "");
+      setApply(location.state.apply || "");
+    } else {
+      // Otherwise, load the saved draft from localStorage
+      const savedDraft = JSON.parse(localStorage.getItem("vacancyDraft"));
+      if (savedDraft) {
+        setJobTitle(savedDraft.jobTitle || "");
+        setSelectedCategories(savedDraft.selectedCategories || "");
+        setSelectedType(savedDraft.selectedType || "");
+        setSelectedLevel(savedDraft.selectedLevel || "");
+        setSelectedTag(savedDraft.selectedTag || "");
+        setSalary(savedDraft.salary || "");
+        setMessage(savedDraft.message || "");
+        setRequirements(savedDraft.requirements || "");
+        setSkills(savedDraft.skills || "");
+        setDescription(savedDraft.description || "");
+        setApply(savedDraft.apply || "");
+      }
+    }
+  }, [location.state]);
+
   const handleNext = () => {
-    navigate("/vacancy-2", {
-      state: {
+    let existingJobs = JSON.parse(localStorage.getItem("jobs")) || [];
+
+    // If editing an existing job, replace it
+    if (location.state?.id) {
+      existingJobs = existingJobs.map((job) =>
+        job.id === location.state.id
+          ? {
+              ...job,
+              jobTitle,
+              selectedCategories,
+              selectedType,
+              selectedLevel,
+              selectedTag,
+              salary,
+              message,
+              requirements,
+              skills,
+              description,
+              apply,
+            }
+          : job
+      );
+    } else {
+      // Add a new job with a unique ID
+      const newJob = {
+        id: Date.now(), // Unique ID
         jobTitle,
         selectedCategories,
         selectedType,
@@ -41,13 +105,59 @@ function Vacancy() {
         message,
         requirements,
         skills,
+        description,
+        apply,
+        status: "published", // Assuming newly added jobs are "published"
+      };
+
+      // existingJobs.push(newJob);
+    }
+
+    // Save to localStorage
+    localStorage.setItem("jobs", JSON.stringify(existingJobs));
+
+    // Navigate to the next step
+    navigate("/vacancy-2", {
+      state: {
+        id: location.state?.id || Date.now(), // Preserve the ID for edits
+        jobTitle,
+        selectedCategories,
+        selectedType,
+        selectedLevel,
+        selectedTag,
+        salary,
+        message,
+        requirements,
+        skills,
+        description,
+        apply,
       },
     });
   };
 
-  // const handleNext = () => {
-  //   navigate("/vacancy-2"); // Redirect to /vacancy-2
-  // };
+  // Save draft to localStorage
+  const handleSaveDraft = () => {
+    const draft = {
+      jobTitle,
+      selectedCategories,
+      selectedType,
+      selectedLevel,
+      selectedTag,
+      salary,
+      message,
+      requirements,
+      skills,
+      description,
+      apply,
+    };
+
+    try {
+      localStorage.setItem("vacancyDraft", JSON.stringify(draft)); // Save draft to localStorage
+      alert("Draft saved successfully!"); // Notify the user
+    } catch (error) {
+      console.error("Error saving draft:", error);
+    }
+  };
 
   return (
     <>
@@ -87,11 +197,11 @@ function Vacancy() {
                 required
               />
 
-              <span
-                className={styles.toggleVisibility}
+              {/* <span
+                className={styles.togggggleVisibility}
                 // onClick={togglePasswordVisibility}
                 style={{ cursor: "pointer" }}
-              ></span>
+              ></span> */}
             </div>
           </div>
           <div className={styles.row}>
@@ -231,6 +341,8 @@ function Vacancy() {
           <RichTextField
             label="Description"
             placeholder="How can professionals apply..."
+            value={description}
+            onChange={(content) => setDescription(content)}
             required={false}
           />
         </div>
@@ -259,12 +371,6 @@ function Vacancy() {
                   ))}
                 </select>
               </div>
-
-              {/* <span
-                className={styles.toggleVisibility}
-                // onClick={togglePasswordVisibility}
-                style={{ cursor: "pointer" }}
-              ></span> */}
             </div>
           </div>
           <div className={styles.field}>
@@ -277,8 +383,8 @@ function Vacancy() {
                 id="email"
                 className={styles.input}
                 placeholder="URL or email"
-                // value={infoData.confirmPassword}
-                // onChange={handleChange}
+                value={apply}
+                onChange={(e) => setApply(e.target.value)}
                 required
               />
             </div>
@@ -299,9 +405,25 @@ function Vacancy() {
             </div>
           </label>
         </div>
+
+        {/* Save draft & next buttons */}
         <div className={styles.authButtons}>
-          <button className={styles.whiteButton}>Save draft</button>
-          <button className={styles.purpleButton} onClick={handleNext}>
+          <button
+            className={styles.whiteButton}
+            onClick={(e) => {
+              e.preventDefault(); // Prevent form submission
+              handleSaveDraft();
+            }}
+          >
+            Save draft
+          </button>
+          <button
+            className={styles.purpleButton}
+            onClick={(e) => {
+              e.preventDefault(); // Prevent form submission
+              handleNext();
+            }}
+          >
             Next <span className={styles.purplee}>[preview & confirm]</span>
           </button>
         </div>
