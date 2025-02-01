@@ -6,21 +6,22 @@ import { NavLink } from "react-router-dom";
 
 function MainFreelancersSignUp() {
   const [infoData, setInfoData] = useState({
-    fullName: "",
+    name: "",
     email: "",
     password: "",
-    confirmPassword: "",
-    agreement: false,
+    passwordConfirm: "",
   });
+  const [agreement, setAgreement] = useState(false);
 
-  const handleRegister = () => {
+  const handleRegister = async () => {
     // Validation Logic
-    if (!infoData.agreement) {
+    // if (!infoData.agreement) {
+    if (!agreement) {
       alert("Please agree to the terms and conditions.");
       return;
     }
 
-    if (infoData.password !== infoData.confirmPassword) {
+    if (infoData.password !== infoData.passwordConfirm) {
       alert("Passwords do not match.");
       return;
     }
@@ -32,24 +33,67 @@ function MainFreelancersSignUp() {
       return;
     }
 
-    const existingFreelancers =
-      JSON.parse(localStorage.getItem("freelancers")) || [];
+    // Construct user data object
+    const userData = {
+      ...infoData,
+      userType: "freelancer", // You can also pass other attributes here like profile, etc.
+    };
+    /****************************************************************************/
+    // const existingFreelancers =
+    //   JSON.parse(localStorage.getItem("freelancers")) || [];
 
-    const updatedFreelancers = [
-      ...existingFreelancers,
-      { ...infoData, userType: "freelancer" },
-    ];
+    // const updatedFreelancers = [
+    //   ...existingFreelancers,
+    //   { ...infoData, userType: "freelancer" },
+    // ];
 
-    localStorage.setItem("freelancers", JSON.stringify(updatedFreelancers));
-    alert("Freelancer registered successfully!");
+    // localStorage.setItem("freelancers", JSON.stringify(updatedFreelancers));
+    // alert("Freelancer registered successfully!");
+    /***************************************************************************** */
 
+    try {
+      console.log(" Preparing to send API request...");
+      console.log("User Data:", userData);
+
+      console.log("Before Fetch");
+      const response = await fetch(
+        "http://192.168.5.217:3000/api/v1/users/signup/freelancer",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(userData),
+          // mode: "cors",
+        }
+      );
+
+      console.log("After Fetch");
+      console.log("Response received:", response);
+
+      const data = await response.json();
+      console.log("Response data:", data);
+
+      if (!response.ok) {
+        throw new Error(
+          data.message || `HTTP error! Status: ${response.status}`
+        );
+      }
+
+      alert("Freelancer registered successfully!");
+      window.location.href = "/login";
+    } catch (error) {
+      console.error("Registration error:", error);
+      alert(`Error: ${error.message}`);
+    }
+
+    /******************************************************************************** */
     setInfoData({
-      fullName: "",
+      name: "",
       email: "",
       password: "",
-      confirmPassword: "",
-      agreement: false,
+      passwordConfirm: "",
+      // agreement: false,
     });
+    setAgreement(false);
 
     //***********Setup for API integration ***********************************/
     /*
@@ -93,7 +137,12 @@ function MainFreelancersSignUp() {
           </div>
         </div>
       </div>
-      <FreelancersInfo infoData={infoData} onInfoDataChange={setInfoData} />
+      <FreelancersInfo
+        infoData={infoData}
+        onInfoDataChange={setInfoData}
+        agreement={agreement}
+        setAgreement={setAgreement}
+      />
       <div className={styles.footer}>
         <span className={styles.footerText}>
           <div className={styles.moreJobs}>

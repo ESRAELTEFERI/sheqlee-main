@@ -1,27 +1,14 @@
 .container {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.orWrapper {
+  max-width: 1000px;
+  margin: 2rem auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
-}
-
-.line {
-  flex: 1;
-  height: 1px;
-  background-color: #ccc;
-  border: none;
-  margin: 0 10px;
-}
-
-.orText {
-  font-size: 14px;
-  color: #666;
-  font-weight: 500;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #fff;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  font-family: "Kantumruy Pro", sans-serif;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .googleButton {
@@ -29,27 +16,27 @@
   align-items: center;
   justify-content: center;
   /* width: 100%; */
-  max-width: 300px;
+  /* max-width: 300px; */
   margin: 0 auto;
-  padding: 10px 15px;
+  padding: 14px 80px;
   background-color: #4285f4;
   color: #fff;
   border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: bold;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: normal;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  margin-bottom: 70px;
 }
 
 .googleButton:hover {
-  background-color: #357ae8;
+  background-color: #4285f4;
 }
 
 .googleIcon {
-  width: 20px;
+  width: 17px;
   height: 20px;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 /************************************************/
@@ -57,18 +44,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
   color: #333;
   margin-bottom: 20px;
-  gap: 70px;
+  gap: 40px;
 }
 
 .title::before,
 .title::after {
   content: "";
   flex: 1;
-  border-top: 4px solid #ccc;
+  border-top: 3px solid #ccc;
   margin: 0;
   border-radius: 5px;
 }

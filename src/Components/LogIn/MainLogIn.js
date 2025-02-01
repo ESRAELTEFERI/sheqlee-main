@@ -42,7 +42,7 @@ function MainLogIn() {
         <span className={styles.footerText}>
           <div className={styles.moreJobs}>
             Forgot password?
-            <NavLink to="/reset" className={styles.linkL}>
+            <NavLink to="/forgotPassword" className={styles.linkL}>
               Reset <div className={styles.underlineL}> </div>
             </NavLink>
             <button className={styles.registerButton} onClick={handleLogin}>

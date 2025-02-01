@@ -120,3 +120,138 @@ td:nth-child(1) {
   margin-right: 70px;
   margin-bottom: 550px;
 }
+/****************MOdal URL****************************/
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.text {
+  font-family: "Kantumruy Pro", sans-serif;
+  font-weight: 500;
+  font-size: 1.7rem;
+}
+.modalContent {
+  background: white;
+  padding: 0 20px;
+  border-radius: 15px;
+  width: 520px;
+  text-align: center;
+}
+
+/* .inputWrapper {
+  width: 463px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #dfdfdf;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: "Kantumruy Pro", sans-serif;
+} */
+
+.input {
+  width: 440px;
+  height: 60px;
+  flex: 1;
+  border: none;
+  /* outline: none; */
+  background: #dfdfdf;
+  color: #000;
+  font-size: 1.4rem;
+  padding: 1.2rem;
+  font-family: "Kantumruy Pro", sans-serif;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.input::placeholder {
+  font-family: "Kantumruy Pro", sans-serif;
+  color: #444444;
+  font-size: 1.4rem;
+}
+
+.addButton {
+  /* width: 50; */
+  padding: 11px 65px;
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 30px;
+  font-size: 1.3rem;
+  font-family: "Kantumruy Pro";
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.addButton:hover {
+  background-color: black;
+}
+.onActive {
+  background: #8967b3;
+}
+.onActive:hover {
+  background: #8967b3;
+}
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+}
+.closeButton:hover {
+  background: none;
+}
+/******************************************************/
+.select-container {
+  position: relative;
+  display: inline-block;
+  width: 440px;
+  height: 60px;
+}
+
+.dropdown {
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #dfdfdf;
+  height: 58px;
+  padding: 10px;
+  padding-left: 20px;
+  font-size: 21px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  /* color: #000; */
+  font-family: "Kantumruy Pro", sans-serif;
+}
+.dropdown option[value=""] {
+  color: #444444; /* Placeholder color */
+}
+.dropdown:focus {
+  outline: none; /* Remove default focus outline */
+  border-color: #ddd; /* Set border color when input is focused */
+}
+
+.select-container::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 20px; /*Adjust the distance from the right*/
+  transform: translateY(-50%); /* Center vertically */
+  width: 14px; /* Adjust the width of the icon */
+  height: 14px; /* Adjust the height of the icon */
+  background: url("../../asset/Filter/arrow-down.svg") no-repeat center center; /* Use your custom icon */
+  background-size: contain; /* Ensure the icon fits within the size */
+  pointer-events: none; /* Ensure the icon doesn't interfere with clicking */
+}

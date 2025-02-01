@@ -1,0 +1,69 @@
+.container {
+  width: 100%;
+}
+.label {
+  display: block;
+  font-size: 1.3rem;
+  padding: 1rem 0 0 0;
+  font-weight: 500;
+  margin: 0;
+}
+
+.required {
+  color: red;
+}
+
+.description {
+  font-size: 1rem;
+  color: #000;
+  margin-bottom: 10px;
+}
+.uploadContainer {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  border: 2px solid #8967b3;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.fileName {
+  flex: 1;
+  padding: 10px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.uploadButton {
+  padding: 10px 15px;
+  background-color: #8967b3; /* Purple button */
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.uploadButton:hover {
+  background-color: #8967b3;
+}
+
+.ellipsecon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.uploadButtonPDF {
+  font-weight: 300;
+}

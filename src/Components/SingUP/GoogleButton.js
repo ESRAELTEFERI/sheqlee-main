@@ -9,11 +9,6 @@ const GoogleButton = () => {
 
   return (
     <div className={styles.container}>
-      {/* <div className={styles.orWrapper}>
-        <hr className={styles.line} />
-        <span className={styles.orText}>OR CONTINUE WITH</span>
-        <hr className={styles.line} />
-      </div> */}
       <h2 className={styles.title}>OR CONTINUE WITH</h2>
 
       <button className={styles.googleButton} onClick={handleGoogleSignIn}>

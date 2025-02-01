@@ -70,10 +70,11 @@
 
 /****************************************/
 .footer {
-  display: flex-end;
-  justify-content: space-between;
+  max-width: 1146px;
+  display: flex;
+  justify-content: end;
   align-items: center;
-  margin-left: 750px;
+  /* margin-left: 750px; */
 }
 
 .footerText {

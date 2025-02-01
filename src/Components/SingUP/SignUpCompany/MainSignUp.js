@@ -19,7 +19,7 @@ function MainSignUp() {
     agreement: false,
   });
 
-  const handleRegister = () => {
+  const handleRegister = async () => {
     console.log("Company Data:", companyData);
     console.log("Info Data:", infoData);
 
@@ -62,16 +62,46 @@ function MainSignUp() {
       ...infoData,
       userType: "company",
     };
-
+    /************************************************************************************ */
     // Fetch existing companies from localStorage or initialize an empty array
-    const existingCompanies =
-      JSON.parse(localStorage.getItem("companies")) || [];
-    const updatedCompanies = [...existingCompanies, combinedData];
+    // const existingCompanies =
+    //   JSON.parse(localStorage.getItem("companies")) || [];
+    // const updatedCompanies = [...existingCompanies, combinedData];
 
-    // Save updated list of companies to localStorage
-    localStorage.setItem("companies", JSON.stringify(updatedCompanies));
-    alert("Company registered successfully!");
+    // // Save updated list of companies to localStorage
+    // localStorage.setItem("companies", JSON.stringify(updatedCompanies));
+    // alert("Company registered successfully!");
+    /*******************************************************************************************/
+    try {
+      const response = await fetch(
+        "http://192.168.5.217:3000/api/v1/users/signup/company",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(combinedData),
+        }
+      );
 
+      console.log(response.body);
+      console.log(response.statusCode);
+
+      const data = await response.json();
+
+      if (response.ok) {
+        alert("Registration successful!");
+        console.log("Success:", data);
+        // Redirect user to login page or dashboard
+        window.location.href = "/login"; // Or use useNavigate() if using React Router
+      } else {
+        alert(data.message || "Failed to register.");
+      }
+    } catch (error) {
+      console.error("Error during registration:", error);
+      alert("An error occurred. Please try again later.");
+    }
+    /*****************************************************************************************/
     // Clear Inputs by Resetting State
     setCompanyData({
       companyName: "",
@@ -87,7 +117,7 @@ function MainSignUp() {
 
     //***********Setup for API integration ***********************************/
     /*
-     fetch("https://api.example.com/register", {
+     fetch("https://192.168.5.217/api/v1/users/signup/company", {
        method: "POST",
        headers: {
          "Content-Type": "application/json",

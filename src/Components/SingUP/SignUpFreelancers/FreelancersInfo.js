@@ -7,7 +7,12 @@ import USER from "../../../asset/SignUp/user.svg";
 import EYE from "../../../asset/SignUp/eye-slash.svg";
 import { NavLink } from "react-router-dom";
 
-const FreelancersInfo = ({ infoData, onInfoDataChange }) => {
+const FreelancersInfo = ({
+  infoData,
+  onInfoDataChange,
+  agreement,
+  setAgreement,
+}) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -28,17 +33,17 @@ const FreelancersInfo = ({ infoData, onInfoDataChange }) => {
       <form className={styles.form}>
         <div className={styles.row}>
           <div className={styles.field}>
-            <label className={styles.label} htmlFor="fullName">
+            <label className={styles.label} htmlFor="name">
               Full name <span className={styles.required}>*</span>
             </label>
             <div className={styles.inputWrapper}>
               <img src={USER} alt="idea icon" className={styles.iconUser} />
               <input
                 type="text"
-                id="fullName"
+                id="name"
                 className={styles.input}
                 placeholder="Abebe Bekila"
-                value={infoData.fullName}
+                value={infoData.name}
                 onChange={handleChange}
                 required
               />
@@ -94,17 +99,17 @@ const FreelancersInfo = ({ infoData, onInfoDataChange }) => {
             </div>
           </div>
           <div className={styles.field}>
-            <label className={styles.label} htmlFor="confirmPassword">
+            <label className={styles.label} htmlFor="passwordConfirm">
               Confirm password <span className={styles.required}>*</span>
             </label>
             <div className={styles.inputWrapper}>
               <img src={KEY} alt="idea icon" className={styles.iconSubject} />
               <input
                 type="password"
-                id="confirmPassword"
+                id="passwordConfirm"
                 className={styles.input}
                 placeholder="**********"
-                value={infoData.confirmPassword}
+                value={infoData.passwordConfirm}
                 onChange={handleChange}
                 required
               />
@@ -117,8 +122,8 @@ const FreelancersInfo = ({ infoData, onInfoDataChange }) => {
               type="checkbox"
               id="agreement"
               className={styles.checkbox}
-              checked={infoData.agreement}
-              onChange={handleChange}
+              checked={agreement}
+              onChange={(e) => setAgreement(e.target.checked)}
             />
             <label htmlFor="agreement" className={styles.checkboxLabel}>
               <div className={styles.moreJobs}>

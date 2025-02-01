@@ -1,12 +1,21 @@
 import React, { useState } from "react";
-import styles from "./AddSkillModal.module.css";
-// import CLOSEMODAL from "../../asset/cancel_icon.svg";
+import styles from "./SkillTable.module.css";
+import CLOSEMODAL from "../../asset/cancel_icon.svg";
 
 const AddSkillModal = ({ onClose, onAddSkill }) => {
   const [skillName, setSkillName] = useState("");
   const [selectedLevel, setSelectedLevel] = useState(""); // Default level C (3)
 
-  const levelMapping = { A: 1, B: 2, C: 3, D: 4, E: 5 };
+  const levelMapping = {
+    Junior: 1,
+    Intermediate: 2,
+    Senior: 3,
+    Expert: 4,
+    Master: 5,
+  };
+
+  // Check if both fields are filled
+  const isBothFilled = skillName.trim() !== "" && selectedLevel.trim() !== "";
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,11 +53,16 @@ const AddSkillModal = ({ onClose, onAddSkill }) => {
               ))}
             </select>
           </div>
-          <button onClick={handleSubmit} className={styles.addButton}>
+          <button
+            onClick={handleSubmit}
+            className={`${styles.addButton} ${
+              isBothFilled ? styles.onActive : ""
+            } `}
+          >
             Add skill
           </button>
           <button onClick={onClose} className={styles.closeButton}>
-            ✖
+            <img src={CLOSEMODAL} alt="closing modal" />
           </button>
         </div>
       </div>

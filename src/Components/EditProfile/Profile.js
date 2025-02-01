@@ -4,6 +4,8 @@ import EDIT from "../../asset/After/edit_profile.svg";
 import UploadComponent from "../After/Company/UploadImage";
 import RichTextField from "../Vacancy/RichTextField";
 import SkillTable from "./SkillTable";
+import AddUrl from "./AddUrl";
+import CVUpload from "./CVUpload";
 
 function FreeSetting() {
   return (
@@ -57,6 +59,23 @@ function FreeSetting() {
         />
 
         <SkillTable />
+        <AddUrl />
+        <CVUpload />
+
+        <div className={styles.purpleButtoncon}>
+          <button className={styles.purpleButton}>Update profile</button>
+        </div>
+
+        <div>
+          <div className={styles.underlineGray}> </div>
+
+          <div style={{ display: "flex" }}>
+            <p className={styles.textt}>
+              <span className={styles.required}>*</span>
+              fields are required.
+            </p>
+          </div>
+        </div>
       </div>
     </>
   );

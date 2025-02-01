@@ -321,3 +321,45 @@
   color: #fff;
   border: none;
 }
+/*******************************/
+.purpleButtoncon {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.purpleButton {
+  width: 230px;
+  background-color: #8967b3;
+  color: #fff;
+  border: none;
+  padding: 15px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-family: "Kantumruy Pro", sans-serif;
+  border-radius: 12px;
+}
+
+.purpleButton:hover {
+  background-color: #8967b0;
+  color: #fff;
+  border: none;
+}
+
+.underlineGray {
+  /* position: absolute; */
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #dfdfdf;
+  border-radius: 10px;
+  margin: 0;
+}
+.textt {
+  font-size: 1.1rem;
+  font-family: "Kantumruy Pro", sans-serif;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}

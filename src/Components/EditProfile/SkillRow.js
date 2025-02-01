@@ -1,4 +1,3 @@
-// components/SkillRow.js
 import React from "react";
 import styles from "./SkillTable.module.css";
 import DELETE from "../../asset/vacancy/delete.svg";
