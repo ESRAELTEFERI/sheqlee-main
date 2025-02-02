@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./Profile.module.css";
 import EDIT from "../../asset/After/edit_profile.svg";
 import UploadComponent from "../After/Company/UploadImage";
@@ -8,6 +9,53 @@ import AddUrl from "./AddUrl";
 import CVUpload from "./CVUpload";
 
 function FreeSetting() {
+  const [bio, setBio] = useState("");
+  const navigate = useNavigate();
+
+  /***************************************************************** */
+  const handleUpdateProfile = async () => {
+    const profileData = {
+      bio,
+      fullName: document.getElementById("fullName").value,
+      title: document.getElementById("tag").value,
+      skills: ["Skill1", "Skill2"], // This should come from SkillTable component
+      links: "some-link.com", // This should come from AddUrl component
+      cv: "CV uploaded", // This should come from CVUpload component
+    };
+
+    // Store the data in local storage (or use state if needed)
+    localStorage.setItem("profileData", JSON.stringify(profileData));
+
+    // Send to API (if needed)
+
+    console.log("Profile updated successfully!");
+    navigate("/profile-preview"); // Navigate to Profile Preview
+  };
+
+  /***************************************************************************************/
+  // const handleUpdateProfile = async () => {
+  //   try {
+  //     const response = await fetch("YOUR_BACKEND_API_URL", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(profileData),
+  //     });
+
+  //     if (response.ok) {
+  //       console.log("Profile updated successfully!");
+  // navigate("/profile-preview");
+  //     } else {
+  //       console.error("Failed to update profile.");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error:", error);
+  //   }
+  // };
+
+  /*******************************************************/
+
   return (
     <>
       <div className={styles.container}>
@@ -54,8 +102,8 @@ function FreeSetting() {
         <RichTextField
           label="Introduce yourself"
           placeholder="Say something appealing about yourself..."
-          // value={requirements}
-          // onChange={(content) => setRequirements(content)}
+          value={bio}
+          onChange={(content) => setBio(content)}
         />
 
         <SkillTable />
@@ -63,7 +111,9 @@ function FreeSetting() {
         <CVUpload />
 
         <div className={styles.purpleButtoncon}>
-          <button className={styles.purpleButton}>Update profile</button>
+          <button className={styles.purpleButton} onClick={handleUpdateProfile}>
+            Update profile
+          </button>
         </div>
 
         <div>

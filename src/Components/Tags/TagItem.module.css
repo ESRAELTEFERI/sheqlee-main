@@ -116,3 +116,31 @@
   background: #444444;
   border-radius: 50%;
 }
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .tagsContainer {
+    grid-template-columns: 1fr; /* Single column layout */
+  }
+
+  .skeletonTagItem,
+  .tagItem {
+    width: 100%; /* Full width */
+    margin-right: 0;
+  }
+
+  .head {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .align {
+    padding-left: 1rem;
+    padding-top: 1rem;
+  }
+
+  .moreTags {
+    justify-content: flex-start;
+  }
+}

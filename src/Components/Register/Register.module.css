@@ -47,26 +47,24 @@
   margin-top: 6px;
 }
 
-.registerButton {
-  /* background-color: #8967b3;
-  color: #ffffff;
-  border: none;
-  font-size: 16px;
-  border-radius: 15px;
-  cursor: pointer;
-  margin-left: 40px;
-  width: 105px;
-  height: 50px;
-  letter-spacing: 0;
-  font-weight: 300;
-  font-family: "Kantumruy Pro";
-  margin: 0;*/
+/*********************************************************/
+@media screen and (max-width: 768px) {
+  .registorBack {
+    flex-direction: column; /* Stack elements */
+    padding: 15px;
+    align-items: center;
+    gap: 10px;
+  }
 
-  /* width: 100px; */
-  padding: 30px 30px !important;
-  font-size: 20px;
-}
+  .registerIcons {
+    width: 30px;
+    height: 30px;
+    margin-left: 0;
+  }
 
-.registerButton:hover {
-  background-color: #8960a8;
+  .registorText {
+    align-content: center;
+    /* width: 19em; */
+    font-size: 1.1rem;
+  }
 }

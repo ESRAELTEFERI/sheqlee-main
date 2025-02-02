@@ -15,3 +15,11 @@
   color: #fff;
   border: none;
 }
+/****************/
+@media screen and (max-width: 768px) {
+  .signupButton {
+    width: 100%; /* Full width button for mobile */
+    max-width: 200px; /* Prevent excessive stretching */
+    font-size: 14px;
+  }
+}

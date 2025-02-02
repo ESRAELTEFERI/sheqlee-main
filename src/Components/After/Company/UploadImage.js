@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import styles from "./Upload.module.css";
 
 function UploadComponent() {
   const [image, setImage] = useState(null);
+  const fileInputRef = useRef(null); // Create a ref for file input
 
   const handleImageUpload = (event) => {
     if (event.target.files && event.target.files.length > 0) {
@@ -22,15 +23,21 @@ function UploadComponent() {
         <input
           type="file"
           accept="image/*"
+          ref={fileInputRef}
           onChange={handleImageUpload}
           hidden
         />
       </label>
-      <button className={styles.uploadButton} onClick={handleImageUpload}>
+      {/* Modify button to trigger file input */}
+      <button
+        className={styles.uploadButton}
+        onClick={() => fileInputRef.current.click()}
+      >
         Upload
       </button>
       <p className={styles.text}>2MB Max | 1:1 Ratio</p>
     </div>
   );
 }
+
 export default UploadComponent;

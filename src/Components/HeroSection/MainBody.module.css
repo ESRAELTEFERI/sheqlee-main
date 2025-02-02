@@ -22,42 +22,40 @@
 
 body {
   background-color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
 .mainBody {
   display: flex;
-  /* flex-direction: column;  */
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0;
+  padding: 20px;
   max-width: 1200px;
-  margin: 60px 40px 30px auto;
+  margin: auto;
   background-color: #fff;
 }
 
 .leftSection {
   flex: 1;
-  margin-bottom: 2rem;
+  text-align: left;
 }
 
 .rightSection {
   flex: 2;
   display: flex;
   justify-content: center;
-  width: 400px;
+  width: 100%;
   max-width: 700px;
-  height: auto;
 }
 
 .hh1 {
-  /* width: 100%;
-  height: auto; */
   font-weight: 600;
-  font-size: 9vh; /* Use viewport height for better scaling */
-  /* line-height: 1.2; */
+  font-size: 7vh;
   margin-bottom: 1rem;
-  font-family: "Kantumruy pro", sans-serif;
-  width: 9em;
+  font-family: "Kantumruy Pro", sans-serif;
+  color: #000;
 }
 
 .highlight {
@@ -65,27 +63,19 @@ body {
 }
 
 .description {
-  width: 100%;
-  height: auto;
-
-  color: #000;
-  margin-bottom: 4rem;
-  /* line-height: 1.2; */
-  font-family: "kantumruy pro", sans-serif;
-  font-weight: 400;
-  letter-spacing: 0;
   font-size: 1.5rem;
-  width: 23em;
+  color: #000;
+  font-family: "Kantumruy Pro", sans-serif;
+  font-weight: 400;
 }
 
 .ModalButton {
-  width: 65%; /* Full width for buttons on small screens */
-  /* max-width: 300px; Set a max width to prevent overly large buttons */
+  width: 100%;
+  max-width: 300px;
   height: 70px;
-  /* padding: 0.8rem 1.5rem; */
   background-color: #8967b3;
   color: #fff;
-  font-family: "Kantumruy pro", sans-serif;
+  font-family: "Kantumruy Pro", sans-serif;
   font-weight: 500;
   border: none;
   border-radius: 12px;
@@ -94,65 +84,67 @@ body {
 }
 
 .ModalButton:hover {
-  background-color: #8967b3;
+  background-color: #6b4e91;
 }
 
-/* .image {
-  max-width: -50%;
-  height: auto;
-} */
-
-/* @media (max-width: 1024px) {
+/* Responsive Styles */
+@media (max-width: 1024px) {
   .mainBody {
     padding: 1.5rem;
   }
 
   .hh1 {
-    font-size: 7vh;
-    text-align: center; 
-  }
-
-  .description {
-    font-size: 4vh;
-    text-align: center; 
-  }
-
-  .ModalButton {
-    font-size: 0.9rem; 
-  }
-} */
-
-/* @media (max-width: 768px) {
-  .mainBody {
-    flex-direction: column; 
-    align-items: center;
-  }
-
-  .hh1 {
     font-size: 6vh;
-    text-align: center;
+    text-align: left;
   }
 
   .description {
-    font-size: 3.5vh;
-    text-align: center;
+    font-size: 1.3rem;
+    text-align: left;
   }
 
   .ModalButton {
-    width: 80%; 
+    font-size: 1.2rem;
   }
-} */
+}
 
-/* @media (max-width: 480px) {
+@media (max-width: 768px) {
+  .mainBody {
+    flex-direction: column-reverse; /* RightSection appears first */
+    text-align: center;
+  }
+
+  .leftSection,
+  .rightSection {
+    width: 100%;
+  }
+
   .hh1 {
-    font-size: 5vh;
+    font-size: 7vh;
   }
 
   .description {
-    font-size: 3vh;
+    font-size: 1.2rem;
+    width: 19em;
   }
 
   .ModalButton {
-    font-size: 0.8rem;
+    width: 100%;
+    font-size: 1.5rem;
   }
-} */
+}
+
+@media (max-width: 480px) {
+  .hh1 {
+    font-size: 4vh;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .ModalButton {
+    font-size: 0.9rem;
+    width: 90%;
+  }
+}

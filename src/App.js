@@ -32,6 +32,7 @@ import ComSettingPage from "./Pages/ComSettingPage";
 import DashboardFreePage from "./Pages/DashboardFreePage";
 import EditProfilePage from "./Pages/EditProfilePage";
 import FreeSettingsPage from "./Pages/FreeSettingsPage";
+import FreeProfilePreview from "./Pages/FreeProfilePreview";
 
 const App = () => {
   // State to track login status
@@ -93,6 +94,7 @@ const App = () => {
           path="/account-settings-freelancer"
           element={<FreeSettingsPage />}
         />
+        <Route path="/profile-preview" element={<FreeProfilePreview />} />
       </Routes>
       {/* </Router> */}
     </>

@@ -134,3 +134,34 @@
   animation: shimmer 1.5s infinite;
   margin-bottom: 20px;
 }
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .tagsContainer {
+    width: 95%;
+    grid-template-columns: 1fr; /* Single column layout */
+  }
+
+  .skeletonTagItem,
+  .tagItem {
+    width: 100%; /* Full width */
+    margin-right: 0;
+  }
+
+  .head {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .align {
+    padding-left: 1rem;
+    padding-top: 1rem;
+  }
+
+  .moreTags {
+    /* justify-content: flex-start; */
+    margin-right: 20px;
+  }
+}

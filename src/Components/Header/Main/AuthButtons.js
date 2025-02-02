@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import dropDawn from "../../../asset/NavCathagories/arrow_down.png";
 import USER from "../../../asset/Users/settings.svg";
@@ -10,8 +10,13 @@ import SETTINGS from "../../../asset/Dashboard/ssettings.svg";
 
 const AuthButtons = ({ isLoggedIn, userType, onLogout }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   const navigate = useNavigate();
   const dropdownRef = useRef(null);
+
+  const location = useLocation();
+  const isEditProfile = location.pathname === "/edit-profile";
+  const isLoginPage = location.pathname === "/login";
 
   const toggleDropdown = () => {
     setIsDropdownOpen((prev) => !prev);
@@ -60,7 +65,9 @@ const AuthButtons = ({ isLoggedIn, userType, onLogout }) => {
         )}
         {userType === "freelancer" && (
           <button
-            className={styles.postJobButton}
+            className={`${styles.editButton} ${
+              isEditProfile ? styles.activeEditButton : ""
+            }`}
             onClick={() => navigate("/edit-profile")}
           >
             Edit profile
@@ -156,7 +163,12 @@ const AuthButtons = ({ isLoggedIn, userType, onLogout }) => {
 
   return (
     <div className={styles.authButtons}>
-      <button className={styles.loginButton} onClick={() => navigate("/login")}>
+      <button
+        className={`${styles.loginButton} ${
+          isLoginPage ? styles.activeButton : ""
+        }`}
+        onClick={() => navigate("/login")}
+      >
         Log in
       </button>
       <button

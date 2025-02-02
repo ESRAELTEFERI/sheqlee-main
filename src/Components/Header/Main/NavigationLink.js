@@ -5,11 +5,13 @@ import dropDawn from "../../../asset/NavCathagories/arrow_down.png";
 import classes from "./Navbar.module.css";
 import { AuthContext } from "../../../Context/AuthContext";
 
-const NavigationLinks = () => {
+const NavigationLinks = ({ showMenu }) => {
   const { isAuthenticated } = useContext(AuthContext); // Get login state
 
   return (
-    <ul className={classes.nav}>
+    <ul className={`${classes.nav} ${showMenu ? classes.mobileMenu : ""}`}>
+      {" "}
+      {/* Apply class when menu is open */}
       <li>
         <NavLink
           to="/all-jobs"
