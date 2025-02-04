@@ -375,14 +375,14 @@
 
 /************************/
 .iconHours {
-  width: 100px;
+  width: 110px;
   height: 67px;
   font-size: 1.3rem;
   font-weight: 400;
 
   background: black;
   color: white;
-  padding: 1.1rem;
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -392,15 +392,14 @@
   width: 58px;
   height: 67px;
   font-size: 1.3rem;
-  font-weight: 400;
 
   background: black;
   color: white;
-  padding: 1.1rem;
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
+  font-weight: 600;
 }
 .inputSalary {
   width: 100px;
@@ -466,4 +465,19 @@
   background: url("../../asset/Filter/arrow-down.svg") no-repeat center center; /* Use your custom icon */
   background-size: contain; /* Ensure the icon fits within the size */
   pointer-events: none; /* Ensure the icon doesn't interfere with clicking */
+}
+
+.iconMoney,
+.iconHours {
+  border: none;
+  /* background: transparent; */
+  cursor: pointer;
+  font-size: 20px;
+  /* appearance: none; */
+  font-family: "Kantumruy Pro", sans-serif;
+}
+
+.iconMoney:focus,
+.iconHours:focus {
+  outline: none;
 }

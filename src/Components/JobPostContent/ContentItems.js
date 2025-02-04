@@ -2,8 +2,10 @@ import React from "react";
 import { getIconForTitle } from "./IconMap";
 import classes from "./ContentItems.module.css";
 import ContentBottom from "./ContentBottom";
+import { useNavigate } from "react-router-dom";
 // const ContentItem = ({ title, description, children, loading }) => {
 const ContentItem = ({
+  id,
   title,
   description,
   timePosted,
@@ -14,6 +16,8 @@ const ContentItem = ({
   applyLink,
   loading,
 }) => {
+  const navigate = useNavigate();
+
   if (loading) {
     /* creating shimmering effect */
     return (
@@ -69,9 +73,13 @@ const ContentItem = ({
 
   const icon = getIconForTitle(title);
 
+  const handleClick = () => {
+    navigate(`/all-jobs/${id}`);
+  };
+
   return (
     <>
-      <div className={classes.contentItem}>
+      <div className={classes.contentItem} onClick={handleClick}>
         {/* <h2 className={classes.title}>{title}</h2> */}
         <div className={classes.titleIcon}>
           {icon && <img src={icon} alt={title} className={classes.icons} />}

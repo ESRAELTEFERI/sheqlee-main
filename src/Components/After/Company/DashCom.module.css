@@ -1,6 +1,6 @@
 .container {
   padding: 40px;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
   font-family: "Kantumruy Pro", sans-serif;
   text-align: center;
@@ -56,14 +56,15 @@
 
 .jobTable {
   width: 100%;
-  border-collapse: separate; /* Important: Change from collapse to separate */
-  border-spacing: 0; /* Removes gaps between cells */
-  border-radius: 10px; /* Adjust this for more or less rounding */
-  overflow: hidden; /* Ensures content respects the border radius */
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
   margin: 10px auto;
   font-size: 1rem;
   border-radius: 10px;
   margin-top: 50px;
+  color: #000;
 }
 
 .jobTable th,
@@ -74,17 +75,20 @@
 }
 .jobTable th {
   background-color: #dfdfdf;
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-weight: 500;
   font-family: "Kantumruy Pro", sans-serif;
   padding: 30px 20px;
+  color: #000;
 }
-
+.jobTable tbody td,
 .jobTable tbody tr {
   background-color: #f7f7f7;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 400;
   font-family: "Kantumruy Pro", sans-serif;
+  border-bottom: 2px solid #dfdfdf;
+  padding: 10px 20px;
 }
 
 /* .jobTable thead tr:first-child th {
@@ -98,16 +102,24 @@
   border-bottom: none;
 }
 
+.jobTable th:nth-child(1),
+.jobTable td:nth-child(1) {
+  padding-left: 50px;
+}
+
 .status {
   font-weight: bold;
 }
 
-.green {
-  color: green;
+.statuss {
+  margin-left: 10px;
+  width: 50px;
+  height: auto;
+  border: none;
 }
-
-.red {
-  color: red;
+.statuss:hover {
+  border: none;
+  background-color: #f7f7f7;
 }
 
 .duplicate,
@@ -119,7 +131,11 @@
   cursor: pointer;
   margin-right: 5px;
 }
-
+.duplicate:hover,
+.view:hover,
+.delete:hover {
+  background: #8967b3;
+}
 .iconss {
   width: 16px;
   height: 16px;
@@ -321,3 +337,4 @@
   color: #fff;
   border: none;
 }
+/***************************************************************/

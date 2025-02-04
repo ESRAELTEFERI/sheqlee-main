@@ -14,7 +14,7 @@ const JobsFilter = ({ contents, onFilter }) => {
   const uniqueCategories = Array.from(
     new Set(contents.map((item) => item.title))
   );
-  const uniqueTypes = Array.from(new Set(contents.map((item) => item.type)));
+  const uniqueTypes = Array.from(new Set(contents.map((item) => item.jobType)));
   const uniqueLevels = Array.from(new Set(contents.map((item) => item.level)));
 
   const handleFilter = () => {
@@ -49,7 +49,9 @@ const JobsFilter = ({ contents, onFilter }) => {
             onChange={(e) => setSelectedCategories(e.target.value)}
             className={classes.dropdown}
           >
-            <option value="">All categories</option>
+            <option value="" disabled hidden>
+              All categories
+            </option>
             {uniqueCategories.map((type, index) => (
               <option key={index} value={type}>
                 {type}
@@ -63,7 +65,9 @@ const JobsFilter = ({ contents, onFilter }) => {
             onChange={(e) => setSelectedType(e.target.value)}
             className={classes.dropdown}
           >
-            <option value="">All types</option>
+            <option value="" disabled hidden>
+              All types
+            </option>
             {uniqueTypes.map((type, index) => (
               <option key={index} value={type}>
                 {type}
@@ -77,7 +81,9 @@ const JobsFilter = ({ contents, onFilter }) => {
             onChange={(e) => setSelectedLevel(e.target.value)}
             className={classes.dropdown}
           >
-            <option value="">All levels</option>
+            <option value="" disabled hidden>
+              All levels
+            </option>
             {uniqueLevels.map((type, index) => (
               <option key={index} value={type}>
                 {type}

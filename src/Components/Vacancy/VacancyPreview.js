@@ -27,6 +27,7 @@ function VacancyPreview() {
     selectedLevel,
     selectedTag,
     salary,
+
     message,
     requirements,
     skills,
@@ -76,7 +77,7 @@ function VacancyPreview() {
         </span>
         <span className={styles.tag}>
           <img src={COMPANY} alt="job icon" className={styles.icon} />
-          {salary || "$20/hr"}
+          {salary ? `${state.currency}${salary}${state.period}` : "$20/hr"}
         </span>
       </div>
 
@@ -84,7 +85,7 @@ function VacancyPreview() {
         {/* Job Description */}
         <p className={styles.description}>
           {message ||
-            "We need one to Designs and maintains prospect websites including graphic development, regular site updates, usability reviews and traffic reporting. "}
+            "We need one to Designs and maintains prospect websites including graphic development, regular site updates, usability reviews and traffic reporting."}
         </p>
 
         {/* Requirements Section */}

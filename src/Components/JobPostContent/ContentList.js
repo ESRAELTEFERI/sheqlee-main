@@ -10,7 +10,7 @@ const ContentsList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000); // Simulate a 2-second load time
+    const timer = setTimeout(() => setLoading(false), 12000); // Simulate a 2-second load time
     return () => clearTimeout(timer);
   }, []);
 

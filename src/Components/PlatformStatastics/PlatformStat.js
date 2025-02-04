@@ -12,7 +12,7 @@ const PlatformStats = () => {
     !isAuthenticated || (isAuthenticated && user?.userType === "company");
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000); // Simulate a 2-second load
+    const timer = setTimeout(() => setLoading(false), 12000); // Simulate a 2-second load
     return () => clearTimeout(timer);
   }, []);
 

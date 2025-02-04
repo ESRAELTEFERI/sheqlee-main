@@ -8,6 +8,9 @@ import { tags } from "../Tags/TagData";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function Vacancy() {
+  const [currency, setCurrency] = useState("$"); // Default to USD
+  const [period, setPeriod] = useState("/hour"); // Default to per hour
+
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -26,10 +29,22 @@ function Vacancy() {
 
   // const navigate = useNavigate(); // Initialize the navigate function
 
+  // const toggleCurrency = () => {
+  //   setCurrency((prevCurrency) => (prevCurrency === "$" ? "€" : "$"));
+  // };
+
+  // const togglePeriod = () => {
+  //   setPeriod((prevPeriod) => {
+  //     if (prevPeriod === "/hour") return "/week";
+  //     if (prevPeriod === "/week") return "/month";
+  //     return "/hour";
+  //   });
+  // };
+
   const uniqueCategories = Array.from(
     new Set(Contents.map((item) => item.title))
   );
-  const uniqueTypes = Array.from(new Set(Contents.map((item) => item.company)));
+  const uniqueTypes = Array.from(new Set(Contents.map((item) => item.jobType)));
 
   const uniqueLevels = Array.from(new Set(Contents.map((item) => item.level)));
 
@@ -84,6 +99,8 @@ function Vacancy() {
               selectedLevel,
               selectedTag,
               salary,
+              currency,
+              period,
               message,
               requirements,
               skills,
@@ -102,6 +119,8 @@ function Vacancy() {
         selectedLevel,
         selectedTag,
         salary,
+        currency,
+        period,
         message,
         requirements,
         skills,
@@ -126,6 +145,8 @@ function Vacancy() {
         selectedLevel,
         selectedTag,
         salary,
+        currency,
+        period,
         message,
         requirements,
         skills,
@@ -216,7 +237,9 @@ function Vacancy() {
                     onChange={(e) => setSelectedCategories(e.target.value)}
                     className={styles.dropdown}
                   >
-                    <option value="">Select category...</option>
+                    <option value="" disabled hidden>
+                      Select category...
+                    </option>
                     {uniqueCategories.map((type, index) => (
                       <option key={index} value={type}>
                         {type}
@@ -237,7 +260,9 @@ function Vacancy() {
                     onChange={(e) => setSelectedType(e.target.value)}
                     className={styles.dropdown}
                   >
-                    <option value="">Select type...</option>
+                    <option value="" disabled hidden>
+                      Select type...
+                    </option>
                     {uniqueTypes.map((type, index) => (
                       <option key={index} value={type}>
                         {type}
@@ -260,7 +285,9 @@ function Vacancy() {
                     onChange={(e) => setSelectedLevel(e.target.value)}
                     className={styles.dropdown}
                   >
-                    <option value="">Add skill level...</option>
+                    <option value="" disabled hidden>
+                      Add skill level...
+                    </option>
                     {uniqueLevels.map((type, index) => (
                       <option key={index} value={type}>
                         {type}
@@ -281,13 +308,13 @@ function Vacancy() {
                 Salary (fixed or range){" "}
                 <span className={styles.required}>*</span>
               </label>
-              <div className={styles.inputWrapper}>
+              {/* <div className={styles.inputWrapper}>
                 <span className={styles.iconMoney}>
-                  $ {/* This represents the domain sufixfix */}
+                  $ 
                 </span>
                 <input
                   type="text"
-                  id="confirmPassword"
+                  id="salary"
                   className={styles.inputSalary}
                   placeholder="Enter salary..."
                   value={salary}
@@ -295,8 +322,64 @@ function Vacancy() {
                   required
                 />
                 <span className={styles.iconHours}>
-                  /hours {/* This represents the domain sufixfix */}
+                  /hours 
                 </span>
+              </div> */}
+              {/* 
+              <div className={styles.inputWrapper}>
+                <span
+                  className={styles.iconMoney}
+                  onClick={toggleCurrency}
+                  style={{ cursor: "pointer" }}
+                >
+                  {currency}
+                </span>
+                <input
+                  type="text"
+                  id="salary"
+                  className={styles.inputSalary}
+                  placeholder="Enter salary..."
+                  value={salary}
+                  onChange={(e) => setSalary(e.target.value)}
+                  required
+                />
+                <span
+                  className={styles.iconHours}
+                  onClick={togglePeriod}
+                  style={{ cursor: "pointer" }}
+                >
+                  {period}
+                </span>
+              </div> */}
+              <div className={styles.inputWrapper}>
+                <select
+                  className={styles.iconMoney}
+                  onChange={(e) => setCurrency(e.target.value)}
+                  value={currency}
+                >
+                  <option value="$">$</option>
+                  <option value="€">€</option>
+                </select>
+
+                <input
+                  type="text"
+                  id="salary"
+                  className={styles.inputSalary}
+                  placeholder="Enter salary..."
+                  value={salary}
+                  onChange={(e) => setSalary(e.target.value)}
+                  required
+                />
+
+                <select
+                  className={styles.iconHours}
+                  onChange={(e) => setPeriod(e.target.value)}
+                  value={period}
+                >
+                  <option value="/hour">/hour</option>
+                  <option value="/week">/week</option>
+                  <option value="/month">/month</option>
+                </select>
               </div>
             </div>
           </div>

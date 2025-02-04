@@ -8,19 +8,38 @@ import SkillTable from "./SkillTable";
 import AddUrl from "./AddUrl";
 import CVUpload from "./CVUpload";
 
-function FreeSetting() {
+function Profile() {
   const [bio, setBio] = useState("");
+  const [image, setImage] = useState(
+    localStorage.getItem("profileImage") || ""
+  );
+  const [skills, setSkills] = useState(() => {
+    return JSON.parse(localStorage.getItem("profileSkills")) || [];
+  });
+  const [links, setLinks] = useState(() => {
+    return JSON.parse(localStorage.getItem("profileLinks")) || [];
+  });
+  const [cv, setCv] = useState(null);
+
   const navigate = useNavigate();
+
+  const handleImageUpload = (imageUrl) => {
+    setImage(imageUrl);
+    localStorage.setItem("profileImage", imageUrl);
+  };
 
   /***************************************************************** */
   const handleUpdateProfile = async () => {
     const profileData = {
+      image,
       bio,
+      skills,
       fullName: document.getElementById("fullName").value,
       title: document.getElementById("tag").value,
-      skills: ["Skill1", "Skill2"], // This should come from SkillTable component
-      links: "some-link.com", // This should come from AddUrl component
-      cv: "CV uploaded", // This should come from CVUpload component
+      links,
+      cv: cv
+        ? { name: cv.name, type: cv.type, data: await cv.arrayBuffer() }
+        : null,
     };
 
     // Store the data in local storage (or use state if needed)
@@ -97,7 +116,7 @@ function FreeSetting() {
               />
             </div>
           </div>
-          <UploadComponent />
+          <UploadComponent onImageUpload={handleImageUpload} />
         </form>
         <RichTextField
           label="Introduce yourself"
@@ -106,9 +125,9 @@ function FreeSetting() {
           onChange={(content) => setBio(content)}
         />
 
-        <SkillTable />
-        <AddUrl />
-        <CVUpload />
+        <SkillTable skills={skills} setSkills={setSkills} />
+        <AddUrl links={links} setLinks={setLinks} />
+        <CVUpload setCv={setCv} />
 
         <div className={styles.purpleButtoncon}>
           <button className={styles.purpleButton} onClick={handleUpdateProfile}>
@@ -130,4 +149,4 @@ function FreeSetting() {
     </>
   );
 }
-export default FreeSetting;
+export default Profile;

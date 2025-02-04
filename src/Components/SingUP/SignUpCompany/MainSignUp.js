@@ -16,7 +16,7 @@ function MainSignUp() {
     email: "",
     password: "",
     confirmPassword: "",
-    agreement: false,
+    // agreement: false,
   });
 
   const handleRegister = async () => {
@@ -73,8 +73,11 @@ function MainSignUp() {
     // alert("Company registered successfully!");
     /*******************************************************************************************/
     try {
+      // const response = await fetch(
+      //   "http://192.168.5.217:3000/api/v1/users/signup/company",
+      //   {
       const response = await fetch(
-        "http://192.168.5.217:3000/api/v1/users/signup/company",
+        "http://192.168.5.120:9000/api.sheqlee.com/v1/company/auth/signup",
         {
           method: "POST",
           headers: {

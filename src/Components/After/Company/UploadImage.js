@@ -1,14 +1,16 @@
 import { useState, useRef } from "react";
 import styles from "./Upload.module.css";
 
-function UploadComponent() {
+function UploadComponent({ onImageUpload }) {
   const [image, setImage] = useState(null);
   const fileInputRef = useRef(null); // Create a ref for file input
 
   const handleImageUpload = (event) => {
     if (event.target.files && event.target.files.length > 0) {
       const file = event.target.files[0];
-      setImage(URL.createObjectURL(file));
+      const imageUrl = URL.createObjectURL(file);
+      setImage(imageUrl); // Store locally for preview
+      onImageUpload(imageUrl); // Pass image URL to parent
     }
   };
 

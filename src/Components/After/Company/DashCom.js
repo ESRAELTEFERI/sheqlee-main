@@ -1,29 +1,3 @@
-// import React from "react";
-// import { useNavigate } from "react-router-dom";
-// import classes from "./DashCom.module.css";
-// import DASHBOARD from "../../../asset/After/dashboard.svg";
-
-// function DashCom() {
-//   const navigate = useNavigate();
-
-//   const handlePostJobClick = () => {
-//     navigate("/vacancy");
-//   };
-//   return (
-//     <div className={classes.container}>
-//       <img src={DASHBOARD} alt="dashboard header" className={classes.iconCat} />
-//       <h1 className={classes.heading}>Dashboard</h1>
-//       <p className={classes.subheading}>
-//         You have not posted any jobs yet. Get started by posting a job.
-//       </p>
-//       <button onClick={handlePostJobClick} className={classes.post}>
-//         Post your first job
-//       </button>
-//     </div>
-//   );
-// }
-// export default DashCom;
-
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import classes from "./DashCom.module.css";
@@ -31,9 +5,9 @@ import DASHBOARD from "../../../asset/After/dashboard.svg";
 import DELETE from "../../../asset/vacancy/delete.svg";
 import EYE from "../../../asset/vacancy/eye.svg";
 import DUPLICATE from "../../../asset/vacancy/duplicate.svg";
-// import BLACK from "../../../asset/Switches/switch-black.png ";
-// import RED from "../../../asset/Switches/switch-red.png ";
-// import GREEN from "../../../asset/Switches/switch-green.png ";
+import BLACK from "../../../asset/Switches/switch-black.png";
+import RED from "../../../asset/Switches/switch-red.png";
+import GREEN from "../../../asset/Switches/switch-green.png";
 
 function DashCom() {
   const navigate = useNavigate();
@@ -57,6 +31,24 @@ function DashCom() {
 
   const handleDeleteJob = (id) => {
     const updatedJobs = jobs.filter((job) => job.id !== id);
+    localStorage.setItem("jobs", JSON.stringify(updatedJobs));
+    setJobs(updatedJobs);
+  };
+
+  const handleToggleStatus = (id) => {
+    const updatedJobs = jobs.map((job) => {
+      if (job.id === id) {
+        if (job.status === "published") {
+          return { ...job, status: "inactive" };
+        } else if (job.status === "inactive") {
+          return { ...job, status: "draft" };
+        } else {
+          return { ...job, status: "published" };
+        }
+      }
+      return job;
+    });
+
     localStorage.setItem("jobs", JSON.stringify(updatedJobs));
     setJobs(updatedJobs);
   };
@@ -96,18 +88,27 @@ function DashCom() {
             </thead>
             <tbody>
               {jobs.map((job, index) => (
-                <tr key={job.id}>
+                <tr key={job.id} className={classes.jobTableBody}>
                   <td>{index + 1}</td> <td>{job.jobTitle}</td>
                   <td>{job.selectedType}</td>
                   <td>{job.selectedLevel}</td>
                   <td>
-                    <span
-                      className={`${classes.status} ${
-                        job.status === "published" ? classes.green : classes.red
-                      }`}
+                    <button
+                      className={classes.statuss}
+                      onClick={() => handleToggleStatus(job.id)}
                     >
-                      {job.status === "published" ? "✅" : "⛔"}
-                    </span>
+                      <img
+                        src={
+                          job.status === "published"
+                            ? GREEN
+                            : job.status === "inactive"
+                            ? RED
+                            : BLACK
+                        }
+                        alt={job.status}
+                        className={classes.statuss}
+                      />
+                    </button>
                   </td>
                   <td>
                     <button className={classes.duplicate}>

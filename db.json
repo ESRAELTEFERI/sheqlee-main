@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": "183b",
+      "companyName": "sheq",
+      "domain": "https://sheq.com",
+      "fullName": "Abebe",
+      "email": "teka@gmail.com",
+      "password": "1111",
+      "confirmPassword": "1111",
+      "agreement": true,
+      "userType": "company"
+    },
+    {
+      "id": "1b28",
+      "companyName": "sheq",
+      "domain": "https://sheq.com",
+      "fullName": "Abebe",
+      "email": "teka@gmail.com",
+      "password": "1111",
+      "confirmPassword": "1111",
+      "agreement": true,
+      "userType": "company"
+    }
+  ]
+}

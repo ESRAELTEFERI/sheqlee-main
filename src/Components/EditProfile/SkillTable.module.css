@@ -47,9 +47,12 @@ tbody tr:last-child td {
   border-bottom-right-radius: 10px; */
   border-bottom: none;
 }
-th:nth-child(1),
+/* th:nth-child(1),
 td:nth-child(1) {
-  width: 50%; /* Make the skill column wider */
+  width: 50%; 
+} */
+.firstTh {
+  width: 50%;
 }
 .delete {
   background: #8967b3;

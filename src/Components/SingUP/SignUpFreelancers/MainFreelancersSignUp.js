@@ -57,7 +57,7 @@ function MainFreelancersSignUp() {
 
       console.log("Before Fetch");
       const response = await fetch(
-        "http://192.168.5.217:3000/api/v1/users/signup/freelancer",
+        "http://192.168.5.217:9000/api/v1/users/signup/freelancer",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

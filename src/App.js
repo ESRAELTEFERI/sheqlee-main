@@ -33,6 +33,7 @@ import DashboardFreePage from "./Pages/DashboardFreePage";
 import EditProfilePage from "./Pages/EditProfilePage";
 import FreeSettingsPage from "./Pages/FreeSettingsPage";
 import FreeProfilePreview from "./Pages/FreeProfilePreview";
+import JobsDetailPage from "./Pages/JobsDetailPage";
 
 const App = () => {
   // State to track login status
@@ -64,6 +65,9 @@ const App = () => {
           path="/companies/:companysName"
           element={<CompaniesDetailPage />}
         />
+        {/******************************************************************/}
+        <Route path="/job/:id" element={<JobsDetailPage />} />
+        {/************************************************************** */}
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/signup" element={<SignUpPageCompany />} />

@@ -5,6 +5,7 @@ import EMAIL from "../../../asset/SignUp/emaill.svg";
 import KEY from "../../../asset/SignUp/key.svg";
 import USER from "../../../asset/SignUp/user.svg";
 import EYE from "../../../asset/SignUp/eye-slash.svg";
+import EYES from "../../../asset/SignUp/awesome-eye.svg";
 import { NavLink } from "react-router-dom";
 
 const FreelancersInfo = ({
@@ -90,10 +91,14 @@ const FreelancersInfo = ({
               >
                 {showPassword ? (
                   <div>
-                    <img src={EYE} alt="hiden"></img>
+                    <img
+                      src={EYES}
+                      alt="hiden"
+                      className={styles.eyeClose}
+                    ></img>
                   </div>
                 ) : (
-                  "👁️"
+                  <img src={EYE} alt="hiden" className={styles.eyeOpen}></img>
                 )}
               </div>
             </div>
