@@ -3,6 +3,7 @@ import styles from "./MainLogIn.module.css";
 import LogInInfo from "./LogInInfo";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthContext";
+import GoogleButton from "../SingUP/GoogleButton";
 
 function MainLogIn() {
   const [infoData, setInfoData] = useState({ email: "", password: "" });
@@ -51,6 +52,7 @@ function MainLogIn() {
           </div>
         </span>
       </div>
+      <GoogleButton />
     </>
   );
 }

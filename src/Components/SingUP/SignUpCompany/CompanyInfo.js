@@ -108,13 +108,13 @@ const CompanyInfo = ({ infoData, onInfoDataChange }) => {
                 {showPassword ? (
                   <div>
                     <img
-                      src={EYE}
+                      src={EYES}
                       alt="hiden"
                       className={styles.eyeClose}
                     ></img>
                   </div>
                 ) : (
-                  <img src={EYES} alt="hiden" className={styles.eyeOpen}></img>
+                  <img src={EYE} alt="hiden" className={styles.eyeOpen}></img>
                 )}
               </span>
             </div>

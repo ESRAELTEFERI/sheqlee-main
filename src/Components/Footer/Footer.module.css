@@ -33,6 +33,7 @@
   margin-bottom: 0;
   padding-bottom: 0;
   margin-left: 20px;
+  color: #fff;
 }
 
 .address2 {
@@ -43,6 +44,7 @@
   font-family: "Kantumruy Pro";
   font-weight: 300;
   /* margin-left: 100px; */
+  color: #fff;
 }
 
 .legal {
@@ -117,6 +119,7 @@ ul li:hover {
   font-size: 13px;
   margin-left: 50px;
   /* margin-bottom: 10px; */
+  color: #fff;
 }
 
 .socials {
@@ -145,8 +148,13 @@ ul li:hover {
   font-family: "Kantumruy Pro";
   font-weight: 300;
   margin-top: 20px;
+  color: #fff;
 }
 .navLink {
   color: #fff;
   text-decoration: none;
+}
+.pp {
+  font-weight: 400;
+  color: #fff;
 }

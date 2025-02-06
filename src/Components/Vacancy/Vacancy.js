@@ -157,14 +157,62 @@ function Vacancy() {
   };
 
   // Save draft to localStorage
+  // const handleSaveDraft = () => {
+  //   const draft = {
+  //     jobTitle,
+  //     selectedCategories,
+  //     selectedType,
+  //     selectedLevel,
+  //     selectedTag,
+  //     salary,
+  //     message,
+  //     requirements,
+  //     skills,
+  //     description,
+  //     apply,
+  //   };
+
+  //   try {
+  //     localStorage.setItem("vacancyDraft", JSON.stringify(draft)); // Save draft to localStorage
+  //     alert("Draft saved successfully!"); // Notify the user
+  //   } catch (error) {
+  //     console.error("Error saving draft:", error);
+  //   }
+  // };
+  const saveJob = (jobData, status) => {
+    const jobs = JSON.parse(localStorage.getItem("jobs")) || [];
+
+    const newJob = {
+      id: jobData.id || Date.now(), // Ensure unique ID
+      jobTitle: jobData.jobTitle,
+      selectedType: jobData.selectedType,
+      selectedLevel: jobData.selectedLevel,
+      status: status || "draft", // Default to draft
+    };
+
+    // Check if job exists (update it), otherwise add new
+    const existingIndex = jobs.findIndex((job) => job.id === newJob.id);
+    if (existingIndex !== -1) {
+      jobs[existingIndex] = newJob;
+    } else {
+      jobs.push(newJob);
+    }
+
+    localStorage.setItem("jobs", JSON.stringify(jobs));
+  };
+
+  // Call this function when saving a draft
   const handleSaveDraft = () => {
-    const draft = {
+    const currentJobData = {
+      id: location.state?.id || Date.now(), // Use existing ID if editing
       jobTitle,
       selectedCategories,
       selectedType,
       selectedLevel,
       selectedTag,
       salary,
+      currency,
+      period,
       message,
       requirements,
       skills,
@@ -172,12 +220,7 @@ function Vacancy() {
       apply,
     };
 
-    try {
-      localStorage.setItem("vacancyDraft", JSON.stringify(draft)); // Save draft to localStorage
-      alert("Draft saved successfully!"); // Notify the user
-    } catch (error) {
-      console.error("Error saving draft:", error);
-    }
+    saveJob(currentJobData, "draft");
   };
 
   return (

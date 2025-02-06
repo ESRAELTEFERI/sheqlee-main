@@ -3,7 +3,8 @@ import styles from "./NewPassword.module.css";
 import CODE from "../../../asset/SignUp/code.svg";
 import { useNavigate } from "react-router-dom";
 import PADLOCk from "../../../asset/padlock.svg";
-import EYE from "../../../asset/SignUp/eye-slash.svg";
+import EYE from "../../../asset/SignUp/awesome-eye.svg";
+import EYES from "../../../asset/SignUp/awesome-eye-slash.svg";
 import KEY from "../../../asset/SignUp/key.svg";
 
 function NewPassword() {
@@ -95,7 +96,7 @@ function NewPassword() {
             <div className={styles.inputWrapper}>
               <img src={KEY} alt="key icon" className={styles.iconSubject} />
               <input
-                type={showPassword ? "text" : "password"}
+                type="password"
                 id="password"
                 className={styles.input}
                 placeholder="**********"
@@ -112,7 +113,7 @@ function NewPassword() {
             <div className={styles.inputWrapper}>
               <img src={KEY} alt="key icon" className={styles.iconSubject} />
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 id="confirmPassword"
                 className={styles.input}
                 placeholder="**********"
@@ -125,7 +126,17 @@ function NewPassword() {
                 onClick={togglePasswordVisibility}
                 style={{ cursor: "pointer" }}
               >
-                {showPassword ? <img src={EYE} alt="hide" /> : "A"}
+                {showPassword ? (
+                  <div>
+                    <img
+                      src={EYE}
+                      alt="hiden"
+                      className={styles.eyeClose}
+                    ></img>
+                  </div>
+                ) : (
+                  <img src={EYES} alt="hiden" className={styles.eyeOpen}></img>
+                )}
               </span>
             </div>
           </div>

@@ -8,6 +8,7 @@
   overflow: hidden;
   font-family: "Kantumruy Pro", sans-serif;
   margin-top: 30px;
+  color: #000;
 }
 .iconHead {
   width: 90px;
@@ -226,7 +227,6 @@
   width: 55px;
   height: 67px;
 }
-
 
 .iconEmail {
   background: black;

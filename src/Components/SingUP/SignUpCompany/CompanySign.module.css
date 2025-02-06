@@ -8,6 +8,7 @@
   padding: 1.5rem;
   font-family: "Kantumruy Pro", sans-serif;
   margin-top: 0;
+  color: #000;
 }
 .align {
   display: flex;
@@ -26,6 +27,7 @@
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 20px;
+  color: #000;
 }
 
 .icon {

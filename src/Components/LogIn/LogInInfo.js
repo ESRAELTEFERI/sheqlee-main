@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import styles from "./LogInInfo.module.css";
 import EMAIL from "../../asset/SignUp/emaill.svg";
 import KEY from "../../asset/SignUp/key.svg";
-import EYE from "../../asset/SignUp/eye-slash.svg";
+import EYE from "../../asset/SignUp/awesome-eye-slash.svg";
+import EYES from "../../asset/SignUp/awesome-eye.svg";
 import ENTER from "../../asset/LogIn/enter.svg";
 
 const LogInInfo = ({ infoData, onInfoDataChange }) => {
@@ -27,7 +28,7 @@ const LogInInfo = ({ infoData, onInfoDataChange }) => {
         <div className={styles.row}>
           <div className={styles.field}>
             <label className={styles.label} htmlFor="email">
-              Email <span className={styles.required}>*</span>
+              Email
             </label>
             <div className={styles.inputWrapper}>
               <img src={EMAIL} alt="idea icon" className={styles.iconEmail} />
@@ -46,7 +47,7 @@ const LogInInfo = ({ infoData, onInfoDataChange }) => {
           {/* <div className={styles.row}> */}
           <div className={styles.field}>
             <label className={styles.label} htmlFor="password">
-              Password <span className={styles.required}>*</span>
+              Password
             </label>
             <div className={styles.inputWrapper}>
               <img src={KEY} alt="idea icon" className={styles.iconSubject} />
@@ -66,10 +67,14 @@ const LogInInfo = ({ infoData, onInfoDataChange }) => {
               >
                 {showPassword ? (
                   <div>
-                    <img src={EYE} alt="hiden"></img>
+                    <img
+                      src={EYES}
+                      alt="hiden"
+                      className={styles.eyeClose}
+                    ></img>
                   </div>
                 ) : (
-                  "👁️"
+                  <img src={EYE} alt="hiden" className={styles.eyeOpen}></img>
                 )}
               </div>
             </div>

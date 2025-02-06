@@ -100,7 +100,9 @@ const Footer = () => {
       <p className={classes.follow}>Follow Us On</p>
 
       <div className={classes.bottomBar}>
-        <p>&copy; 2024 Sheqlee Co., Ltd. All rights reserved.</p>
+        <p className={classes.pp}>
+          &copy; 2024 Sheqlee Co., Ltd. All rights reserved.
+        </p>
         <div className={classes.socials}>
           <a
             href="www.facebook.com"

@@ -3,6 +3,7 @@ import styles from "./MainSignUp.module.css";
 import COMAN from "../../../asset/SignUp/compan.svg";
 import FreelancersInfo from "./FreelancersInfo";
 import { NavLink } from "react-router-dom";
+import GoogleButton from "../GoogleButton";
 
 function MainFreelancersSignUp() {
   const [infoData, setInfoData] = useState({
@@ -156,6 +157,7 @@ function MainFreelancersSignUp() {
           </div>
         </span>
       </div>
+      <GoogleButton />
     </>
   );
 }
