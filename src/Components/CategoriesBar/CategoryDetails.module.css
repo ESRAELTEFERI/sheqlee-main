@@ -41,8 +41,9 @@
 .iconBell {
   width: 25px;
   height: 25px;
-  margin-top: 15px;
-  margin-left: 20px;
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 15px;
 }
 .buttonText {
   padding: 0px 30px;
@@ -63,7 +64,7 @@
 }
 
 .subscribeButton:hover {
-  background-color: #6f22a7;
+  background-color: #8967b3;
 }
 
 .subscribers {

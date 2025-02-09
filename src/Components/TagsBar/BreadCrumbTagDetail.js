@@ -3,9 +3,15 @@ import classes from "../CategoriesBar/BreadcrumbCategories.module.css";
 import ARROW from "../../asset/BreadCrumb/keyboard-arrow-down.svg";
 import ICON from "../../asset/BreadCrumb/placeholder.svg";
 import { Link, useParams } from "react-router-dom";
+import { getTagsWithName } from "../Tags/TagData";
 
 const BreadcrumbCategories = () => {
   const { tagsName } = useParams();
+  const category = getTagsWithName.find(
+    (tag) =>
+      tag.name.toLowerCase().replace(/\s+/g, "-").replace(/\//g, "-") ===
+      tagsName
+  );
 
   return (
     <div className={classes.breadcrumb}>
@@ -19,7 +25,7 @@ const BreadcrumbCategories = () => {
       </Link>
       <img src={ARROW} alt="Bread-crumb" className={classes.separator} />
       <Link to={`/categories/${tagsName}`} className={classes.navLinkkk}>
-        {tagsName?.replace(/-/g, " ")}
+        {category.name}
       </Link>
     </div>
   );

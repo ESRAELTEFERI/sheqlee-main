@@ -17,7 +17,7 @@ const ContentBottom = ({
         <div className={classes.details}>
           <span>
             <img
-              src={getIconForKey("time")}
+              src={getIconForKey("timePosted")}
               alt="timePosted"
               className={classes.icon}
             />
@@ -25,7 +25,7 @@ const ContentBottom = ({
           </span>
           <span>
             <img
-              src={getIconForKey("type")}
+              src={getIconForKey("company")}
               alt="company"
               className={classes.icon}
             />
@@ -33,7 +33,7 @@ const ContentBottom = ({
           </span>
           <span>
             <img
-              src={getIconForKey("timeKind")}
+              src={getIconForKey("jobType")}
               alt="jobType"
               className={classes.icon}
             />
@@ -51,7 +51,7 @@ const ContentBottom = ({
           </span>
           <span>
             <img
-              src={getIconForKey("price")}
+              src={getIconForKey("pay")}
               alt="pay"
               className={classes.icon}
             />

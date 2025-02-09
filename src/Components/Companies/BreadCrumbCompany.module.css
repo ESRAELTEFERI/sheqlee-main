@@ -10,7 +10,11 @@
 .icon {
   width: 15px;
   height: 50px;
-  margin-left: 150px;
+  margin-left: 170px;
+}
+.separator {
+  width: 10px;
+  height: 9px;
 }
 
 .navLinkk {

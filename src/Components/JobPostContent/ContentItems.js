@@ -82,8 +82,10 @@ const ContentItem = ({
       <div className={classes.contentItem} onClick={handleClick}>
         {/* <h2 className={classes.title}>{title}</h2> */}
         <div className={classes.titleIcon}>
-          {icon && <img src={icon} alt={title} className={classes.icons} />}
-          <span className={classes.title}>{title}</span>
+          <span className={classes.title}>
+            {icon && <img src={icon} alt={title} className={classes.icons} />}
+            {title}
+          </span>
         </div>
         <p className={classes.description}>{description}</p>
         {/* <div className={classes.elements}>{children}</div> */}

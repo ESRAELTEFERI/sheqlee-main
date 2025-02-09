@@ -32,7 +32,7 @@
 }
 
 .buttonFix {
-  padding: 15px 20px;
+  padding: 0px 20px;
   font-size: 1.6rem;
   color: #fff;
   background-color: #8967b3;
@@ -41,7 +41,7 @@
   border-radius: 10px;
 }
 .buttonFix:hover {
-  background-color: #732d91;
+  background-color: #8967b3;
   color: #fff;
   border: none;
 }

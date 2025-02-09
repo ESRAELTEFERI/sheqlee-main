@@ -97,12 +97,12 @@ const Footer = () => {
 
       {/* <p className={classes.address2}>MIT, Mekelle, Tigray</p> */}
 
-      <p className={classes.follow}>Follow Us On</p>
+      <p className={classes.follow}>Follow us on</p>
 
       <div className={classes.bottomBar}>
-        <p className={classes.pp}>
+        <div className={classes.pp}>
           &copy; 2024 Sheqlee Co., Ltd. All rights reserved.
-        </p>
+        </div>
         <div className={classes.socials}>
           <a
             href="www.facebook.com"

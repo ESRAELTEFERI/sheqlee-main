@@ -41,7 +41,8 @@ const MainTag = () => {
               <div className={classes.contentContainer}>
                 <h3 className={classes.title}>{tag.name}</h3>
                 <p className={classes.details}>
-                  {tag.jobs} jobs &bull; {tag.subscribers} subscribers
+                  {tag.jobs} jobs <span className={classes.bullet}>&bull;</span>{" "}
+                  {tag.subscribers.toLocaleString()} subscribers
                 </p>
               </div>
             </Link>

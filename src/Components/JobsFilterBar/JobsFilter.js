@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classes from "./JobsFilter.module.css";
-// import SEARCH from "../../asset/Filter/search.svg";
+import SEARCH from "../../asset/Filter/search.svg";
 // import DOWN from "../../asset/Filter/arrow-down.svg";
 // import { FiChevronDown } from "react-icons/fi"; // Import the icon
 
@@ -92,14 +92,16 @@ const JobsFilter = ({ contents, onFilter }) => {
           </select>
         </div>
 
-        <input
-          type="text"
-          placeholder="Search by programming technology or field..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className={classes.searchInput}
-        />
-
+        <div className={classes.searchCon}>
+          <img src={SEARCH} alt="searching" className={classes.search} />
+          <input
+            type="text"
+            placeholder="Search by programming technology or field..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className={classes.searchInput}
+          />
+        </div>
         <button onClick={handleFilter} className={classes.applyButton}>
           Apply filter
         </button>

@@ -9,6 +9,9 @@ import TG from "../../asset/categoriesSocial/telegram.svg";
 import TW from "../../asset/categoriesSocial/twitter.svg";
 import Modal from "../HeroSection/Modal";
 
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faJsSquare } from "@fortawesome/free-brands-svg-icons";
+
 const CategoryDetails = () => {
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -29,6 +32,9 @@ const CategoryDetails = () => {
 
   return (
     <div className={classes.card}>
+      <div className={classes.jsBox}>
+        <span className={classes.jsText}>JS</span>
+      </div>
       <h2 className={classes.title}>{category.name}</h2>
       <p className={classes.description}>
         All job posts with the tag{" "}

@@ -110,7 +110,7 @@ function Vacancy() {
           : job
       );
     } else {
-      // Add a new job with a unique ID
+      // // Add a new job with a unique ID
       const newJob = {
         id: Date.now(), // Unique ID
         jobTitle,
@@ -351,50 +351,7 @@ function Vacancy() {
                 Salary (fixed or range){" "}
                 <span className={styles.required}>*</span>
               </label>
-              {/* <div className={styles.inputWrapper}>
-                <span className={styles.iconMoney}>
-                  $ 
-                </span>
-                <input
-                  type="text"
-                  id="salary"
-                  className={styles.inputSalary}
-                  placeholder="Enter salary..."
-                  value={salary}
-                  onChange={(e) => setSalary(e.target.value)}
-                  required
-                />
-                <span className={styles.iconHours}>
-                  /hours 
-                </span>
-              </div> */}
-              {/* 
-              <div className={styles.inputWrapper}>
-                <span
-                  className={styles.iconMoney}
-                  onClick={toggleCurrency}
-                  style={{ cursor: "pointer" }}
-                >
-                  {currency}
-                </span>
-                <input
-                  type="text"
-                  id="salary"
-                  className={styles.inputSalary}
-                  placeholder="Enter salary..."
-                  value={salary}
-                  onChange={(e) => setSalary(e.target.value)}
-                  required
-                />
-                <span
-                  className={styles.iconHours}
-                  onClick={togglePeriod}
-                  style={{ cursor: "pointer" }}
-                >
-                  {period}
-                </span>
-              </div> */}
-              <div className={styles.inputWrapper}>
+                            <div className={styles.inputWrapper}>
                 <select
                   className={styles.iconMoney}
                   onChange={(e) => setCurrency(e.target.value)}

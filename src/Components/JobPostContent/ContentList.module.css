@@ -48,11 +48,12 @@
   color: #000000;
   opacity: 1;
   margin-left: 20px;
+  margin-top: 20px;
 }
 
 .head {
   display: flex;
-  gap: 670px;
+  gap: 700px;
 }
 
 /*////////////////////////////////////////*/
@@ -82,7 +83,7 @@
 
 .underline {
   position: absolute;
-  bottom: 0px;
+  bottom: 9px;
   left: 0;
   width: 45px;
   height: 4px;
@@ -107,8 +108,8 @@
 }
 
 .skeletonSpan2 {
-  width: 80px;
-  height: 10px;
+  width: 100px;
+  height: 16px;
   border-radius: 4px;
   background: linear-gradient(
     90deg,

@@ -25,6 +25,11 @@
   width: 25em;
 }
 
+.bullet {
+  color: #4a4a4a;
+  padding: 0 6px;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

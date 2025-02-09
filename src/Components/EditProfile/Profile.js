@@ -6,7 +6,7 @@ import UploadComponent from "../After/Company/UploadImage";
 import RichTextField from "../Vacancy/RichTextField";
 import SkillTable from "./SkillTable";
 import AddUrl from "./AddUrl";
-import CVUpload from "./CVUpload";
+import CVUpload from "./CvUpdload";
 
 function Profile() {
   const [bio, setBio] = useState("");

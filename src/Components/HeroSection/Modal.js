@@ -2,8 +2,8 @@ import React from "react";
 import classes from "./Modal.module.css";
 // import AuthButtons from "../Header/AuthButtons"; //for the SignUp and logIn buttons
 import CLOSEMODAL from "../../asset/cancel_icon.svg";
-import SignUpButton from "../Header/SignUpButton";
-import LoginButton from "../Header/LogInButton";
+import SignUp from "./SignUp";
+import LogIn from "./LogIn";
 const Modal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
@@ -18,13 +18,13 @@ const Modal = ({ isOpen, onClose }) => {
           Please register or login as a client to post jobs.
         </h2>
         <div className={classes.buttonGroup}>
-          <SignUpButton />
-          <LoginButton />
+          <SignUp />
+          <LogIn />
           {/* <AuthButtons /> */}
         </div>
       </div>
       <div className={classes.closeModall} onClick={onClose}>
-        <img src={CLOSEMODAL} alt="closing modal" />
+        <img src={CLOSEMODAL} alt="closing modal" className={classes.iconnn} />
       </div>
     </div>
   );

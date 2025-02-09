@@ -24,6 +24,7 @@ const Categories = () => {
           <Link
             to={`/categories/${
               cat.name
+
                 .toLowerCase()
                 .replace(/\s+/g, "-")
                 // .replace(/&/g, "and")
@@ -39,7 +40,8 @@ const Categories = () => {
             <div className={classes.contentContainer}>
               <h3 className={classes.title}>{cat.name}</h3>
               <p className={classes.details}>
-                {cat.jobs} jobs &bull; {cat.subscribers} subscribers
+                {cat.jobs} jobs <span className={classes.bullet}>&bull;</span>{" "}
+                {cat.subscribers.toLocaleString()} subscribers
               </p>
             </div>
           </Link>

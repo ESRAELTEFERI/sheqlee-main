@@ -43,29 +43,22 @@
 }
 
 .title {
-  /* font-size: 1.4rem;
-  color: #000000;
-  letter-spacing: 0px;
-  font-weight: 500;
-  font-family: "Kantumruy Pro";
-  padding-bottom: 20px;
-  text-align: left;
-  margin-right: 100px; */
-
+  display: flex;
+  align-items: center;
   font-size: 1.5rem;
   color: #000000;
   letter-spacing: 0px;
   font-family: "Kantumruy Pro", sans-serif;
   font-weight: 500;
-  padding-top: 15px;
-  /* margin: 0;
-  padding: 0; */
   text-align: left;
-  /* padding-top: 35px; */
+
+  /* padding: 3px 8px; */
+  border-radius: 4px; /* Optional: Rounded corners */
+  gap: 8px; /* Space between icon and text */
 }
 
 .description {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #000000;
   letter-spacing: 0px;
   font-family: "Kantumruy Pro";
@@ -73,28 +66,30 @@
   opacity: 1;
   text-align: left;
   padding-bottom: 20px;
-  width: 19em; /*about 20 characters*/
+  /* width: 19em;  */
   height: 5em;
 }
 
 .icons {
-  display: flex;
+  /* display: flex; */
 
   width: 25px;
   height: 25px;
-  display: inline-block;
+  /* display: inline-block;
   margin-right: 8px;
+  padding-top: 0; */
 }
 .titleIcon {
-  font-size: 1.2rem;
-  color: #000000;
+  /* color: #000000;
   letter-spacing: 0px;
   font-family: "Kantumruy Pro";
   padding-bottom: 0px;
   text-align: left;
-  /* margin-right: 100px; */
   margin: 0;
-  padding: 0;
+  padding: 0; */
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
 }
 
 /*-----------Shimmering Effect-------------*/
@@ -115,18 +110,18 @@
 }
 
 .skeletonIcon {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
-  margin-right: 12px;
-  margin-bottom: 30px;
+  margin-right: 15px;
+  margin-bottom: 40px;
 }
 
 .skeletonTitle {
-  height: 17px;
+  height: 20px;
   width: 70%;
-  margin-bottom: 30px;
-  border-radius: 3px;
+  margin-bottom: 40px;
+  border-radius: 4px;
 }
 
 .skeletonIcon,
@@ -140,16 +135,16 @@
 }
 
 .skeletonDescription {
-  height: 10px;
-  width: 80%;
+  height: 13px;
+  width: 90%;
   margin-bottom: 10px;
   border-radius: 3px;
 }
 
 .skeletonDescriptionSecond {
-  height: 10px;
+  height: 13px;
   width: 50%;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   border-radius: 3px;
 }
 .skeletonContainer {
@@ -173,8 +168,8 @@
 
 /*************Shimmering Effect of the Bottom part****************/
 .skeletonElement {
-  width: 90px;
-  height: 20px;
+  width: 100px;
+  height: 22px;
   margin-bottom: 5px;
   color: #dfdfdf;
 }
@@ -189,8 +184,8 @@
 }
 
 .skeletonInsideText {
-  width: 60px;
-  height: 10px;
+  width: 70px;
+  height: 13px;
   background: linear-gradient(90deg, #c9c9c9 25%, #f0f0f0 50%, #c9c9c9 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
@@ -201,18 +196,20 @@
   background: linear-gradient(90deg, #8967b3 25%, #f0f0f0 50%, #8967b3 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
-  width: 50px;
-  height: 20px;
+  width: 70px;
+  height: 24px;
   margin-bottom: 5px;
   border-radius: 4px;
+  padding: 2px 7px;
+  /* padding-bottom: 5px; */
 }
 .skeletonInsideTextButton {
-  width: 40px;
-  height: 10px;
+  width: 60px;
+  height: 11px;
   background: linear-gradient(90deg, #c9c9c9 25%, #f0f0f0 50%, #c9c9c9 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 
 /* Icon Placeholder */

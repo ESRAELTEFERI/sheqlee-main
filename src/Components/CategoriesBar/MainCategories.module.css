@@ -32,6 +32,10 @@
   column-gap: 100px;
   row-gap: 20px;
 }
+.bullet {
+  color: #777;
+  margin: 0 6px; /* Optional spacing around the bullet */
+}
 
 .card {
   height: 110px;
